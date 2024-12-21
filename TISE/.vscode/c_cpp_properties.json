@@ -7,7 +7,11 @@
                 "${workspaceFolder}/header_files",
                 "${PETSC_DIR}/include",
                 "${PETSC_DIR}/${PETSC_ARCH}/include",
-                "/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/src/include"
+                "/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/src/include",
+                "/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/hdf5-1.14.3-p1/src/",
+                "/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/hdf5-1.14.3-p1/src/H5FDsubfiling",
+                "/home/dopl4670/slepc/include",
+                "/home/dopl4670/slepc/arch-linux-c-opt/include"
 
             ],
             "defines": [],

@@ -7,7 +7,9 @@
             "command": "bash",
             "args": [
                 "-c",
-                "mkdir -p build && mpicxx -O3 -g -Iheader_files -I/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/src/include -I${PETSC_DIR}/include -I${PETSC_DIR}/${PETSC_ARCH}/include source_files/*.cpp -L/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/lib/.libs -L${PETSC_DIR}/${PETSC_ARCH}/lib -lpetsc -o build/output"
+                "mkdir -p build && mpicxx -O3 -g -Iheader_files -I/home/dopl4670/repos/TISE -I/home/dopl4670/repos/TISE/header_files -I${PETSC_DIR}/include -I${PETSC_DIR}/${PETSC_ARCH}/include -I/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/src/include -I/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/hdf5-1.14.3-p1/src -I/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/hdf5-1.14.3-p1/src/H5FDsubfiling -I/home/dopl4670/slepc/include -I/home/dopl4670/slepc/arch-linux-c-opt/include source_files/*.cpp -L/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/lib/.libs -L${PETSC_DIR}/${PETSC_ARCH}/lib -L/home/dopl4670/slepc/arch-linux-c-opt/lib -lpetsc -lslepc -o build/output"
+
+
             ],
             "group": {
                 "kind": "build",
