@@ -1,69 +1,39 @@
-#include <iostream>
+#include "tise.h"
+#include <petscsys.h>
 #include <vector>
 #include "basis.h"
-#include <fstream>
-#include <iomanip>
-#include <chrono>
+#include <mpi.h>
 
-int main()
-{
-    double xmax = 10;
-    int n_basis = 30;
-    int order = 7;
-	int degree = order - 1;
+int main(int argc, char **argv) {
+    
 
+    PetscErrorCode ierr;
+    Mat K;
+    Mat V;
 
-    std::vector knots = basis::linear_knots(n_basis, order, xmax);
+    int n_basis = 3000;
+    int degree = 6;
+    double rmax = 3000;
 
+    ierr = PetscInitialize(&argc, &argv, NULL, NULL); CHKERRQ(ierr);
+    std::vector<double> knots = basis::linear_knots(n_basis, degree, rmax);
 
-	int Nx = 1000;
-	std::vector<double> x_vector;
-	double step_size = xmax / (Nx - 1);
+    double start_time = MPI_Wtime();
+    ierr = tise::construct_kinetic_matrix(&K, n_basis, degree, knots); CHKERRQ(ierr);
+    double end_time = MPI_Wtime();
+    double elapsed_time = end_time - start_time;
+    PetscPrintf(PETSC_COMM_WORLD, "Time taken to construct matrix: %.3f seconds\n", elapsed_time);
 
-
-	for (int idx = 0; idx < Nx; ++idx)
-	{
-		x_vector.push_back(idx * step_size);
-	}
-
-	std::vector<double> y_vector;
-
-
-	
-	for (int i = 0; i < n_basis; ++i)
-	{
-		for (int idx = 0; idx < Nx; ++idx)
-		{
-			double y = basis::B(i, degree, knots, x_vector[idx]);
-			y_vector.push_back(y);
-		}
-	}
+    start_time = MPI_Wtime();
+    ierr = tise::construct_kinetic_matrix(&V, n_basis, degree, knots); CHKERRQ(ierr);
+    end_time = MPI_Wtime();
+    elapsed_time = end_time - start_time;
+    PetscPrintf(PETSC_COMM_WORLD, "Time taken to construct matrix: %.3f seconds\n", elapsed_time);
 
 
-	
-	
-	
+    // Clean up and finalize
+    ierr = MatDestroy(&K); CHKERRQ(ierr);
+    ierr = PetscFinalize(); CHKERRQ(ierr);
 
-	std::ofstream file("output.txt");
-
-	for (const auto& y : y_vector)
-	{
-		file << y << std::endl;
-	}
-
-
-	auto start = std::chrono::high_resolution_clock::now();
-	double integral_value = basis::overlap_matrix_element(15, 15, degree, knots);
-	auto end = std::chrono::high_resolution_clock::now();
-	std::cout << std::fixed << std::setprecision(20) << integral_value << std::endl;
-	std::chrono::duration<double, std::milli> duration = end - start;
-
-	// Print the duration
-	std::cout << "Time taken: " << duration.count() << " ms" << std::endl;
-	return 0;
-
-
-
-
+    return 0;
 }
-

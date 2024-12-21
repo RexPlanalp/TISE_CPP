@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "-c",
+                "mkdir -p build && mpicxx -O3 -g -Iheader_files -I/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/src/include -I${PETSC_DIR}/include -I${PETSC_DIR}/${PETSC_ARCH}/include source_files/*.cpp -L/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/lib/.libs -L${PETSC_DIR}/${PETSC_ARCH}/lib -lpetsc -o build/output"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": ["relative", "${workspaceFolder}"],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        }
+    ]
+}
