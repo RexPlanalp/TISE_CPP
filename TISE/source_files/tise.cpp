@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <vector>
 #include <fstream>
+#include "tise.h"
 
 namespace tise 
 {
