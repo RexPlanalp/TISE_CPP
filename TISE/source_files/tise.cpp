@@ -4,9 +4,42 @@
 #include "basis.h"
 #include <cstdlib>
 #include <vector>
+#include <fstream>
 
 namespace tise 
 {
+
+    PetscErrorCode save_matrix_to_csv(Mat A, const std::string& filename)
+    {
+    PetscErrorCode ierr;
+    PetscInt rows, cols;
+
+    // Get the size of the matrix
+    ierr = MatGetSize(A, &rows, &cols); CHKERRQ(ierr);
+
+    // Open file for writing
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        return -1; // Return error code for failure to open file
+    }
+
+    // Iterate over rows and columns to write values
+    for (PetscInt i = 0; i < rows; ++i) {
+        for (PetscInt j = 0; j < cols; ++j) {
+            PetscScalar value;
+            ierr = MatGetValue(A, i, j, &value); CHKERRQ(ierr);
+            file << value;
+
+            if (j < cols - 1) {
+                file << ","; // Separate values by comma
+            }
+        }
+        file << "\n"; // New line after each row
+    }
+
+    file.close();
+    return 0; // Return success
+    }
 
     PetscErrorCode construct_kinetic_matrix(Mat *A, int n_basis, int degree, const std::vector<double>& knots) 
     {
@@ -59,6 +92,7 @@ namespace tise
         // Assemble the matrix
         ierr = MatAssemblyBegin(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
         ierr = MatAssemblyEnd(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
+        ierr = save_matrix_to_csv(*A, "k.csv"); CHKERRQ(ierr);
         return 0; // Return success
     }
 
@@ -229,5 +263,9 @@ namespace tise
         return 0;
 
     }
+
+
+
+    
 
 } // namespace tise

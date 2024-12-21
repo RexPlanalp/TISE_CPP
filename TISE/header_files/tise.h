@@ -3,8 +3,10 @@
 
 #include <petscmat.h>
 #include <vector>
+#include <string>
 
 namespace tise {
+    PetscErrorCode save_matrix_to_csv(Mat A, const std::string& filename);
     PetscErrorCode construct_kinetic_matrix(Mat *A, int n_basis, int degree,const std::vector<double>& knots);
     PetscErrorCode construct_inv_r2_matrix(Mat *A, int n_basis, int degree, const std::vector<double>& knots);
     PetscErrorCode construct_overlap_matrix(Mat *A, int n_basis, int degree, const std::vector<double>& knots);
