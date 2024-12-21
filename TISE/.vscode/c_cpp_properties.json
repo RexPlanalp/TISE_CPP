@@ -4,7 +4,11 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/header_files"
+                "${workspaceFolder}/header_files",
+                "${PETSC_DIR}/include",
+                "${PETSC_DIR}/${PETSC_ARCH}/include",
+                "/home/dopl4670/petsc/arch-linux-c-opt/externalpackages/mpich-4.2.3/src/include"
+
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
