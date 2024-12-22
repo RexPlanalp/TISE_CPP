@@ -5,6 +5,8 @@
 #include <unordered_map>
 #include <algorithm>
 #include <fstream>
+#include <functional>
+#include <cstdlib>
 
 namespace basis
 {
@@ -113,129 +115,103 @@ namespace basis
 		return knots;
 	}
 
-	double overlap_matrix_element(int i, int j, int degree, const std::vector<double>& knots)
-	{
+
+
+	// Generalized function for computing matrix elements
+	double compute_matrix_element(
+		int i, int j, int degree, const std::vector<double>& knots,
+		std::function<double(int, int, const std::vector<double>&, double)> integrand
+	) {
+
+		std::vector<double> weights;
+    	std::vector<double> roots;
+
+		if (degree == 1) {
+			roots = {roots_two.begin(), roots_two.end()};
+			weights = {weights_two.begin(), weights_two.end()};
+		} else if (degree == 2) {
+			roots = {roots_three.begin(), roots_three.end()};
+			weights = {weights_three.begin(), weights_three.end()};
+		} else if (degree == 3) {
+			roots = {roots_four.begin(), roots_four.end()};
+			weights = {weights_four.begin(), weights_four.end()};
+		} else if (degree == 4) {
+			roots = {roots_five.begin(), roots_five.end()};
+			weights = {weights_five.begin(), weights_five.end()};
+		} else if (degree == 5) {
+			roots = {roots_six.begin(), roots_six.end()};
+			weights = {weights_six.begin(), weights_six.end()};
+		} else if (degree == 6) {
+			roots = {roots_seven.begin(), roots_seven.end()};
+			weights = {weights_seven.begin(), weights_seven.end()};
+		} else if (degree == 7) {
+			roots = {roots_eight.begin(), roots_eight.end()};
+			weights = {weights_eight.begin(), weights_eight.end()};
+		} else {
+			std::cerr << "Unsupported degree: " << degree << std::endl;
+			exit(1);
+		}
+
 		double total = 0.0;
 
 		int lower = std::min(i, j);
 		int upper = std::max(i, j);
 
-		for (int k = lower; k <= upper + degree; ++k)
-		{
+		for (int k = lower; k <= upper + degree; ++k) {
 			double a = knots[k];    
 			double b = knots[k + 1]; 
 
 			if (a == b)
 				continue;
 
-			for (size_t r = 0; r < basis::roots_seven.size(); ++r)
-			{
-				double xi = 0.5 * (b - a) * basis::roots_seven[r] + 0.5 * (b + a); 
-				double weight = basis::weights_seven[r];
+			for (size_t r = 0; r < roots.size(); ++r) {
+				double xi = 0.5 * (b - a) * roots[r] + 0.5 * (b + a); 
+				double weight = weights[r];
 
-				double Bi = basis::B(i, degree, knots, xi);
-				double Bj = basis::B(j, degree, knots, xi);
-
-				total += weight * Bi * Bj * (b - a) * 0.5;
-				
+				total += weight * integrand(i, j, knots, xi) * (b - a) * 0.5;
 			}
 		}
 
 		return total;
 	}
 
-	double kinetic_matrix_element(int i, int j, int degree, const std::vector<double>& knots)
-	{
-		double total = 0.0;
+	// Specific matrix element functions using the generalized integrand
+	double overlap_matrix_element(int i, int j, int degree, const std::vector<double>& knots) {
+		return compute_matrix_element(i, j, degree, knots, 
+			[degree](int i, int j, const std::vector<double>& knots, double xi) {
+				double Bi = basis::B(i, degree, knots, xi);
+				double Bj = basis::B(j, degree, knots, xi);
+				return Bi * Bj;
+			});
+	}
 
-		int lower = std::min(i, j);
-		int upper = std::max(i, j);
-
-		for (int k = lower; k <= upper + degree; ++k)
-		{
-			double a = knots[k];    
-			double b = knots[k + 1]; 
-
-			if (a == b)
-				continue;
-
-			for (size_t r = 0; r < basis::roots_seven.size(); ++r)
-			{
-				double xi = 0.5 * (b - a) * basis::roots_seven[r] + 0.5 * (b + a); 
-				double weight = basis::weights_seven[r];
-
+	double kinetic_matrix_element(int i, int j, int degree, const std::vector<double>& knots) {
+		return compute_matrix_element(i, j, degree, knots, 
+			[degree](int i, int j, const std::vector<double>& knots, double xi) {
 				double Bi = basis::dB(i, degree, knots, xi);
 				double Bj = basis::dB(j, degree, knots, xi);
-
-				total += weight * Bi * Bj * (b - a) * 0.5;
-				
-			}
-		}
-
-		return total * 0.5;
+				return 0.5 * Bi * Bj;
+			});
 	}
 
-	double inverse_r2_matrix_element(int i, int j, int degree, const std::vector<double>& knots)
-	{
-		double total = 0.0;
-
-		int lower = std::min(i, j);
-		int upper = std::max(i, j);
-
-		for (int k = lower; k <= upper + degree; ++k)
-		{
-			double a = knots[k];    
-			double b = knots[k + 1]; 
-
-			if (a == b)
-				continue;
-
-			for (size_t r = 0; r < basis::roots_seven.size(); ++r)
-			{
-				double xi = 0.5 * (b - a) * basis::roots_seven[r] + 0.5 * (b + a); 
-				double weight = basis::weights_seven[r];
-
+	double inverse_r2_matrix_element(int i, int j, int degree, const std::vector<double>& knots) {
+		return compute_matrix_element(i, j, degree, knots, 
+			[degree](int i, int j, const std::vector<double>& knots, double xi) {
 				double Bi = basis::B(i, degree, knots, xi);
 				double Bj = basis::B(j, degree, knots, xi);
-
-				total += weight * Bi * Bj * (b - a) * 0.5 / (xi*xi + 1E-25);
-				
-			}
-		}
-
-		return total;
+				return Bi * Bj / (xi * xi + 1E-25);
+			});
 	}
 
-	double inverse_r_matrix_element(int i, int j, int degree, const std::vector<double>& knots)
-	{
-		double total = 0.0;
-
-		int lower = std::min(i, j);
-		int upper = std::max(i, j);
-
-		for (int k = lower; k <= upper + degree; ++k)
-		{
-			double a = knots[k];    
-			double b = knots[k + 1]; 
-
-			if (a == b)
-				continue;
-
-			for (size_t r = 0; r < basis::roots_seven.size(); ++r)
-			{
-				double xi = 0.5 * (b - a) * basis::roots_seven[r] + 0.5 * (b + a); 
-				double weight = basis::weights_seven[r];
-
+	double inverse_r_matrix_element(int i, int j, int degree, const std::vector<double>& knots) {
+		return compute_matrix_element(i, j, degree, knots, 
+			[degree](int i, int j, const std::vector<double>& knots, double xi) {
 				double Bi = basis::B(i, degree, knots, xi);
 				double Bj = basis::B(j, degree, knots, xi);
-
-				total += weight * Bi * Bj * (b - a) * 0.5 / (xi + 1E-25);
-				
-			}
-		}
-
-		return total;
+				return Bi * Bj / (xi + 1E-25);
+			});
 	}
+
 
 	int save_bsplinee_basis(int n_basis,int degree, const std::vector<double>& knots, int Nx,double xmax)
 	{
