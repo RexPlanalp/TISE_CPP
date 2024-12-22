@@ -11,9 +11,9 @@ int main(int argc, char **argv) {
     Mat V;
     Mat S;
 
-    int n_basis = 1500;
+    int n_basis = 1250;
     int degree = 6;
-    double rmax = 1500;
+    double rmax = 1250;
     int lmax = 50;
     int nmax = 10;
 
@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
     // int Nx = 1000;
     // int rex_err = basis::save_bsplinee_basis(n_basis,degree,knots,Nx,rmax);
 
-    PetscPrintf(PETSC_COMM_WORLD, "Generating Bsplines\n");
+    PetscPrintf(PETSC_COMM_WORLD, "Solving TISE\n");
 
 
     double start_time = MPI_Wtime();
