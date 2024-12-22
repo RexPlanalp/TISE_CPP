@@ -27,8 +27,8 @@ int main(int argc, char **argv) {
     ierr = SlepcInitialize(&argc, &argv, NULL,NULL); CHKERRQ(ierr);
     std::vector<double> knots = basis::linear_knots(n_basis, degree, rmax);
 
-    int Nx = 1000;
-    int rex_err = basis::save_bsplinee_basis(n_basis,degree,knots,Nx,rmax);
+    // int Nx = 1000;
+    // int rex_err = basis::save_bsplinee_basis(n_basis,degree,knots,Nx,rmax);
 
     PetscPrintf(PETSC_COMM_WORLD, "Generating Bsplines\n");
 
