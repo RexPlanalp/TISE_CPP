@@ -11,17 +11,17 @@ int main(int argc, char **argv) {
     Mat V;
     Mat S;
 
-    // int n_basis = 1500;
-    // int degree = 6;
-    // double rmax = 1500;
-    // int lmax = 50;
-    // int nmax = 10;
-
-    int n_basis = 30;
+    int n_basis = 1500;
     int degree = 6;
-    double rmax = 10;
-    int lmax = 5;
-    int nmax = 5;
+    double rmax = 1500;
+    int lmax = 50;
+    int nmax = 10;
+
+    // int n_basis = 30;
+    // int degree = 6;
+    // double rmax = 10;
+    // int lmax = 5;
+    // int nmax = 5;
 
     
     ierr = SlepcInitialize(&argc, &argv, NULL,NULL); CHKERRQ(ierr);
