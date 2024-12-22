@@ -6,7 +6,7 @@
 #include <vector>
 #include <fstream>
 #include "tise.h"
-
+#include <string>
 namespace tise 
 {
 
@@ -237,6 +237,7 @@ namespace tise
         Mat temp;
         EPS eps;
         PetscInt nconv;
+        
 
         double tolerance = 1e-15;
         PetscInt max_iter = 5000;
@@ -254,8 +255,8 @@ namespace tise
 
         ierr = construct_kinetic_matrix(&K, n_basis, degree, knots); CHKERRQ(ierr);
         ierr = construct_overlap_matrix(&S, n_basis, degree, knots); CHKERRQ(ierr);
-        ierr = construct_inv_r2_matrix(&Inv_r2, n_basis, degree,knots);
-        ierr = construct_inv_r_matrix(&Inv_r,n_basis,degree,knots);
+        ierr = construct_inv_r2_matrix(&Inv_r2, n_basis, degree,knots); CHKERRQ(ierr);
+        ierr = construct_inv_r_matrix(&Inv_r,n_basis,degree,knots); CHKERRQ(ierr);
 
         for (int l=0; l<=lmax; ++l)
         {
@@ -280,9 +281,60 @@ namespace tise
             {
                 PetscScalar eigenvalue;
                 ierr = EPSGetEigenvalue(eps, i, &eigenvalue, NULL); CHKERRQ(ierr);
-                PetscPrintf(PETSC_COMM_WORLD, "Eigenvalue %d: %g\n", i, PetscRealPart(eigenvalue));
+
+                PetscReal real_part;
+                real_part = PetscRealPart(eigenvalue);
+
+                if (real_part>0)
+                {
+                    continue;
+                }
+                
+                // Retrieve eigenvalue
+                ierr = EPSGetEigenvalue(eps, i, &eigenvalue, NULL); CHKERRQ(ierr);
+
+                // Save eigenvalue as a scalar
+                std::string eigenvalue_name = std::string("E_") + std::to_string(i + l + 1) + "_" + std::to_string(l);
+                ierr = PetscViewerHDF5PushGroup(viewTISE, "/eigenvalues"); CHKERRQ(ierr);
+
+                Vec eigenvalue_vec;
+                ierr = VecCreate(PETSC_COMM_WORLD, &eigenvalue_vec); CHKERRQ(ierr);
+                ierr = VecSetSizes(eigenvalue_vec, PETSC_DECIDE, 1); CHKERRQ(ierr);
+                ierr = VecSetFromOptions(eigenvalue_vec); CHKERRQ(ierr);
+                ierr = VecSetValue(eigenvalue_vec, 0, eigenvalue, INSERT_VALUES); CHKERRQ(ierr);
+                ierr = VecAssemblyBegin(eigenvalue_vec); CHKERRQ(ierr);
+                ierr = VecAssemblyEnd(eigenvalue_vec); CHKERRQ(ierr);
+
+                ierr = PetscObjectSetName((PetscObject)eigenvalue_vec, eigenvalue_name.c_str()); CHKERRQ(ierr);
+                ierr = VecView(eigenvalue_vec, viewTISE); CHKERRQ(ierr);
+                ierr = PetscViewerHDF5PopGroup(viewTISE); CHKERRQ(ierr);
+                ierr = VecDestroy(&eigenvalue_vec); CHKERRQ(ierr);
+
+                // Retrieve and save eigenvector
+                Vec eigenvector;
+                ierr = MatCreateVecs(temp, &eigenvector, NULL); CHKERRQ(ierr);
+                ierr = EPSGetEigenvector(eps, i, eigenvector, NULL); CHKERRQ(ierr);
+
+                std::string eigenvector_name = std::string("psi_l_") + std::to_string(i + l + 1) + "_" + std::to_string(l);
+                ierr = PetscViewerHDF5PushGroup(viewTISE, "/eigenvectors"); CHKERRQ(ierr);
+                ierr = PetscObjectSetName((PetscObject)eigenvector, eigenvector_name.c_str()); CHKERRQ(ierr);
+                ierr = VecView(eigenvector, viewTISE); CHKERRQ(ierr);
+                ierr = PetscViewerHDF5PopGroup(viewTISE); CHKERRQ(ierr);
+
+                // Cleanup
+                ierr = VecDestroy(&eigenvector); CHKERRQ(ierr);
             }
+        
         }
+
+        ierr = PetscViewerDestroy(&viewTISE); CHKERRQ(ierr);
+        ierr = EPSDestroy(&eps); CHKERRQ(ierr);
+        ierr = MatDestroy(&K); CHKERRQ(ierr);
+        ierr = MatDestroy(&Inv_r2); CHKERRQ(ierr);
+        ierr = MatDestroy(&Inv_r); CHKERRQ(ierr);
+        ierr = MatDestroy(&S); CHKERRQ(ierr);
+        ierr = MatDestroy(&temp); CHKERRQ(ierr);
+
 
         return 0;
 
