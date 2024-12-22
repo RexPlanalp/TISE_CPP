@@ -11,15 +11,24 @@ int main(int argc, char **argv) {
     Mat V;
     Mat S;
 
-    int n_basis = 1500;
+    // int n_basis = 1500;
+    // int degree = 6;
+    // double rmax = 1500;
+    // int lmax = 50;
+    // int nmax = 10;
+
+    int n_basis = 30;
     int degree = 6;
-    double rmax = 1500;
-    int lmax = 50;
-    int nmax = 10;
+    double rmax = 10;
+    int lmax = 5;
+    int nmax = 5;
 
     
     ierr = SlepcInitialize(&argc, &argv, NULL,NULL); CHKERRQ(ierr);
     std::vector<double> knots = basis::linear_knots(n_basis, degree, rmax);
+
+    int Nx = 1000;
+    int rex_err = basis::save_bsplinee_basis(n_basis,degree,knots,Nx,rmax);
 
     PetscPrintf(PETSC_COMM_WORLD, "Generating Bsplines\n");
 

@@ -4,6 +4,7 @@
 #include <immintrin.h>
 #include <unordered_map>
 #include <algorithm>
+#include <fstream>
 
 namespace basis
 {
@@ -219,6 +220,37 @@ namespace basis
 		}
 
 		return total;
+	}
+
+	int save_bsplinee_basis(int n_basis,int degree, const std::vector<double>& knots, int Nx,double xmax)
+	{
+		std::vector<double> x_vector;
+		double step_size = xmax / (Nx - 1);
+		for (int idx = 0; idx < Nx; ++idx)
+		{
+			x_vector.push_back(idx * step_size);
+		}
+
+		for (int i =0; i<n_basis; ++i)
+		{
+			std::vector<double> y_vector;
+			for (int i = 0; i < n_basis; ++i)
+			{
+				for (int idx = 0; idx < Nx; ++idx)
+				{
+					double y = B(i, degree, knots, x_vector[idx]);
+					y_vector.push_back(y);
+				}
+			}
+
+			std::ofstream file("bsplines.txt");
+
+			for (const auto& y : y_vector)
+			{
+				file << y << std::endl;
+			}
+		}
+		return 0;
 	}
 
 }

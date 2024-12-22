@@ -12,4 +12,5 @@ namespace basis
 	double kinetic_matrix_element(int i, int j, int degree, const std::vector<double>& knots);
 	double inverse_r2_matrix_element(int i, int j, int degree, const std::vector<double>& knots);
 	double inverse_r_matrix_element(int i, int j, int degree, const std::vector<double>& knots);
+	int save_bsplinee_basis(int n_basis,int degree, const std::vector<double>& knots, int Nx,double xmax);
 }
