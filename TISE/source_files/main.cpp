@@ -11,9 +11,9 @@ int main(int argc, char **argv) {
     Mat V;
     Mat S;
 
-    int n_basis = 1000;
-    int degree = 6;
-    double rmax = 1000;
+    int n_basis = 4;
+    int degree = 2;
+    double rmax = 4;
     int lmax = 2;
     int nmax = 2;
 

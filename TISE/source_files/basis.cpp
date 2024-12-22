@@ -187,7 +187,7 @@ namespace basis
 			}
 		}
 
-		return total * 0.5;
+		return total;
 	}
 
 }

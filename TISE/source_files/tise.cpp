@@ -9,7 +9,6 @@
 
 namespace tise 
 {
-
     PetscErrorCode save_matrix_to_csv(Mat A, const std::string& filename)
     {
     PetscErrorCode ierr;
@@ -148,6 +147,7 @@ namespace tise
         // Assemble the matrix
         ierr = MatAssemblyBegin(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
         ierr = MatAssemblyEnd(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
+        ierr = save_matrix_to_csv(*A, "inv_r2.csv"); CHKERRQ(ierr);
         return 0; // Return success
     }
     
@@ -202,6 +202,7 @@ namespace tise
         // Assemble the matrix
         ierr = MatAssemblyBegin(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
         ierr = MatAssemblyEnd(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
+        ierr = save_matrix_to_csv(*A, "S.csv"); CHKERRQ(ierr);
         return 0; // Return success
     }
 
@@ -216,7 +217,7 @@ namespace tise
         EPS eps;
         PetscInt nconv;
 
-        double tolerance = 1e-8;
+        double tolerance = 1e-15;
         PetscInt max_iter = 5000;
 
 
