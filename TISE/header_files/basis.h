@@ -11,4 +11,5 @@ namespace basis
 	double overlap_matrix_element(int i, int j, int degree, const std::vector<double>& knots);
 	double kinetic_matrix_element(int i, int j, int degree, const std::vector<double>& knots);
 	double inverse_r2_matrix_element(int i, int j, int degree, const std::vector<double>& knots);
+	double inverse_r_matrix_element(int i, int j, int degree, const std::vector<double>& knots);
 }

@@ -11,17 +11,13 @@ int main(int argc, char **argv) {
     Mat V;
     Mat S;
 
-    int n_basis = 4;
-    int degree = 2;
-    double rmax = 4;
-    int lmax = 2;
-    int nmax = 2;
+    int n_basis = 1500;
+    int degree = 6;
+    double rmax = 1500;
+    int lmax = 50;
+    int nmax = 10;
 
     
-
-
-
-
     ierr = SlepcInitialize(&argc, &argv, NULL,NULL); CHKERRQ(ierr);
     std::vector<double> knots = basis::linear_knots(n_basis, degree, rmax);
 
