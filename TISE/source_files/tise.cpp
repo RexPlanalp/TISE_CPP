@@ -11,7 +11,7 @@
 namespace tise 
 {
 
-    PetscErrorCode construct_kinetic_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots) 
+    PetscErrorCode construct_kinetic_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots,double R0,double eta) 
     {
         PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
         PetscInt p_degree = static_cast<PetscInt>(degree);
@@ -51,7 +51,9 @@ namespace tise
                     static_cast<int>(i), 
                     static_cast<int>(j), 
                     degree, 
-                    knots
+                    knots,
+                    R0,
+                    eta
                 );
 
                 // Set the value in the matrix
@@ -65,7 +67,7 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode construct_inv_r2_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots) 
+    PetscErrorCode construct_inv_r2_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots,double R0, double eta) 
     {
         PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
         PetscInt p_degree = static_cast<PetscInt>(degree);
@@ -105,7 +107,9 @@ namespace tise
                     static_cast<int>(i), 
                     static_cast<int>(j), 
                     degree, 
-                    knots
+                    knots,
+                    R0,
+                    eta
                 );
 
                 // Set the value in the matrix
@@ -119,61 +123,7 @@ namespace tise
         return 0; // Return success
     }
     
-    PetscErrorCode construct_inv_r_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots) 
-    {
-        PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
-        PetscInt p_degree = static_cast<PetscInt>(degree);
-
-        PetscErrorCode ierr;
-
-        // Create the matrix
-        ierr = MatCreate(PETSC_COMM_WORLD, A); CHKERRQ(ierr);
-        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, p_n_basis, p_n_basis); CHKERRQ(ierr);
-        ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
-
-        // Preallocate memory for nonzero entries
-        PetscInt nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
-        ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
-
-        // Set up the matrix
-        ierr = MatSetUp(*A); CHKERRQ(ierr);
-
-        // Get the range of rows owned by the current process
-        PetscInt start_row, end_row;
-        ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
-
-        // Precompute the degree-based band width
-        PetscInt band_width = p_degree + 1;
-
-        // Iterate over locally owned rows
-        for (PetscInt i = start_row; i < end_row; i++) 
-        {
-            // Set values only within the band for current row
-            PetscInt col_start = std::max(static_cast<PetscInt>(0), i - band_width + 1);
-            PetscInt col_end = std::min(p_n_basis, i + band_width); // Exclusive
-
-            for (PetscInt j = col_start; j < col_end; j++) 
-            {
-                // Compute the matrix element
-                std::complex<double> matrix_element = basis::inverse_r_matrix_element(
-                    static_cast<int>(i), 
-                    static_cast<int>(j), 
-                    degree, 
-                    knots
-                );
-
-                // Set the value in the matrix
-                ierr = MatSetValue(*A, i, j, matrix_element, INSERT_VALUES); CHKERRQ(ierr);
-            }
-        }
-        
-        // Assemble the matrix
-        ierr = MatAssemblyBegin(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-        ierr = MatAssemblyEnd(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-        return 0; // Return success
-    }
-
-    PetscErrorCode construct_overlap_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots) 
+    PetscErrorCode construct_overlap_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots,double R0, double eta) 
     {
         PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
         PetscInt p_degree = static_cast<PetscInt>(degree);
@@ -213,7 +163,9 @@ namespace tise
                     static_cast<int>(i), 
                     static_cast<int>(j), 
                     degree, 
-                    knots
+                    knots,
+                    R0,
+                    eta
                 );
 
                 // Set the value in the matrix
@@ -227,7 +179,63 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<std::complex<double>>& knots,int lmax, int nmax)
+    PetscErrorCode construct_inv_r_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots,double R0, double eta) 
+    {
+        PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
+        PetscInt p_degree = static_cast<PetscInt>(degree);
+
+        PetscErrorCode ierr;
+
+        // Create the matrix
+        ierr = MatCreate(PETSC_COMM_WORLD, A); CHKERRQ(ierr);
+        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, p_n_basis, p_n_basis); CHKERRQ(ierr);
+        ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
+
+        // Preallocate memory for nonzero entries
+        PetscInt nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
+
+        // Set up the matrix
+        ierr = MatSetUp(*A); CHKERRQ(ierr);
+
+        // Get the range of rows owned by the current process
+        PetscInt start_row, end_row;
+        ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
+
+        // Precompute the degree-based band width
+        PetscInt band_width = p_degree + 1;
+
+        // Iterate over locally owned rows
+        for (PetscInt i = start_row; i < end_row; i++) 
+        {
+            // Set values only within the band for current row
+            PetscInt col_start = std::max(static_cast<PetscInt>(0), i - band_width + 1);
+            PetscInt col_end = std::min(p_n_basis, i + band_width); // Exclusive
+
+            for (PetscInt j = col_start; j < col_end; j++) 
+            {
+                // Compute the matrix element
+                std::complex<double> matrix_element = basis::inverse_r_matrix_element(
+                    static_cast<int>(i), 
+                    static_cast<int>(j), 
+                    degree, 
+                    knots,
+                    R0,
+                    eta
+                );
+
+                // Set the value in the matrix
+                ierr = MatSetValue(*A, i, j, matrix_element, INSERT_VALUES); CHKERRQ(ierr);
+            }
+        }
+        
+        // Assemble the matrix
+        ierr = MatAssemblyBegin(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
+        ierr = MatAssemblyEnd(*A, MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
+        return 0; // Return success
+    }
+
+    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<std::complex<double>>& knots,int lmax, int nmax,double R0, double w)
     {
         PetscErrorCode ierr;
         PetscViewer viewTISE;
@@ -254,10 +262,10 @@ namespace tise
        
 
 
-        ierr = construct_kinetic_matrix(&K, n_basis, degree, knots); CHKERRQ(ierr);
-        ierr = construct_overlap_matrix(&S, n_basis, degree, knots); CHKERRQ(ierr);
-        ierr = construct_inv_r2_matrix(&Inv_r2, n_basis, degree,knots); CHKERRQ(ierr);
-        ierr = construct_inv_r_matrix(&Inv_r,n_basis,degree,knots); CHKERRQ(ierr);
+        ierr = construct_kinetic_matrix(&K, n_basis, degree, knots,R0,w); CHKERRQ(ierr);
+        ierr = construct_overlap_matrix(&S, n_basis, degree, knots,R0,w); CHKERRQ(ierr);
+        ierr = construct_inv_r2_matrix(&Inv_r2, n_basis, degree,knots,R0,w); CHKERRQ(ierr);
+        ierr = construct_inv_r_matrix(&Inv_r,n_basis,degree,knots,R0,w); CHKERRQ(ierr);
 
         for (int l=0; l<=lmax; ++l)
         {

@@ -29,6 +29,42 @@ namespace basis
 	std::array<double, 8> roots_eight = { -0.96028986, -0.79666648, -0.52553241, -0.18343464, 0.18343464, 0.52553241, 0.79666648, 0.96028986};
 	std::array<double, 8> weights_eight = {0.10122854, 0.22238103, 0.31370665, 0.36268378, 0.36268378, 0.31370665, 0.22238103, 0.10122854};
 
+	std::complex<double> R_x(std::complex<double> x, double R0, double eta)
+	{
+		if (x.real() < R0)
+		{
+			return x;
+		}
+		else
+		{
+			return R0 + (x - R0) * std::exp(std::complex<double>(0, M_PI * eta));
+		}
+	}
+
+	std::vector<std::complex<double>> R_k(const std::vector<std::complex<double>>& knots, double R0, double eta)
+	{
+		std::vector<std::complex<double>> modified(knots.size());
+		std::transform(knots.begin(), knots.end(), modified.begin(),
+					[R0, eta](const std::complex<double>& x) {
+						return R_x(x, R0, eta);
+					});
+		return modified;
+	}
+
+	std::complex<double> R_w(std::complex<double> x, double w, double R0, double eta)
+	{
+		if (x.real() < R0)
+		{
+			return w;
+		}
+		else
+		{
+			return w * std::exp(std::complex<double>(0, M_PI * eta));
+		}
+	}
+
+
+
 	std::vector<std::complex<double>> linear_knots(int n_basis, int degree, double rmax) 
 	{	
 		int order = degree + 1;
@@ -109,10 +145,12 @@ namespace basis
 		return term1 + term2;
 	}
 
-	std::complex<double> compute_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots,std::function<std::complex<double>(int, int, const std::vector<std::complex<double>>&, std::complex<double>)> integrand) 
+	std::complex<double> compute_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots, std::function<std::complex<double>(int, int, const std::vector<std::complex<double>>&, std::complex<double>)> integrand, double R0, double eta) // Note eta here
 	{
 		std::vector<double> weights;
-    	std::vector<double> roots;
+		std::vector<double> roots;
+
+		std::vector<std::complex<double>> knots_modified = R_k(knots, R0, eta);
 
 		if (degree == 1) {
 			roots = {roots_two.begin(), roots_two.end()};
@@ -146,8 +184,8 @@ namespace basis
 		int upper = std::max(i, j);
 
 		for (int k = lower; k <= upper + degree; ++k) {
-			std::complex<double> a = knots[k];    
-			std::complex<double> b = knots[k + 1]; 
+			std::complex<double> a = knots_modified[k];    
+			std::complex<double> b = knots_modified[k + 1]; 
 
 			if (a == b)
 				continue;
@@ -155,51 +193,61 @@ namespace basis
 			for (size_t r = 0; r < roots.size(); ++r) {
 				std::complex<double> xi = 0.5 * (b - a) * roots[r] + 0.5 * (b + a); 
 				double weight = weights[r];
+				std::complex<double> xi_modified = R_x(xi, R0, eta);
+				std::complex<double> weight_modified = R_w(xi,weight,R0,eta);
 
-				total += weight * integrand(i, j, knots, xi) * (b - a) * 0.5;
+				total += weight_modified * integrand(i, j, knots_modified, xi_modified) * (b - a) * 0.5;
 			}
 		}
 
 		return total;
 	}
 
-	std::complex<double> overlap_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots) {
-		return compute_matrix_element(i, j, degree, knots, 
-			[degree](int i, int j, const std::vector<std::complex<double>>& knots, std::complex<double> xi) {
-				std::complex<double> Bi = basis::B(i, degree, knots, xi);
-				std::complex<double> Bj = basis::B(j, degree, knots, xi);
-				return Bi * Bj;
-			});
+	std::complex<double> overlap_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots, double R0, double eta) 
+	{
+		return compute_matrix_element(
+			i, 
+			j, 
+			degree, 
+			knots, 
+			[degree, R0, eta](int i, int j, const std::vector<std::complex<double>>& knots, std::complex<double> xi)
+			{
+			std::complex<double> Bi = basis::B(i, degree, knots, xi); std::complex<double> Bj = basis::B(j, degree, knots, xi);
+			return Bi * Bj;
+			}, 
+			R0, 
+			eta // Pass R0 and w explicitly here
+		);
 	}
 
-	std::complex<double> kinetic_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots) {
+	std::complex<double> kinetic_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots,double R0,double eta) {
 		return compute_matrix_element(i, j, degree, knots, 
 			[degree](int i, int j, const std::vector<std::complex<double>>& knots, std::complex<double> xi) {
 				std::complex<double> Bi = basis::dB(i, degree, knots, xi);
 				std::complex<double> Bj = basis::dB(j, degree, knots, xi);
 				return 0.5 * Bi * Bj;
-			});
+			},R0,eta);
 	}
 
-	std::complex<double> inverse_r2_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots) {
+	std::complex<double> inverse_r2_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots,double R0,double eta) {
 		return compute_matrix_element(i, j, degree, knots, 
 			[degree](int i, int j, const std::vector<std::complex<double>>& knots, std::complex<double> xi) {
 				std::complex<double> Bi = basis::B(i, degree, knots, xi);
 				std::complex<double> Bj = basis::B(j, degree, knots, xi);
 				return Bi * Bj / (xi * xi + 1E-25);
-			});
+			},R0,eta);
 	}
 
-	std::complex<double> inverse_r_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots) {
+	std::complex<double> inverse_r_matrix_element(int i, int j, int degree, const std::vector<std::complex<double>>& knots,double R0,double eta) {
 		return compute_matrix_element(i, j, degree, knots, 
 			[degree](int i, int j, const std::vector<std::complex<double>>& knots, std::complex<double> xi) {
 				std::complex<double> Bi = basis::B(i, degree, knots, xi);
 				std::complex<double> Bj = basis::B(j, degree, knots, xi);
 				return Bi * Bj / (xi + 1E-25);
-			});
+			},R0,eta);
 	}
 
-	int save_bsplinee_basis(int n_basis, int degree, const std::vector<std::complex<double>>& knots, int Nx, double xmax)
+	int save_bsplinee_basis(int n_basis, int degree, const std::vector<std::complex<double>>& knots, int Nx, double xmax,double R0,double eta)
 	{
 		std::vector<std::complex<double>> x_vector;
 		double step_size = xmax / (Nx - 1);
@@ -223,8 +271,11 @@ namespace basis
 		{
 			for (int idx = 0; idx < Nx; ++idx)
 			{
+
+				std::vector<std::complex<double>> knots_modified = R_k(knots,R0,eta);
+				std::complex<double> xi_modified = R_x(x_vector[idx],R0,eta);
 				// Compute the B-spline value for the given x
-				std::complex<double> y = B(i, degree, knots, x_vector[idx]);
+				std::complex<double> y = B(i, degree, knots_modified, xi_modified);
 
 				// Write the real and imaginary parts as columns
 				file << y.real() << "\t" << y.imag() << "\n";
@@ -237,6 +288,9 @@ namespace basis
 		file.close();
 		return 0;
 	}
+
+	
+
 
 
 }
