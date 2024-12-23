@@ -31,6 +31,12 @@ namespace basis
 
 	std::complex<double> R_x(std::complex<double> x, double R0, double eta)
 	{
+
+		if (eta == 0)
+		{
+			return x;
+		}
+
 		if (x.real() < R0)
 		{
 			return x;
@@ -43,6 +49,11 @@ namespace basis
 
 	std::vector<std::complex<double>> R_k(const std::vector<std::complex<double>>& knots, double R0, double eta)
 	{
+		if (eta == 0)
+		{
+			return knots;
+		}
+
 		std::vector<std::complex<double>> modified(knots.size());
 		std::transform(knots.begin(), knots.end(), modified.begin(),
 					[R0, eta](const std::complex<double>& x) {
@@ -53,6 +64,13 @@ namespace basis
 
 	std::complex<double> R_w(std::complex<double> x, double w, double R0, double eta)
 	{
+
+		if (eta == 0)
+		{
+			return w;
+		}
+
+
 		if (x.real() < R0)
 		{
 			return w;
@@ -193,10 +211,16 @@ namespace basis
 			for (size_t r = 0; r < roots.size(); ++r) {
 				std::complex<double> xi = 0.5 * (b - a) * roots[r] + 0.5 * (b + a); 
 				double weight = weights[r];
+
+				
 				std::complex<double> xi_modified = R_x(xi, R0, eta);
 				std::complex<double> weight_modified = R_w(xi,weight,R0,eta);
-
 				total += weight_modified * integrand(i, j, knots_modified, xi_modified) * (b - a) * 0.5;
+
+				
+				
+
+				
 			}
 		}
 
