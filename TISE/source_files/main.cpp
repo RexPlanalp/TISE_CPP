@@ -11,38 +11,38 @@ int main(int argc, char **argv) {
     Mat V;
     Mat S;
 
-    int n_basis = 1250;
-    int degree = 6;
-    double rmax = 1250;
-    int lmax = 50;
-    int nmax = 10;
+    // int n_basis = 1250;
+    // int degree = 6;
+    // double rmax = 1250;
+    // int lmax = 50;
+    // int nmax = 10;
 
     // For testing
-    // int n_basis = 30;
-    // int degree = 6;
-    // double rmax = 10;
-    // int lmax = 5;
-    // int nmax = 5;
+    int n_basis = 30;
+    int degree = 6;
+    double rmax = 10;
+    int lmax = 5;
+    int nmax = 5;
 
     
     ierr = SlepcInitialize(&argc, &argv, NULL,NULL); CHKERRQ(ierr);
-    std::vector<double> knots = basis::linear_knots(n_basis, degree, rmax);
+    std::vector<std::complex<double>> knots = basis::linear_knots(n_basis, degree, rmax);
 
     // For testing
-    // int Nx = 1000;
-    // int rex_err = basis::save_bsplinee_basis(n_basis,degree,knots,Nx,rmax);
+    int Nx = 1000;
+    int rex_err = basis::save_bsplinee_basis(n_basis,degree,knots,Nx,rmax);
 
-    PetscPrintf(PETSC_COMM_WORLD, "Solving TISE\n");
+    // PetscPrintf(PETSC_COMM_WORLD, "Solving TISE\n");
 
 
-    double start_time = MPI_Wtime();
+    // double start_time = MPI_Wtime();
     
-    tise::solve_tise(n_basis,degree,knots,lmax,nmax);
+    // tise::solve_tise(n_basis,degree,knots,lmax,nmax);
 
 
-    double end_time = MPI_Wtime();
-    double elapsed_time = end_time - start_time;
-    PetscPrintf(PETSC_COMM_WORLD, "Time taken to construct matrix: %.3f seconds\n", elapsed_time);
+    // double end_time = MPI_Wtime();
+    // double elapsed_time = end_time - start_time;
+    // PetscPrintf(PETSC_COMM_WORLD, "Time taken to construct matrix: %.3f seconds\n", elapsed_time);
 
     
     ierr = SlepcFinalize(); CHKERRQ(ierr);
