@@ -1,0 +1,1791 @@
+desc: (none)
+cmd: ./output
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=9043493941
+mem_heap_B=27863164
+mem_heap_extra_B=88828
+mem_stacks_B=0
+heap_tree=detailed
+n7: 27863164 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n0: 857349 in 231 places, all below massif's threshold (1.00%)
+ n2: 762296 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 757104 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 608592 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 80408 in 30 places, all below massif's threshold (1.00%)
+   n0: 148512 in 17 places, all below massif's threshold (1.00%)
+  n0: 5192 in 2 places, all below massif's threshold (1.00%)
+ n1: 286720 0x711D5C8: MPIR_Handle_indirect_init (mpir_handlemem.h:188)
+  n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc_unsafe (mpir_handlemem.h:316)
+   n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc.constprop.0 (mpir_handlemem.h:258)
+    n1: 286720 0x711DB21: type_struct.part.0 (type_create.c:201)
+     n1: 286720 0x711EE05: type_struct (type_create.c:192)
+      n1: 286720 0x711EE05: MPIR_Type_struct (type_create.c:243)
+       n1: 286720 0x7122954: MPIR_Type_create_struct_impl (type_create.c:905)
+        n1: 286720 0x6F34F33: internal_Type_create_struct (c_binding.c:36775)
+         n1: 286720 0x50A80EB: PetscInitialize_Common (pinit.c:972)
+          n1: 286720 0x50A92D9: PetscInitialize (pinit.c:1360)
+           n1: 286720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 286720 0x10D015: main (main.cpp:15)
+#-----------
+snapshot=2
+#-----------
+time=23482552298
+mem_heap_B=28013708
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=31809884862
+mem_heap_B=28013708
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=39064623555
+mem_heap_B=28411020
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=51254177606
+mem_heap_B=28411020
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=60641035003
+mem_heap_B=28411020
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=70751906580
+mem_heap_B=28411020
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=80533523352
+mem_heap_B=29205644
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=87515927373
+mem_heap_B=29205644
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=detailed
+n8: 29205644 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n1: 1048576 0x5350127: kh_resize_HMapIJV (hashmapijv.h:10)
+  n1: 1048576 0x5350127: kh_put_HMapIJV (hashmapijv.h:10)
+   n1: 1048576 0x5350127: PetscHMapIJVQuerySet (hashmapijv.h:10)
+    n1: 1048576 0x5350127: MatSetValues_Seq_Hash (seqhashmatsetvalues.h:52)
+     n1: 1048576 0x5A923D4: MatSetValues (matrix.c:1543)
+      n1: 1048576 0x10FD71: MatSetValue (petscmat.h:981)
+       n1: 1048576 0x10FD71: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:60)
+        n1: 1048576 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 1048576 0x10D093: main (main.cpp:40)
+ n0: 913685 in 230 places, all below massif's threshold (1.00%)
+ n2: 762296 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 757104 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 608592 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 80408 in 30 places, all below massif's threshold (1.00%)
+   n0: 148512 in 17 places, all below massif's threshold (1.00%)
+  n0: 5192 in 2 places, all below massif's threshold (1.00%)
+ n1: 524288 0x53500D6: kh_resize_HMapIJV (hashmapijv.h:10)
+  n1: 524288 0x53500D6: kh_put_HMapIJV (hashmapijv.h:10)
+   n1: 524288 0x53500D6: PetscHMapIJVQuerySet (hashmapijv.h:10)
+    n1: 524288 0x53500D6: MatSetValues_Seq_Hash (seqhashmatsetvalues.h:52)
+     n1: 524288 0x5A923D4: MatSetValues (matrix.c:1543)
+      n1: 524288 0x10FD71: MatSetValue (petscmat.h:981)
+       n1: 524288 0x10FD71: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:60)
+        n1: 524288 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 524288 0x10D093: main (main.cpp:40)
+#-----------
+snapshot=10
+#-----------
+time=98117331461
+mem_heap_B=29205644
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=107754263548
+mem_heap_B=29205644
+mem_heap_extra_B=88820
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=114914048812
+mem_heap_B=28512184
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=128419233843
+mem_heap_B=28661176
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=136201980237
+mem_heap_B=28859832
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=149520158474
+mem_heap_B=29257144
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=159881412030
+mem_heap_B=29257144
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=detailed
+n8: 29257144 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n0: 1114629 in 231 places, all below massif's threshold (1.00%)
+ n2: 899132 0x5078F25: PetscMallocAlign (mal.c:52)
+  n2: 791164 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 623328 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 623328 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 623328 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n1: 623328 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n0: 167836 in 2 places, all below massif's threshold (1.00%)
+  n0: 107968 in 2 places, all below massif's threshold (1.00%)
+ n2: 762296 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 757104 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 608592 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 80408 in 30 places, all below massif's threshold (1.00%)
+   n0: 148512 in 17 places, all below massif's threshold (1.00%)
+  n0: 5192 in 2 places, all below massif's threshold (1.00%)
+ n1: 524288 0x5350127: kh_resize_HMapIJV (hashmapijv.h:10)
+  n1: 524288 0x5350127: kh_put_HMapIJV (hashmapijv.h:10)
+   n1: 524288 0x5350127: PetscHMapIJVQuerySet (hashmapijv.h:10)
+    n1: 524288 0x5350127: MatSetValues_Seq_Hash (seqhashmatsetvalues.h:52)
+     n2: 524288 0x5A923D4: MatSetValues (matrix.c:1543)
+      n1: 524288 0x110191: MatSetValue (petscmat.h:981)
+       n1: 524288 0x110191: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:172)
+        n1: 524288 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 524288 0x10D093: main (main.cpp:40)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=171720469251
+mem_heap_B=29257144
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=185040004829
+mem_heap_B=30051768
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=193921774441
+mem_heap_B=30051768
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=207240247332
+mem_heap_B=30051768
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=215602322775
+mem_heap_B=30051768
+mem_heap_extra_B=89272
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=224152119583
+mem_heap_B=31669980
+mem_heap_extra_B=89300
+mem_stacks_B=0
+heap_tree=detailed
+n9: 31669980 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n3: 2517480 0x5078F25: PetscMallocAlign (mal.c:52)
+  n2: 1582328 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1246656 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 1246656 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1246656 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 1246656 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+        n1: 623328 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n0: 335672 in 2 places, all below massif's threshold (1.00%)
+  n2: 915088 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 791184 0x5354E4A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:40)
+    n2: 791184 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+     n1: 791184 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+      n1: 791184 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+       n0: 791184 0x10D093: main (main.cpp:40)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 123904 in 69 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n1: 1048576 0x5350127: kh_resize_HMapIJV (hashmapijv.h:10)
+  n1: 1048576 0x5350127: kh_put_HMapIJV (hashmapijv.h:10)
+   n1: 1048576 0x5350127: PetscHMapIJVQuerySet (hashmapijv.h:10)
+    n1: 1048576 0x5350127: MatSetValues_Seq_Hash (seqhashmatsetvalues.h:52)
+     n2: 1048576 0x5A923D4: MatSetValues (matrix.c:1543)
+      n1: 1048576 0x110191: MatSetValue (petscmat.h:981)
+       n1: 1048576 0x110191: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:172)
+        n1: 1048576 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 1048576 0x10D093: main (main.cpp:40)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 860541 in 230 places, all below massif's threshold (1.00%)
+ n2: 762296 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 757104 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 608592 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 80408 in 30 places, all below massif's threshold (1.00%)
+   n0: 148512 in 17 places, all below massif's threshold (1.00%)
+  n0: 5192 in 2 places, all below massif's threshold (1.00%)
+ n1: 524288 0x53500D6: kh_resize_HMapIJV (hashmapijv.h:10)
+  n1: 524288 0x53500D6: kh_put_HMapIJV (hashmapijv.h:10)
+   n1: 524288 0x53500D6: PetscHMapIJVQuerySet (hashmapijv.h:10)
+    n1: 524288 0x53500D6: MatSetValues_Seq_Hash (seqhashmatsetvalues.h:52)
+     n2: 524288 0x5A923D4: MatSetValues (matrix.c:1543)
+      n1: 524288 0x110191: MatSetValue (petscmat.h:981)
+       n1: 524288 0x110191: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:172)
+        n1: 524288 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 524288 0x10D093: main (main.cpp:40)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=23
+#-----------
+time=235300254946
+mem_heap_B=29507252
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=240876570396
+mem_heap_B=29507252
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=252022222639
+mem_heap_B=29705908
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=detailed
+n7: 29705908 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n2: 1744152 0x5078F25: PetscMallocAlign (mal.c:52)
+  n3: 1582328 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1246656 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 1246656 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1246656 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 1246656 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+        n1: 623328 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n1: 311664 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n1: 311664 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 311664 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n1: 311664 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 311664 in 2 places, all below massif's threshold (1.00%)
+   n0: 24008 in 1 place, below massif's threshold (1.00%)
+  n0: 161824 in 2 places, all below massif's threshold (1.00%)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n0: 1242661 in 232 places, all below massif's threshold (1.00%)
+ n2: 762296 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 757104 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 608592 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 80408 in 30 places, all below massif's threshold (1.00%)
+   n0: 148512 in 17 places, all below massif's threshold (1.00%)
+  n0: 5192 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=26
+#-----------
+time=260383415198
+mem_heap_B=29705908
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=268745764931
+mem_heap_B=30103220
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=277105424168
+mem_heap_B=30103220
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=285469348741
+mem_heap_B=30103220
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=296616487032
+mem_heap_B=30103220
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=307764023277
+mem_heap_B=30897844
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=detailed
+n9: 30897844 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n2: 1744152 0x5078F25: PetscMallocAlign (mal.c:52)
+  n3: 1582328 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1246656 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 1246656 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1246656 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 1246656 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+        n1: 623328 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n1: 311664 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n1: 311664 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 311664 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n1: 311664 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 311664 in 2 places, all below massif's threshold (1.00%)
+   n0: 24008 in 1 place, below massif's threshold (1.00%)
+  n0: 161824 in 2 places, all below massif's threshold (1.00%)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n1: 1048576 0x5350127: kh_resize_HMapIJV (hashmapijv.h:10)
+  n1: 1048576 0x5350127: kh_put_HMapIJV (hashmapijv.h:10)
+   n1: 1048576 0x5350127: PetscHMapIJVQuerySet (hashmapijv.h:10)
+    n1: 1048576 0x5350127: MatSetValues_Seq_Hash (seqhashmatsetvalues.h:52)
+     n2: 1048576 0x5A923D4: MatSetValues (matrix.c:1543)
+      n1: 1048576 0x10FF81: MatSetValue (petscmat.h:981)
+       n1: 1048576 0x10FF81: tise::construct_inv_r2_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:116)
+        n1: 1048576 0x1105CA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:266)
+         n0: 1048576 0x10D093: main (main.cpp:40)
+      n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n0: 861733 in 230 places, all below massif's threshold (1.00%)
+ n2: 762296 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 757104 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 608592 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 80408 in 30 places, all below massif's threshold (1.00%)
+   n0: 148512 in 17 places, all below massif's threshold (1.00%)
+  n0: 5192 in 2 places, all below massif's threshold (1.00%)
+ n1: 524288 0x53500D6: kh_resize_HMapIJV (hashmapijv.h:10)
+  n1: 524288 0x53500D6: kh_put_HMapIJV (hashmapijv.h:10)
+   n1: 524288 0x53500D6: PetscHMapIJVQuerySet (hashmapijv.h:10)
+    n1: 524288 0x53500D6: MatSetValues_Seq_Hash (seqhashmatsetvalues.h:52)
+     n2: 524288 0x5A923D4: MatSetValues (matrix.c:1543)
+      n1: 524288 0x10FF81: MatSetValue (petscmat.h:981)
+       n1: 524288 0x10FF81: tise::construct_inv_r2_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:116)
+        n1: 524288 0x1105CA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:266)
+         n0: 524288 0x10D093: main (main.cpp:40)
+      n0: 0 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=32
+#-----------
+time=321699974173
+mem_heap_B=30897844
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=327275148565
+mem_heap_B=30897844
+mem_heap_extra_B=89676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=342036526754
+mem_heap_B=30254024
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=353609572475
+mem_heap_B=30353352
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=361326244763
+mem_heap_B=30552008
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=372899216647
+mem_heap_B=30949320
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=detailed
+n8: 30949320 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n2: 2589172 0x5078F25: PetscMallocAlign (mal.c:52)
+  n3: 2373492 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1869984 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 1869984 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1869984 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 1869984 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x10FFBF: tise::construct_inv_r2_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:122)
+        n1: 623328 0x1105CA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:266)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+        n1: 623328 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n1: 467496 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n1: 467496 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 467496 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n1: 467496 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 467496 in 3 places, all below massif's threshold (1.00%)
+   n0: 36012 in 1 place, below massif's threshold (1.00%)
+  n0: 215680 in 2 places, all below massif's threshold (1.00%)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n0: 1116765 in 231 places, all below massif's threshold (1.00%)
+ n2: 762296 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 757104 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 608592 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 80408 in 30 places, all below massif's threshold (1.00%)
+   n0: 148512 in 17 places, all below massif's threshold (1.00%)
+  n0: 5192 in 2 places, all below massif's threshold (1.00%)
+ n1: 524288 0x5350127: kh_resize_HMapIJV (hashmapijv.h:10)
+  n1: 524288 0x5350127: kh_put_HMapIJV (hashmapijv.h:10)
+   n1: 524288 0x5350127: PetscHMapIJVQuerySet (hashmapijv.h:10)
+    n1: 524288 0x5350127: MatSetValues_Seq_Hash (seqhashmatsetvalues.h:52)
+     n2: 524288 0x5A923D4: MatSetValues (matrix.c:1543)
+      n1: 524288 0x1103A1: MatSetValue (petscmat.h:981)
+       n1: 524288 0x1103A1: tise::construct_inv_r_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:228)
+        n1: 524288 0x110603: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:267)
+         n0: 524288 0x10D093: main (main.cpp:40)
+      n0: 0 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=38
+#-----------
+time=380615217768
+mem_heap_B=30949320
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=392187903003
+mem_heap_B=30949320
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=399904013790
+mem_heap_B=30949320
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=407620154809
+mem_heap_B=30949320
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=423048618346
+mem_heap_B=31743944
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=438479596510
+mem_heap_B=31743944
+mem_heap_extra_B=90112
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=448771869191
+mem_heap_B=34977368
+mem_heap_extra_B=98064
+mem_stacks_B=0
+heap_tree=detailed
+n7: 34977368 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n3: 7400732 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 5654268 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 2493312 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 2493312 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 2493312 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n4: 2493312 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x10FFBF: tise::construct_inv_r2_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:122)
+        n1: 623328 0x1105CA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:266)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+        n1: 623328 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1103DF: tise::construct_inv_r_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:234)
+        n1: 623328 0x110603: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:267)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n1: 1310752 0x5366612: MatLUFactorSymbolic_SeqAIJ (aijfact.c:388)
+    n1: 1310752 0x5AA57A6: MatLUFactorSymbolic (matrix.c:3253)
+     n1: 1310752 0x5F922F7: PCSetUp_LU (lu.c:87)
+      n1: 1310752 0x604B8E9: PCSetUp (precon.c:1071)
+       n1: 1310752 0x5EF79FA: KSPSetUp (itfunc.c:415)
+        n1: 1310752 0x6CCB21F: STSetUp_Shift (shift.c:134)
+         n1: 1310752 0x6CD25EB: STSetUp (stsolve.c:546)
+          n1: 1310752 0x6D36A54: EPSSetUp (epssetup.c:394)
+           n1: 1310752 0x6D387A7: EPSSolve (epssolve.c:132)
+            n1: 1310752 0x110757: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:283)
+             n0: 1310752 0x10D093: main (main.cpp:40)
+   n1: 623328 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n1: 623328 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 623328 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n1: 623328 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 623328 in 4 places, all below massif's threshold (1.00%)
+   n1: 623328 0x536372D: MatDuplicateNoCreate_SeqAIJ (aij.c:4982)
+    n1: 623328 0x5363A2E: MatDuplicate_SeqAIJ (aij.c:5053)
+     n1: 623328 0x5AAB8FA: MatDuplicate (matrix.c:4964)
+      n1: 623328 0x110696: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:277)
+       n0: 623328 0x10D093: main (main.cpp:40)
+   n0: 603548 in 6 places, all below massif's threshold (1.00%)
+  n2: 1726400 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 1269632 0x5807D69: MatSeqDenseSetPreallocation_SeqDense (dense.c:3357)
+    n2: 1269632 0x581109E: MatSeqDenseSetPreallocation (dense.c:3338)
+     n1: 1248000 0x5ABDF22: MatCreateDenseFromVecType (veccreatematdense.c:51)
+      n1: 1248000 0x6C39D66: BVCreate_Mat (bvmat.c:436)
+       n1: 1248000 0x6C4621A: BVSetSizesFromVec (bvbasic.c:192)
+        n1: 1248000 0x6D381A2: EPSAllocateSolution (epssetup.c:728)
+         n1: 1248000 0x6D0F054: EPSSetUp_KrylovSchur (krylovschur.c:124)
+          n1: 1248000 0x6D36990: EPSSetUp (epssetup.c:362)
+           n1: 1248000 0x6D387A7: EPSSolve (epssolve.c:132)
+            n1: 1248000 0x110757: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:283)
+             n0: 1248000 0x10D093: main (main.cpp:40)
+     n0: 21632 in 1 place, below massif's threshold (1.00%)
+   n0: 456768 in 124 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n0: 857541 in 232 places, all below massif's threshold (1.00%)
+ n2: 762296 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 757104 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 608592 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 80408 in 30 places, all below massif's threshold (1.00%)
+   n0: 148512 in 17 places, all below massif's threshold (1.00%)
+  n0: 5192 in 2 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=45
+#-----------
+time=460440299663
+mem_heap_B=35016328
+mem_heap_extra_B=99792
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=469091574144
+mem_heap_B=36604972
+mem_heap_extra_B=113876
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=481814494557
+mem_heap_B=38023224
+mem_heap_extra_B=123280
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=494991083613
+mem_heap_B=39380708
+mem_heap_extra_B=131796
+mem_stacks_B=0
+heap_tree=detailed
+n7: 39380708 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781447 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781447 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4231 in 27 places, all below massif's threshold (1.00%)
+ n3: 9938992 0x5078F25: PetscMallocAlign (mal.c:52)
+  n6: 8038576 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 2493312 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 2493312 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 2493312 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n4: 2493312 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x10FFBF: tise::construct_inv_r2_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:122)
+        n1: 623328 0x1105CA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:266)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+        n1: 623328 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1103DF: tise::construct_inv_r_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:234)
+        n1: 623328 0x110603: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:267)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n1: 2493312 0x536372D: MatDuplicateNoCreate_SeqAIJ (aij.c:4982)
+    n1: 2493312 0x5363A2E: MatDuplicate_SeqAIJ (aij.c:5053)
+     n1: 2493312 0x5AAB8FA: MatDuplicate (matrix.c:4964)
+      n1: 2493312 0x110696: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:277)
+       n0: 2493312 0x10D093: main (main.cpp:40)
+   n1: 1310752 0x5366612: MatLUFactorSymbolic_SeqAIJ (aijfact.c:388)
+    n1: 1310752 0x5AA57A6: MatLUFactorSymbolic (matrix.c:3253)
+     n1: 1310752 0x5F922F7: PCSetUp_LU (lu.c:87)
+      n1: 1310752 0x604B8E9: PCSetUp (precon.c:1071)
+       n1: 1310752 0x5EF79FA: KSPSetUp (itfunc.c:415)
+        n1: 1310752 0x6CCB21F: STSetUp_Shift (shift.c:134)
+         n1: 1310752 0x6CD25EB: STSetUp (stsolve.c:546)
+          n1: 1310752 0x6D36A54: EPSSetUp (epssetup.c:394)
+           n1: 1310752 0x6D387A7: EPSSolve (epssolve.c:132)
+            n1: 1310752 0x110757: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:283)
+             n0: 1310752 0x10D093: main (main.cpp:40)
+   n1: 623328 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n1: 623328 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 623328 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n1: 623328 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 623328 in 4 places, all below massif's threshold (1.00%)
+   n1: 623328 0x5363750: MatDuplicateNoCreate_SeqAIJ (aij.c:4983)
+    n1: 623328 0x5363A2E: MatDuplicate_SeqAIJ (aij.c:5053)
+     n1: 623328 0x5AAB8FA: MatDuplicate (matrix.c:4964)
+      n1: 623328 0x110696: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:277)
+       n0: 623328 0x10D093: main (main.cpp:40)
+   n0: 494544 in 5 places, all below massif's threshold (1.00%)
+  n2: 1880352 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 1280448 0x5807D69: MatSeqDenseSetPreallocation_SeqDense (dense.c:3357)
+    n2: 1280448 0x581109E: MatSeqDenseSetPreallocation (dense.c:3338)
+     n1: 1248000 0x5ABDF22: MatCreateDenseFromVecType (veccreatematdense.c:51)
+      n1: 1248000 0x6C39D66: BVCreate_Mat (bvmat.c:436)
+       n1: 1248000 0x6C4621A: BVSetSizesFromVec (bvbasic.c:192)
+        n1: 1248000 0x6D381A2: EPSAllocateSolution (epssetup.c:728)
+         n1: 1248000 0x6D0F054: EPSSetUp_KrylovSchur (krylovschur.c:124)
+          n1: 1248000 0x6D36990: EPSSetUp (epssetup.c:362)
+           n1: 1248000 0x6D387A7: EPSSolve (epssolve.c:132)
+            n1: 1248000 0x110757: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:283)
+             n0: 1248000 0x10D093: main (main.cpp:40)
+     n0: 32448 in 1 place, below massif's threshold (1.00%)
+   n0: 599904 in 145 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n3: 2454960 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 1292368 0x8FF699E: H5FL_blk_malloc (H5FL.c:848)
+   n2: 955968 0x8F15E5E: H5B_create (H5B.c:228)
+    n1: 955152 0x8F5095A: H5D__btree_idx_create (H5Dbtree.c:873)
+     n1: 955152 0x8F598C1: H5D__chunk_create (H5Dchunk.c:3711)
+      n1: 955152 0x8F796CF: H5D__alloc_storage (H5Dint.c:2289)
+       n1: 955152 0x8F8112F: H5D__layout_oh_create (H5Dlayout.c:478)
+        n1: 955152 0x8F7502A: H5D__update_oh_info (H5Dint.c:978)
+         n1: 955152 0x8F7502A: H5D__create (H5Dint.c:1299)
+          n1: 955152 0x8F825C7: H5O__dset_create (H5Doh.c:272)
+           n1: 955152 0x9088C85: H5O_obj_create (H5Oint.c:2346)
+            n1: 955152 0x904FDFF: H5L__link_cb (H5Lint.c:535)
+             n1: 955152 0x901F0F3: H5G__traverse_real (H5Gtraverse.c:595)
+              n1: 955152 0x901F57D: H5G_traverse (H5Gtraverse.c:815)
+               n1: 955152 0x9051300: H5L__create_real (H5Lint.c:728)
+                n1: 955152 0x9051300: H5L_link_object (H5Lint.c:491)
+                 n1: 955152 0x8F746B9: H5D__create_named (H5Dint.c:349)
+                  n1: 955152 0x91DD88D: H5VL__native_dataset_create (H5VLnative_dataset.c:280)
+                   n1: 955152 0x91C7927: H5VL__dataset_create (H5VLcallback.c:1839)
+                    n1: 955152 0x91C7927: H5VL_dataset_create (H5VLcallback.c:1874)
+                     n1: 955152 0x8F471A7: H5D__create_api_common (H5D.c:133)
+                      n1: 955152 0x8F484B2: H5Dcreate2 (H5D.c:185)
+                       n1: 955152 0x5217616: VecView_MPI_HDF5 (pdvec.c:664)
+                        n1: 955152 0x522194B: VecView_Seq (bvec2.c:557)
+                         n2: 955152 0x523F7BF: VecView (vector.c:805)
+                          n1: 477576 0x110FA4: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:317)
+                           n0: 477576 0x10D093: main (main.cpp:40)
+                          n1: 477576 0x111685: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:329)
+                           n0: 477576 0x10D093: main (main.cpp:40)
+    n0: 816 in 1 place, below massif's threshold (1.00%)
+   n0: 336400 in 10 places, all below massif's threshold (1.00%)
+  n2: 1156704 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 690568 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 162384 in 44 places, all below massif's threshold (1.00%)
+   n0: 466136 in 34 places, all below massif's threshold (1.00%)
+  n0: 5888 in 2 places, all below massif's threshold (1.00%)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n0: 1029885 in 243 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=502774640193
+mem_heap_B=39380724
+mem_heap_extra_B=131868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=504060308529
+mem_heap_B=39380724
+mem_heap_extra_B=131868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=505345656678
+mem_heap_B=39380724
+mem_heap_extra_B=131868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=506629799693
+mem_heap_B=39380724
+mem_heap_extra_B=131868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=507949113019
+mem_heap_B=39380724
+mem_heap_extra_B=131868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=509271213468
+mem_heap_B=39380724
+mem_heap_extra_B=131868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=510592634139
+mem_heap_B=39380724
+mem_heap_extra_B=131868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=511912000228
+mem_heap_B=39380724
+mem_heap_extra_B=131868
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=512147652076
+mem_heap_B=39773597
+mem_heap_extra_B=137507
+mem_stacks_B=0
+heap_tree=detailed
+n7: 39773597 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781447 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781447 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4231 in 27 places, all below massif's threshold (1.00%)
+ n3: 9988896 0x5078F25: PetscMallocAlign (mal.c:52)
+  n6: 8086576 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 2493312 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 2493312 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 2493312 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n4: 2493312 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x10FFBF: tise::construct_inv_r2_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:122)
+        n1: 623328 0x1105CA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:266)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+        n1: 623328 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1103DF: tise::construct_inv_r_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:234)
+        n1: 623328 0x110603: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:267)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n1: 2493312 0x536372D: MatDuplicateNoCreate_SeqAIJ (aij.c:4982)
+    n1: 2493312 0x5363A2E: MatDuplicate_SeqAIJ (aij.c:5053)
+     n1: 2493312 0x5AAB8FA: MatDuplicate (matrix.c:4964)
+      n1: 2493312 0x110696: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:277)
+       n0: 2493312 0x10D093: main (main.cpp:40)
+   n1: 1310752 0x5366612: MatLUFactorSymbolic_SeqAIJ (aijfact.c:388)
+    n1: 1310752 0x5AA57A6: MatLUFactorSymbolic (matrix.c:3253)
+     n1: 1310752 0x5F922F7: PCSetUp_LU (lu.c:87)
+      n1: 1310752 0x604B8E9: PCSetUp (precon.c:1071)
+       n1: 1310752 0x5EF79FA: KSPSetUp (itfunc.c:415)
+        n1: 1310752 0x6CCB21F: STSetUp_Shift (shift.c:134)
+         n1: 1310752 0x6CD25EB: STSetUp (stsolve.c:546)
+          n1: 1310752 0x6D36A54: EPSSetUp (epssetup.c:394)
+           n1: 1310752 0x6D387A7: EPSSolve (epssolve.c:132)
+            n1: 1310752 0x110757: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:283)
+             n0: 1310752 0x10D093: main (main.cpp:40)
+   n1: 623328 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n1: 623328 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 623328 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n1: 623328 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 623328 in 4 places, all below massif's threshold (1.00%)
+   n1: 623328 0x5363750: MatDuplicateNoCreate_SeqAIJ (aij.c:4983)
+    n1: 623328 0x5363A2E: MatDuplicate_SeqAIJ (aij.c:5053)
+     n1: 623328 0x5AAB8FA: MatDuplicate (matrix.c:4964)
+      n1: 623328 0x110696: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:277)
+       n0: 623328 0x10D093: main (main.cpp:40)
+   n0: 542544 in 5 places, all below massif's threshold (1.00%)
+  n2: 1882256 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 1280448 0x5807D69: MatSeqDenseSetPreallocation_SeqDense (dense.c:3357)
+    n2: 1280448 0x581109E: MatSeqDenseSetPreallocation (dense.c:3338)
+     n1: 1248000 0x5ABDF22: MatCreateDenseFromVecType (veccreatematdense.c:51)
+      n1: 1248000 0x6C39D66: BVCreate_Mat (bvmat.c:436)
+       n1: 1248000 0x6C4621A: BVSetSizesFromVec (bvbasic.c:192)
+        n1: 1248000 0x6D381A2: EPSAllocateSolution (epssetup.c:728)
+         n1: 1248000 0x6D0F054: EPSSetUp_KrylovSchur (krylovschur.c:124)
+          n1: 1248000 0x6D36990: EPSSetUp (epssetup.c:362)
+           n1: 1248000 0x6D387A7: EPSSolve (epssolve.c:132)
+            n1: 1248000 0x110757: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:283)
+             n0: 1248000 0x10D093: main (main.cpp:40)
+     n0: 32448 in 1 place, below massif's threshold (1.00%)
+   n0: 601808 in 145 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n3: 2739916 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 1514876 0x8FF699E: H5FL_blk_malloc (H5FL.c:848)
+   n2: 1132848 0x8F15E5E: H5B_create (H5B.c:228)
+    n1: 1132032 0x8F5095A: H5D__btree_idx_create (H5Dbtree.c:873)
+     n1: 1132032 0x8F598C1: H5D__chunk_create (H5Dchunk.c:3711)
+      n1: 1132032 0x8F796CF: H5D__alloc_storage (H5Dint.c:2289)
+       n1: 1132032 0x8F8112F: H5D__layout_oh_create (H5Dlayout.c:478)
+        n1: 1132032 0x8F7502A: H5D__update_oh_info (H5Dint.c:978)
+         n1: 1132032 0x8F7502A: H5D__create (H5Dint.c:1299)
+          n1: 1132032 0x8F825C7: H5O__dset_create (H5Doh.c:272)
+           n1: 1132032 0x9088C85: H5O_obj_create (H5Oint.c:2346)
+            n1: 1132032 0x904FDFF: H5L__link_cb (H5Lint.c:535)
+             n1: 1132032 0x901F0F3: H5G__traverse_real (H5Gtraverse.c:595)
+              n1: 1132032 0x901F57D: H5G_traverse (H5Gtraverse.c:815)
+               n1: 1132032 0x9051300: H5L__create_real (H5Lint.c:728)
+                n1: 1132032 0x9051300: H5L_link_object (H5Lint.c:491)
+                 n1: 1132032 0x8F746B9: H5D__create_named (H5Dint.c:349)
+                  n1: 1132032 0x91DD88D: H5VL__native_dataset_create (H5VLnative_dataset.c:280)
+                   n1: 1132032 0x91C7927: H5VL__dataset_create (H5VLcallback.c:1839)
+                    n1: 1132032 0x91C7927: H5VL_dataset_create (H5VLcallback.c:1874)
+                     n1: 1132032 0x8F471A7: H5D__create_api_common (H5D.c:133)
+                      n1: 1132032 0x8F484B2: H5Dcreate2 (H5D.c:185)
+                       n1: 1132032 0x5217616: VecView_MPI_HDF5 (pdvec.c:664)
+                        n1: 1132032 0x522194B: VecView_Seq (bvec2.c:557)
+                         n2: 1132032 0x523F7BF: VecView (vector.c:805)
+                          n1: 566016 0x110FA4: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:317)
+                           n0: 566016 0x10D093: main (main.cpp:40)
+                          n1: 566016 0x111685: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:329)
+                           n0: 566016 0x10D093: main (main.cpp:40)
+    n0: 816 in 1 place, below massif's threshold (1.00%)
+   n0: 382028 in 10 places, all below massif's threshold (1.00%)
+  n2: 1218720 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 703136 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 174952 in 44 places, all below massif's threshold (1.00%)
+   n0: 515584 in 34 places, all below massif's threshold (1.00%)
+  n0: 6320 in 2 places, all below massif's threshold (1.00%)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n0: 1087914 in 243 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=58
+#-----------
+time=512151442003
+mem_heap_B=40669312
+mem_heap_extra_B=139240
+mem_stacks_B=0
+heap_tree=peak
+n7: 40669312 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16781447 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781447 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 16777216 0x10D093: main (main.cpp:40)
+   n0: 4231 in 27 places, all below massif's threshold (1.00%)
+ n3: 10771836 0x5078F25: PetscMallocAlign (mal.c:52)
+  n6: 8829740 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 3116640 0x536372D: MatDuplicateNoCreate_SeqAIJ (aij.c:4982)
+    n1: 3116640 0x5363A2E: MatDuplicate_SeqAIJ (aij.c:5053)
+     n1: 3116640 0x5AAB8FA: MatDuplicate (matrix.c:4964)
+      n1: 3116640 0x110696: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:277)
+       n0: 3116640 0x10D093: main (main.cpp:40)
+   n1: 2493312 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 2493312 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 2493312 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n4: 2493312 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 623328 0x10FDAF: tise::construct_kinetic_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:66)
+        n1: 623328 0x110558: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:264)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x10FFBF: tise::construct_inv_r2_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:122)
+        n1: 623328 0x1105CA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:266)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1101CF: tise::construct_overlap_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:178)
+        n1: 623328 0x110591: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:265)
+         n0: 623328 0x10D093: main (main.cpp:40)
+       n1: 623328 0x1103DF: tise::construct_inv_r_matrix(_p_Mat**, int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, double, double) (tise.cpp:234)
+        n1: 623328 0x110603: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:267)
+         n0: 623328 0x10D093: main (main.cpp:40)
+   n1: 1310752 0x5366612: MatLUFactorSymbolic_SeqAIJ (aijfact.c:388)
+    n1: 1310752 0x5AA57A6: MatLUFactorSymbolic (matrix.c:3253)
+     n1: 1310752 0x5F922F7: PCSetUp_LU (lu.c:87)
+      n1: 1310752 0x604B8E9: PCSetUp (precon.c:1071)
+       n1: 1310752 0x5EF79FA: KSPSetUp (itfunc.c:415)
+        n1: 1310752 0x6CCB21F: STSetUp_Shift (shift.c:134)
+         n1: 1310752 0x6CD25EB: STSetUp (stsolve.c:546)
+          n1: 1310752 0x6D36A54: EPSSetUp (epssetup.c:394)
+           n1: 1310752 0x6D387A7: EPSSolve (epssolve.c:132)
+            n1: 1310752 0x110757: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:283)
+             n0: 1310752 0x10D093: main (main.cpp:40)
+   n1: 779160 0x5363750: MatDuplicateNoCreate_SeqAIJ (aij.c:4983)
+    n1: 779160 0x5363A2E: MatDuplicate_SeqAIJ (aij.c:5053)
+     n1: 779160 0x5AAB8FA: MatDuplicate (matrix.c:4964)
+      n1: 779160 0x110696: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:277)
+       n0: 779160 0x10D093: main (main.cpp:40)
+   n1: 623328 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n1: 623328 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 623328 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n1: 623328 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 623328 in 4 places, all below massif's threshold (1.00%)
+   n0: 506548 in 5 places, all below massif's threshold (1.00%)
+  n2: 1922032 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 1280448 0x5807D69: MatSeqDenseSetPreallocation_SeqDense (dense.c:3357)
+    n2: 1280448 0x581109E: MatSeqDenseSetPreallocation (dense.c:3338)
+     n1: 1248000 0x5ABDF22: MatCreateDenseFromVecType (veccreatematdense.c:51)
+      n1: 1248000 0x6C39D66: BVCreate_Mat (bvmat.c:436)
+       n1: 1248000 0x6C4621A: BVSetSizesFromVec (bvbasic.c:192)
+        n1: 1248000 0x6D381A2: EPSAllocateSolution (epssetup.c:728)
+         n1: 1248000 0x6D0F054: EPSSetUp_KrylovSchur (krylovschur.c:124)
+          n1: 1248000 0x6D36990: EPSSetUp (epssetup.c:362)
+           n1: 1248000 0x6D387A7: EPSSolve (epssolve.c:132)
+            n1: 1248000 0x110757: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:283)
+             n0: 1248000 0x10D093: main (main.cpp:40)
+     n0: 32448 in 1 place, below massif's threshold (1.00%)
+   n0: 641584 in 145 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10D015: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10D015: main (main.cpp:15)
+ n3: 2868440 0x8FF62AD: H5FL__malloc (H5FL.c:231)
+  n2: 1609704 0x8FF699E: H5FL_blk_malloc (H5FL.c:848)
+   n2: 1203600 0x8F15E5E: H5B_create (H5B.c:228)
+    n1: 1202784 0x8F5095A: H5D__btree_idx_create (H5Dbtree.c:873)
+     n1: 1202784 0x8F598C1: H5D__chunk_create (H5Dchunk.c:3711)
+      n1: 1202784 0x8F796CF: H5D__alloc_storage (H5Dint.c:2289)
+       n1: 1202784 0x8F8112F: H5D__layout_oh_create (H5Dlayout.c:478)
+        n1: 1202784 0x8F7502A: H5D__update_oh_info (H5Dint.c:978)
+         n1: 1202784 0x8F7502A: H5D__create (H5Dint.c:1299)
+          n1: 1202784 0x8F825C7: H5O__dset_create (H5Doh.c:272)
+           n1: 1202784 0x9088C85: H5O_obj_create (H5Oint.c:2346)
+            n1: 1202784 0x904FDFF: H5L__link_cb (H5Lint.c:535)
+             n1: 1202784 0x901F0F3: H5G__traverse_real (H5Gtraverse.c:595)
+              n1: 1202784 0x901F57D: H5G_traverse (H5Gtraverse.c:815)
+               n1: 1202784 0x9051300: H5L__create_real (H5Lint.c:728)
+                n1: 1202784 0x9051300: H5L_link_object (H5Lint.c:491)
+                 n1: 1202784 0x8F746B9: H5D__create_named (H5Dint.c:349)
+                  n1: 1202784 0x91DD88D: H5VL__native_dataset_create (H5VLnative_dataset.c:280)
+                   n1: 1202784 0x91C7927: H5VL__dataset_create (H5VLcallback.c:1839)
+                    n1: 1202784 0x91C7927: H5VL_dataset_create (H5VLcallback.c:1874)
+                     n1: 1202784 0x8F471A7: H5D__create_api_common (H5D.c:133)
+                      n1: 1202784 0x8F484B2: H5Dcreate2 (H5D.c:185)
+                       n1: 1202784 0x5217616: VecView_MPI_HDF5 (pdvec.c:664)
+                        n1: 1202784 0x522194B: VecView_Seq (bvec2.c:557)
+                         n2: 1202784 0x523F7BF: VecView (vector.c:805)
+                          n1: 601392 0x110FA4: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:317)
+                           n0: 601392 0x10D093: main (main.cpp:40)
+                          n1: 601392 0x111685: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:329)
+                           n0: 601392 0x10D093: main (main.cpp:40)
+    n0: 816 in 1 place, below massif's threshold (1.00%)
+   n0: 406104 in 10 places, all below massif's threshold (1.00%)
+  n2: 1252176 0x8FF63D4: H5FL_reg_malloc (H5FL.c:414)
+   n2: 709768 0x8FF64D1: H5FL_reg_calloc (H5FL.c:468)
+    n1: 528184 0x8F2A701: H5C_create (H5C.c:144)
+     n1: 528184 0x8F12A75: H5AC_create (H5AC.c:314)
+      n1: 528184 0x8FBD6A0: H5F__new (H5Fint.c:1304)
+       n1: 528184 0x8FBE5E8: H5F_open (H5Fint.c:1914)
+        n1: 528184 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 528184 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 528184 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 528184 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 528184 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 528184 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 528184 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 528184 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 528184 0x11049A: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int) (tise.cpp:254)
+                 n0: 528184 0x10D093: main (main.cpp:40)
+    n0: 181584 in 44 places, all below massif's threshold (1.00%)
+   n0: 542408 in 34 places, all below massif's threshold (1.00%)
+  n0: 6560 in 2 places, all below massif's threshold (1.00%)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 1310720 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 1310720 0x10D015: main (main.cpp:15)
+ n0: 1072165 in 243 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=59
+#-----------
+time=513433268669
+mem_heap_B=40669328
+mem_heap_extra_B=139232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=514751098487
+mem_heap_B=40669328
+mem_heap_extra_B=139232
+mem_stacks_B=0
+heap_tree=empty

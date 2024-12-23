@@ -14,13 +14,13 @@ int main(int argc, char **argv) {
 
     ierr = SlepcInitialize(&argc, &argv, NULL,NULL); CHKERRQ(ierr);
 
-    int n_basis = 1250;
+    int n_basis = 3000;
     int degree = 6;
-    double rmax = 1250;
+    double rmax = 3000;
     int lmax = 50;
     int nmax = 10;
     double R0 = 1245;
-    double eta=  0.25;
+    double eta=  0;
     double tise_tolerance = 1E-15;
     PetscInt tise_mat_iter = 3000;
 
