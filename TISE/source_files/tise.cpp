@@ -235,7 +235,7 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<std::complex<double>>& knots,int lmax, int nmax,double R0, double eta)
+    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<std::complex<double>>& knots,int lmax, int nmax,double R0, double eta,double tolerance, PetscInt max_iter)
     {
         PetscErrorCode ierr;
         PetscViewer viewTISE;
@@ -248,8 +248,7 @@ namespace tise
         PetscInt nconv;
         
 
-        double tolerance = 1e-15;
-        PetscInt max_iter = 5000;
+        
 
 
         ierr = PetscViewerHDF5Open(PETSC_COMM_WORLD, "tise_output.h5", FILE_MODE_WRITE, &viewTISE);
