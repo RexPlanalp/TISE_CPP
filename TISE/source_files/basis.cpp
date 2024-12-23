@@ -31,7 +31,6 @@ namespace basis
 
 	std::complex<double> R_x(std::complex<double> x, double R0, double eta)
 	{
-
 		if (eta == 0)
 		{
 			return x;
@@ -77,11 +76,9 @@ namespace basis
 		}
 		else
 		{
-			return w * std::exp(std::complex<double>(0, M_PI * eta));
+			return w * std::exp(std::complex<double>(0, M_PI * eta));			
 		}
 	}
-
-
 
 	std::vector<std::complex<double>> linear_knots(int n_basis, int degree, double rmax) 
 	{	
@@ -202,8 +199,8 @@ namespace basis
 		int upper = std::max(i, j);
 
 		for (int k = lower; k <= upper + degree; ++k) {
-			std::complex<double> a = knots_modified[k];    
-			std::complex<double> b = knots_modified[k + 1]; 
+			std::complex<double> a = knots[k];    
+			std::complex<double> b = knots[k + 1]; 
 
 			if (a == b)
 				continue;
@@ -216,13 +213,9 @@ namespace basis
 				std::complex<double> xi_modified = R_x(xi, R0, eta);
 				std::complex<double> weight_modified = R_w(xi,weight,R0,eta);
 				total += weight_modified * integrand(i, j, knots_modified, xi_modified) * (b - a) * 0.5;
-
-				
-				
-
-				
 			}
 		}
+
 
 		return total;
 	}
@@ -312,9 +305,4 @@ namespace basis
 		file.close();
 		return 0;
 	}
-
-	
-
-
-
 }

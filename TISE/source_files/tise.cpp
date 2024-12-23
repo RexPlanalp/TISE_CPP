@@ -235,7 +235,7 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<std::complex<double>>& knots,int lmax, int nmax,double R0, double w)
+    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<std::complex<double>>& knots,int lmax, int nmax,double R0, double eta)
     {
         PetscErrorCode ierr;
         PetscViewer viewTISE;
@@ -262,10 +262,10 @@ namespace tise
        
 
 
-        ierr = construct_kinetic_matrix(&K, n_basis, degree, knots,R0,w); CHKERRQ(ierr);
-        ierr = construct_overlap_matrix(&S, n_basis, degree, knots,R0,w); CHKERRQ(ierr);
-        ierr = construct_inv_r2_matrix(&Inv_r2, n_basis, degree,knots,R0,w); CHKERRQ(ierr);
-        ierr = construct_inv_r_matrix(&Inv_r,n_basis,degree,knots,R0,w); CHKERRQ(ierr);
+        ierr = construct_kinetic_matrix(&K, n_basis, degree, knots,R0,eta); CHKERRQ(ierr);
+        ierr = construct_overlap_matrix(&S, n_basis, degree, knots,R0,eta); CHKERRQ(ierr);
+        ierr = construct_inv_r2_matrix(&Inv_r2, n_basis, degree,knots,R0,eta); CHKERRQ(ierr);
+        ierr = construct_inv_r_matrix(&Inv_r,n_basis,degree,knots,R0,eta); CHKERRQ(ierr);
 
         for (int l=0; l<=lmax; ++l)
         {
@@ -348,9 +348,4 @@ namespace tise
         return 0;
 
     }
-
-
-
-
-
 } // namespace tise
