@@ -3,3 +3,5 @@
 
 build/output
 build/tise_output.h5
+build/H_total.dat
+build/S_total.dat

@@ -1,0 +1,2582 @@
+desc: (none)
+cmd: ./output
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=6463992322
+mem_heap_B=10072799
+mem_heap_extra_B=48369
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=13291334734
+mem_heap_B=10192183
+mem_heap_extra_B=48361
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=24117202674
+mem_heap_B=10370783
+mem_heap_extra_B=48369
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=33975619456
+mem_heap_B=10390839
+mem_heap_extra_B=48361
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=39888951533
+mem_heap_B=10768095
+mem_heap_extra_B=48369
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=47866612201
+mem_heap_B=1230298075
+mem_heap_extra_B=112317
+mem_stacks_B=0
+heap_tree=detailed
+n2: 1230298075 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 1220362876 0x5078F25: PetscMallocAlign (mal.c:52)
+  n3: 882546764 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 674813072 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 674813072 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 674512128 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 674512128 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 674512128 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n1: 674512128 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 674512128 0x11159D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:321)
+          n0: 674512128 0x10DCC9: main (main.cpp:54)
+     n0: 300944 in 1 place, below massif's threshold (1.00%)
+   n1: 168703268 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 168703268 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 168628032 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 168628032 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 168628032 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n1: 168628032 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 168628032 0x11159D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:321)
+          n0: 168628032 0x10DCC9: main (main.cpp:54)
+     n0: 75236 in 1 place, below massif's threshold (1.00%)
+   n1: 39030424 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 39030424 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025420 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025420 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005004 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n1: 13005004 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n0: 15412 in 2 places, all below massif's threshold (1.00%)
+     n1: 13005004 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 13005004 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 13005004 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n1: 13005004 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 13005004 0x11159D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:321)
+          n0: 13005004 0x10DCC9: main (main.cpp:54)
+  n7: 337796048 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 181633040 0x5361886: MatSeqAIJKron_SeqAIJ (aij.c:4201)
+    n1: 181633040 0x535517E: MatSeqAIJKron (aij.c:4178)
+     n1: 181633040 0x11159D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:321)
+      n0: 181633040 0x10DCC9: main (main.cpp:54)
+   n1: 39030448 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 39030448 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025440 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025440 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15424 in 2 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 13005008 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 13005008 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n1: 13005008 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 13005008 0x11159D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:321)
+          n0: 13005008 0x10DCC9: main (main.cpp:54)
+   n1: 39030448 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 39030448 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025440 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025440 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15424 in 2 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 13005008 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 13005008 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n1: 13005008 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 13005008 0x11159D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:321)
+          n0: 13005008 0x10DCC9: main (main.cpp:54)
+   n1: 39030448 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 39030448 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025440 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025440 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15424 in 2 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 13005008 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 13005008 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n1: 13005008 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 13005008 0x11159D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:321)
+          n0: 13005008 0x10DCC9: main (main.cpp:54)
+   n1: 26025440 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n1: 26025440 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 26025440 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 26025440 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n3: 26025440 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n0: 15424 in 2 places, all below massif's threshold (1.00%)
+   n1: 13005008 0x5358E71: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4130)
+    n1: 13005008 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+     n1: 13005008 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+      n1: 13005008 0x535517E: MatSeqAIJKron (aij.c:4178)
+       n1: 13005008 0x11159D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:321)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+   n0: 41216 in 61 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 9935199 in 202 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=58126155916
+mem_heap_B=158023176
+mem_heap_extra_B=128304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=66510101427
+mem_heap_B=158172168
+mem_heap_extra_B=128304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=77163714222
+mem_heap_B=158370824
+mem_heap_extra_B=128304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=84317591684
+mem_heap_B=158370824
+mem_heap_extra_B=128304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=95940375472
+mem_heap_B=158768136
+mem_heap_extra_B=128304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=105315307961
+mem_heap_B=158379308
+mem_heap_extra_B=128724
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=111994763653
+mem_heap_B=158528300
+mem_heap_extra_B=128724
+mem_stacks_B=0
+heap_tree=detailed
+n5: 158528300 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 130819040 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 104130640 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 26020032 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 26020032 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 26020032 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 26020032 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 50512 in 72 places, all below massif's threshold (1.00%)
+  n2: 26668336 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 26020016 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 26020016 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020016 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020016 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005004 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n1: 13005004 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n0: 10008 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 648320 in 2 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11160D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:330)
+                 n0: 16777216 0x10DCC9: main (main.cpp:54)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10DC45: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10DC45: main (main.cpp:15)
+ n0: 3063181 in 234 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=120901205146
+mem_heap_B=158726956
+mem_heap_extra_B=128724
+mem_stacks_B=0
+heap_tree=detailed
+n5: 158726956 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 130819040 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 104130640 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 26020032 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 26020032 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 26020032 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 26020032 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 50512 in 72 places, all below massif's threshold (1.00%)
+  n2: 26668336 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 26020016 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 26020016 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020016 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020016 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005004 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n1: 13005004 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n0: 10008 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 648320 in 2 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11160D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:330)
+                 n0: 16777216 0x10DCC9: main (main.cpp:54)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10DC45: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10DC45: main (main.cpp:15)
+ n0: 3261837 in 234 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=15
+#-----------
+time=126689830440
+mem_heap_B=158726956
+mem_heap_extra_B=128724
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=134260830288
+mem_heap_B=158726956
+mem_heap_extra_B=128724
+mem_stacks_B=0
+heap_tree=detailed
+n5: 158726956 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 130819040 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 104130640 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 26020032 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 26020032 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020032 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26020032 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 26020032 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 26020032 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 26020032 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n3: 26020032 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n0: 10016 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 50512 in 72 places, all below massif's threshold (1.00%)
+  n2: 26668336 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 26020016 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 26020016 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26020016 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26020016 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005004 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n1: 13005004 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n0: 10008 in 3 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 648320 in 2 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11160D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:330)
+                 n0: 16777216 0x10DCC9: main (main.cpp:54)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10DC45: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10DC45: main (main.cpp:15)
+ n0: 3261837 in 234 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=139602713346
+mem_heap_B=159124268
+mem_heap_extra_B=128724
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=148508398305
+mem_heap_B=158688880
+mem_heap_extra_B=129176
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=156520700487
+mem_heap_B=158785104
+mem_heap_extra_B=129176
+mem_stacks_B=0
+heap_tree=detailed
+n5: 158785104 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 131174092 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 104156528 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 26025040 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 26025040 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025040 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025040 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15024 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26025040 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 26025040 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025040 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025040 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15024 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26025040 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 26025040 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025040 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025040 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15024 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26025040 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 26025040 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 26025040 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 26025040 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n3: 26025040 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n0: 15024 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 56368 in 72 places, all below massif's threshold (1.00%)
+  n2: 26997500 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 26025020 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 26025020 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025020 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025020 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005004 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n1: 13005004 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n0: 15012 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 972480 in 2 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11160D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:330)
+                 n0: 16777216 0x10DCC9: main (main.cpp:54)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10DC45: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10DC45: main (main.cpp:15)
+ n0: 2964933 in 234 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=20
+#-----------
+time=165434814813
+mem_heap_B=158884432
+mem_heap_extra_B=129176
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=170783656589
+mem_heap_B=159083088
+mem_heap_extra_B=129176
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=179697731457
+mem_heap_B=159083088
+mem_heap_extra_B=129176
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=192175590110
+mem_heap_B=159480400
+mem_heap_extra_B=129176
+mem_stacks_B=0
+heap_tree=detailed
+n5: 159480400 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 131174092 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 104156528 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 26025040 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 26025040 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025040 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025040 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15024 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26025040 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 26025040 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025040 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025040 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15024 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26025040 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 26025040 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025040 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025040 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 15024 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 26025040 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 26025040 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 26025040 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 26025040 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n3: 26025040 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 13005008 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n0: 15024 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 56368 in 72 places, all below massif's threshold (1.00%)
+  n2: 26997500 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 26025020 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 26025020 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 26025020 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 26025020 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005004 0x1113DD: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:301)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n1: 13005004 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n0: 15012 in 4 places, all below massif's threshold (1.00%)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 972480 in 2 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 16781375 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781375 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11160D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:330)
+                 n0: 16777216 0x10DCC9: main (main.cpp:54)
+   n0: 4159 in 19 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n1: 4194688 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+            n0: 4194688 0x10DC45: main (main.cpp:15)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n1: 3670016 0x6CD89C1: SlepcInitialize (slepcinit.c:264)
+          n0: 3670016 0x10DC45: main (main.cpp:15)
+ n0: 3660229 in 234 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=199873734232
+mem_heap_B=239171804
+mem_heap_extra_B=162068
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=210151576583
+mem_heap_B=306283924
+mem_heap_extra_B=195588
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=217605312143
+mem_heap_B=532982784
+mem_heap_extra_B=271888
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=226947389741
+mem_heap_B=520658004
+mem_heap_extra_B=273252
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=234547148255
+mem_heap_B=442167588
+mem_heap_extra_B=252756
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=244749005351
+mem_heap_B=589790564
+mem_heap_extra_B=309844
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=251668788847
+mem_heap_B=580461308
+mem_heap_extra_B=308364
+mem_stacks_B=0
+heap_tree=detailed
+n3: 580461308 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 550248112 0x5078F25: PetscMallocAlign (mal.c:52)
+  n6: 430507152 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 104060096 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n3: 104060096 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 91055088 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 91055088 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 78030048 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 78030048 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 20032 in 7 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 104060096 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n3: 104060096 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 91055088 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 91055088 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 78030048 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 78030048 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 20032 in 7 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 104060096 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n3: 104060096 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 91055088 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 91055088 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 78030048 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 78030048 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 20032 in 7 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 104060096 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 104060096 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 91055088 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 91055088 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n3: 91055088 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 78030048 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 78030048 0x10DCC9: main (main.cpp:54)
+        n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n0: 20032 in 7 places, all below massif's threshold (1.00%)
+     n2: 13005008 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+      n1: 13005008 0x5AAFCC4: MatAXPY_BasicWithPreallocation (axpy.c:290)
+       n1: 13005008 0x5361FDC: MatAXPY_SeqAIJ (aij.c:3048)
+        n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+         n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+          n0: 13005008 0x10DCC9: main (main.cpp:54)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 13005008 0x53DC783: MatSeqAIJCheckInode (inode.c:4310)
+    n1: 13005008 0x53DD9E0: MatAssemblyEnd_SeqAIJ_Inode (inode2.c:32)
+     n2: 13005008 0x53525DD: MatAssemblyEnd_SeqAIJ (aij.c:1157)
+      n2: 13005008 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x5AAFCC4: MatAXPY_BasicWithPreallocation (axpy.c:290)
+        n1: 13005008 0x5361FDC: MatAXPY_SeqAIJ (aij.c:3048)
+         n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+          n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+           n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+   n0: 1261760 in 148 places, all below massif's threshold (1.00%)
+  n3: 119720896 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 104060048 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n3: 104060048 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 91055044 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 91055044 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 78030024 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 78030024 0x10DCC9: main (main.cpp:54)
+       n1: 13005004 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n0: 20016 in 7 places, all below massif's threshold (1.00%)
+     n1: 13005004 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 13005004 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 13005004 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 10373120 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 10373120 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 9335808 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 9335808 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 9335808 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 9335808 0x10DCC9: main (main.cpp:54)
+     n0: 1037312 in 2 places, all below massif's threshold (1.00%)
+   n0: 5287728 in 8 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 16781447 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781447 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11160D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:330)
+                 n0: 16777216 0x10DCC9: main (main.cpp:54)
+   n0: 4231 in 27 places, all below massif's threshold (1.00%)
+ n0: 13431749 in 247 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=261163177833
+mem_heap_B=650517508
+mem_heap_extra_B=333316
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=273956441842
+mem_heap_B=884645204
+mem_heap_extra_B=411524
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=283776857854
+mem_heap_B=943441204
+mem_heap_extra_B=426692
+mem_stacks_B=0
+heap_tree=detailed
+n3: 943441204 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 912303968 0x5078F25: PetscMallocAlign (mal.c:52)
+  n7: 705464304 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 169095552 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n3: 169095552 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 143085536 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 143085536 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 130050080 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 130050080 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 30448 in 7 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 13005008 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 13005008 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n2: 13005008 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 13005008 0x11313E: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:403)
+          n0: 13005008 0x10DCC9: main (main.cpp:54)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+     n1: 13005008 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+   n1: 169095552 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n3: 169095552 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 143085536 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 143085536 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 130050080 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 130050080 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 30448 in 7 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 13005008 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 13005008 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n2: 13005008 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 13005008 0x11313E: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:403)
+          n0: 13005008 0x10DCC9: main (main.cpp:54)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+     n1: 13005008 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+   n1: 169095552 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n3: 169095552 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 143085536 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 143085536 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 130050080 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 130050080 0x10DCC9: main (main.cpp:54)
+       n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 30448 in 7 places, all below massif's threshold (1.00%)
+     n1: 13005008 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 13005008 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 13005008 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n2: 13005008 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 13005008 0x11313E: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:403)
+          n0: 13005008 0x10DCC9: main (main.cpp:54)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+     n1: 13005008 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 13005008 0x10DCC9: main (main.cpp:54)
+   n1: 169095552 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 169095552 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 143085536 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 143085536 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n3: 143085536 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 130050080 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 130050080 0x10DCC9: main (main.cpp:54)
+        n1: 13005008 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+         n0: 13005008 0x10DCC9: main (main.cpp:54)
+        n0: 30448 in 7 places, all below massif's threshold (1.00%)
+     n2: 26010016 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+      n1: 13005008 0x5358FA0: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4142)
+       n1: 13005008 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+        n1: 13005008 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+         n2: 13005008 0x535517E: MatSeqAIJKron (aij.c:4178)
+          n1: 13005008 0x11313E: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:403)
+           n0: 13005008 0x10DCC9: main (main.cpp:54)
+          n0: 0 in 1 place, below massif's threshold (1.00%)
+      n1: 13005008 0x5AAFCC4: MatAXPY_BasicWithPreallocation (axpy.c:290)
+       n1: 13005008 0x5361FDC: MatAXPY_SeqAIJ (aij.c:3048)
+        n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+         n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+          n0: 13005008 0x10DCC9: main (main.cpp:54)
+   n1: 14236816 0x5361886: MatSeqAIJKron_SeqAIJ (aij.c:4201)
+    n2: 14236816 0x535517E: MatSeqAIJKron (aij.c:4178)
+     n1: 14236816 0x11313E: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:403)
+      n0: 14236816 0x10DCC9: main (main.cpp:54)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 13015424 0x53DC783: MatSeqAIJCheckInode (inode.c:4310)
+    n1: 13015424 0x53DD9E0: MatAssemblyEnd_SeqAIJ_Inode (inode2.c:32)
+     n2: 13015424 0x53525DD: MatAssemblyEnd_SeqAIJ (aij.c:1157)
+      n2: 13005008 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 13005008 0x5AAFCC4: MatAXPY_BasicWithPreallocation (axpy.c:290)
+        n1: 13005008 0x5361FDC: MatAXPY_SeqAIJ (aij.c:3048)
+         n1: 13005008 0x5AB0C14: MatAXPY (axpy.c:123)
+          n1: 13005008 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+           n0: 13005008 0x10DCC9: main (main.cpp:54)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 10416 in 1 place, below massif's threshold (1.00%)
+   n0: 1829856 in 147 places, all below massif's threshold (1.00%)
+  n3: 206819600 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 169095476 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n3: 169095476 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 143085468 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n3: 143085468 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 130050040 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 130050040 0x10DCC9: main (main.cpp:54)
+       n1: 13005004 0x111497: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:309)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+       n0: 30424 in 7 places, all below massif's threshold (1.00%)
+     n1: 13005004 0x5358ED2: MatSeqAIJSetPreallocationCSR_SeqAIJ (aij.c:4136)
+      n1: 13005004 0x535510E: MatSeqAIJSetPreallocationCSR (aij.c:4112)
+       n1: 13005004 0x5361AA3: MatSeqAIJKron_SeqAIJ (aij.c:4214)
+        n2: 13005004 0x535517E: MatSeqAIJKron (aij.c:4178)
+         n1: 13005004 0x11313E: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:403)
+          n0: 13005004 0x10DCC9: main (main.cpp:54)
+         n0: 0 in 1 place, below massif's threshold (1.00%)
+     n1: 13005004 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 13005004 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 13005004 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 13005004 0x10DCC9: main (main.cpp:54)
+   n1: 26970416 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 26970416 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 21005568 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 21005568 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 21005568 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 21005568 0x10DCC9: main (main.cpp:54)
+     n0: 5964848 in 2 places, all below massif's threshold (1.00%)
+   n0: 10753708 in 8 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n1: 16781447 0x729DC39: MPL_malloc (mpl_trmem.h:373)
+  n2: 16781447 0x729DC39: ADIOI_Malloc_fn (malloc.c:41)
+   n1: 16777216 0x7290218: ADIO_Open (ad_open.c:149)
+    n1: 16777216 0x7271815: PMPI_File_open (open.c:152)
+     n1: 16777216 0x9218F44: H5FD__mpio_open (H5FDmpio.c:884)
+      n1: 16777216 0x8FCFF91: H5FD_open (H5FD.c:768)
+       n1: 16777216 0x8FBE39F: H5F_open (H5Fint.c:1850)
+        n1: 16777216 0x91DF4C8: H5VL__native_file_create (H5VLnative_file.c:93)
+         n1: 16777216 0x91CBDFC: H5VL__file_create (H5VLcallback.c:3570)
+          n1: 16777216 0x91CBDFC: H5VL_file_create (H5VLcallback.c:3604)
+           n1: 16777216 0x8FAC1C9: H5F__create_api_common (H5F.c:612)
+            n1: 16777216 0x8FADC27: H5Fcreate (H5F.c:659)
+             n1: 16777216 0x503FA0A: PetscViewerFileSetName_HDF5 (hdf5v.c:435)
+              n1: 16777216 0x5030754: PetscViewerFileSetName (filev.c:764)
+               n1: 16777216 0x5040765: PetscViewerHDF5Open (hdf5v.c:629)
+                n1: 16777216 0x11160D: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:330)
+                 n0: 16777216 0x10DCC9: main (main.cpp:54)
+   n0: 4231 in 27 places, all below massif's threshold (1.00%)
+ n0: 14355789 in 247 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=34
+#-----------
+time=295150522935
+mem_heap_B=1132124592
+mem_heap_extra_B=476592
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=302941438297
+mem_heap_B=1294489904
+mem_heap_extra_B=515616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=310990555711
+mem_heap_B=1462121776
+mem_heap_extra_B=561984
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=319333661783
+mem_heap_B=1635020208
+mem_heap_extra_B=603120
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=328006547847
+mem_heap_B=1813185200
+mem_heap_extra_B=635056
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=337045007919
+mem_heap_B=1996616752
+mem_heap_extra_B=678192
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=346484835033
+mem_heap_B=2185314864
+mem_heap_extra_B=721728
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=356361821245
+mem_heap_B=2379279536
+mem_heap_extra_B=764512
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=366711770332
+mem_heap_B=2578510768
+mem_heap_extra_B=795744
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=377570463212
+mem_heap_B=2783008560
+mem_heap_extra_B=840304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=388973694059
+mem_heap_B=2992772912
+mem_heap_extra_B=881632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=396782704960
+mem_heap_B=2828783572
+mem_heap_extra_B=913436
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=409041648413
+mem_heap_B=2993435268
+mem_heap_extra_B=948676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=415406363672
+mem_heap_B=3081853588
+mem_heap_extra_B=964596
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=427007039251
+mem_heap_B=3653710320
+mem_heap_extra_B=1000944
+mem_stacks_B=0
+heap_tree=detailed
+n2: 3653710320 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 3622449004 0x5078F25: PetscMallocAlign (mal.c:52)
+  n6: 2187446640 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 533235776 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 533235776 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 494220752 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 494220752 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 481185296 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 481185296 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 533235776 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 533235776 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 494220752 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 494220752 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 481185296 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 481185296 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 533235776 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 533235776 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 494220752 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 494220752 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 481185296 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 481185296 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 533235776 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 533235776 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 494220752 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 494220752 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 494220752 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 481185296 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 481185296 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n1: 39015024 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+      n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 39025440 0x53DC783: MatSeqAIJCheckInode (inode.c:4310)
+    n1: 39025440 0x53DD9E0: MatAssemblyEnd_SeqAIJ_Inode (inode2.c:32)
+     n2: 39025440 0x53525DD: MatAssemblyEnd_SeqAIJ (aij.c:1157)
+      n1: 39015024 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+      n0: 10416 in 1 place, below massif's threshold (1.00%)
+   n0: 15478096 in 148 places, all below massif's threshold (1.00%)
+  n4: 1434982300 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 711078544 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 711078544 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 691109120 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 691109120 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 691109120 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 691109120 0x10DCC9: main (main.cpp:54)
+     n0: 19969424 in 2 places, all below massif's threshold (1.00%)
+   n1: 533235588 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 533235588 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 494220576 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 494220576 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 481185148 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 481185148 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 177769636 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 177769636 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 172777280 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 172777280 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 172777280 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 172777280 0x10DCC9: main (main.cpp:54)
+     n0: 4992356 in 2 places, all below massif's threshold (1.00%)
+   n0: 12898532 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31261316 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=427288681422
+mem_heap_B=3105437900
+mem_heap_extra_B=959924
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=428438801773
+mem_heap_B=3208608444
+mem_heap_extra_B=989564
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=433554103506
+mem_heap_B=3754732272
+mem_heap_extra_B=1016600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=433868802779
+mem_heap_B=3767737280
+mem_heap_extra_B=1020432
+mem_stacks_B=0
+heap_tree=detailed
+n2: 3767737280 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 3736473804 0x5078F25: PetscMallocAlign (mal.c:52)
+  n6: 2239513232 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 546240784 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 546240784 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 507225760 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 507225760 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 494190304 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 494190304 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 546240784 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 546240784 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 507225760 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 507225760 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 494190304 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 494190304 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 546240784 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 546240784 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 507225760 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 507225760 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 494190304 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 494190304 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 546240784 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 546240784 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 507225760 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 507225760 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 507225760 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 494190304 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 494190304 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n1: 39015024 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+      n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 39025440 0x53DC783: MatSeqAIJCheckInode (inode.c:4310)
+    n1: 39025440 0x53DD9E0: MatAssemblyEnd_SeqAIJ_Inode (inode2.c:32)
+     n2: 39025440 0x53525DD: MatAssemblyEnd_SeqAIJ (aij.c:1157)
+      n1: 39015024 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+      n0: 10416 in 1 place, below massif's threshold (1.00%)
+   n0: 15524656 in 148 places, all below massif's threshold (1.00%)
+  n4: 1496940508 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 749977776 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 749977776 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 729489664 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 729489664 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 729489664 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 729489664 0x10DCC9: main (main.cpp:54)
+     n0: 20488112 in 2 places, all below massif's threshold (1.00%)
+   n1: 546240592 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 546240592 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 507225580 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 507225580 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 494190152 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 494190152 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 187494444 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 187494444 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 182372416 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 182372416 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 182372416 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 182372416 0x10DCC9: main (main.cpp:54)
+     n0: 5122028 in 2 places, all below massif's threshold (1.00%)
+   n0: 13227696 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31263476 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=53
+#-----------
+time=435122553610
+mem_heap_B=3303193804
+mem_heap_extra_B=1007076
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=440583423527
+mem_heap_B=3870055904
+mem_heap_extra_B=1037992
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=440906720698
+mem_heap_B=3883060912
+mem_heap_extra_B=1041824
+mem_stacks_B=0
+heap_tree=detailed
+n2: 3883060912 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 3851795276 0x5078F25: PetscMallocAlign (mal.c:52)
+  n6: 2291579856 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 559245792 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 559245792 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 520230768 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 520230768 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 507195312 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 507195312 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 559245792 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 559245792 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 520230768 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 520230768 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 507195312 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 507195312 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 559245792 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 559245792 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 520230768 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 520230768 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 507195312 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 507195312 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 559245792 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 559245792 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 520230768 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 520230768 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 520230768 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 507195312 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 507195312 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n1: 39015024 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+      n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 39025440 0x53DC783: MatSeqAIJCheckInode (inode.c:4310)
+    n1: 39025440 0x53DD9E0: MatAssemblyEnd_SeqAIJ_Inode (inode2.c:32)
+     n2: 39025440 0x53525DD: MatAssemblyEnd_SeqAIJ (aij.c:1157)
+      n1: 39015024 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+      n0: 10416 in 1 place, below massif's threshold (1.00%)
+   n0: 15571248 in 148 places, all below massif's threshold (1.00%)
+  n4: 1560195356 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 789914320 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 789914320 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 768907520 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 768907520 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 768907520 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 768907520 0x10DCC9: main (main.cpp:54)
+     n0: 21006800 in 2 places, all below massif's threshold (1.00%)
+   n1: 559245596 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 559245596 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 520230584 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 520230584 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 507195156 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 507195156 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 197478580 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 197478580 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 192226880 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 192226880 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 192226880 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 192226880 0x10DCC9: main (main.cpp:54)
+     n0: 5251700 in 2 places, all below massif's threshold (1.00%)
+   n0: 13556860 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31265636 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=56
+#-----------
+time=442163709819
+mem_heap_B=3394315068
+mem_heap_extra_B=1027988
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=447793137048
+mem_heap_B=3986676144
+mem_heap_extra_B=1061128
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=448125255439
+mem_heap_B=3999681152
+mem_heap_extra_B=1064960
+mem_stacks_B=0
+heap_tree=detailed
+n2: 3999681152 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 3968413356 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2343646448 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 572250800 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 572250800 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 533235776 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 533235776 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 520200320 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 520200320 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 572250800 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 572250800 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 533235776 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 533235776 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 520200320 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 520200320 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 572250800 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 572250800 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 533235776 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 533235776 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 520200320 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 520200320 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 572250800 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 572250800 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 533235776 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 533235776 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 533235776 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 520200320 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 520200320 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 54643248 in 149 places, all below massif's threshold (1.00%)
+  n4: 1624746844 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 830888176 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 830888176 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 809362688 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 809362688 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 809362688 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 809362688 0x10DCC9: main (main.cpp:54)
+     n0: 21525488 in 2 places, all below massif's threshold (1.00%)
+   n1: 572250600 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 572250600 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 533235588 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 533235588 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 520200160 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 520200160 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 207722044 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 207722044 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 202340672 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 202340672 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 202340672 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 202340672 0x10DCC9: main (main.cpp:54)
+     n0: 5381372 in 2 places, all below massif's threshold (1.00%)
+   n0: 13886024 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31267796 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=59
+#-----------
+time=449385483028
+mem_heap_B=3486084684
+mem_heap_extra_B=1055876
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=455187706108
+mem_heap_B=4104593056
+mem_heap_extra_B=1086008
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=455528869041
+mem_heap_B=4117598064
+mem_heap_extra_B=1089840
+mem_stacks_B=0
+heap_tree=detailed
+n2: 4117598064 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4086328108 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2395713072 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 585255808 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 585255808 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 546240784 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 546240784 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 533205328 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 533205328 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 585255808 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 585255808 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 546240784 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 546240784 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 533205328 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 533205328 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 585255808 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 585255808 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 546240784 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 546240784 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 533205328 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 533205328 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 585255808 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 585255808 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 546240784 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 546240784 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 546240784 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 533205328 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 533205328 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 54689840 in 149 places, all below massif's threshold (1.00%)
+  n4: 1690594972 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 872899344 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 872899344 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 850855168 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 850855168 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 850855168 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 850855168 0x10DCC9: main (main.cpp:54)
+     n0: 22044176 in 2 places, all below massif's threshold (1.00%)
+   n1: 585255604 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 585255604 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 546240592 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 546240592 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 533205164 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 533205164 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 218224836 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 218224836 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 212713792 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 212713792 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 212713792 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 212713792 0x10DCC9: main (main.cpp:54)
+     n0: 5511044 in 2 places, all below massif's threshold (1.00%)
+   n0: 14215188 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31269956 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=456792335530
+mem_heap_B=3578502588
+mem_heap_extra_B=1066356
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=462771592496
+mem_heap_B=4223806576
+mem_heap_extra_B=1096424
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=463122023294
+mem_heap_B=4236811584
+mem_heap_extra_B=1100256
+mem_stacks_B=0
+heap_tree=detailed
+n2: 4236811584 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4205539468 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2447779664 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 598260816 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 598260816 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 559245792 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 559245792 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 546210336 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 546210336 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 598260816 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 598260816 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 559245792 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 559245792 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 546210336 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 546210336 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 598260816 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 598260816 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 559245792 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 559245792 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 546210336 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 546210336 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 598260816 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 598260816 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 559245792 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 559245792 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 559245792 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 546210336 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 546210336 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 54736400 in 149 places, all below massif's threshold (1.00%)
+  n4: 1757739740 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 915947824 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 915947824 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 893384960 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 893384960 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 893384960 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 893384960 0x10DCC9: main (main.cpp:54)
+     n0: 22562864 in 2 places, all below massif's threshold (1.00%)
+   n1: 598260608 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 598260608 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 559245596 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 559245596 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 546210168 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 546210168 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 228986956 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 228986956 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 223346240 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 223346240 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 223346240 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 223346240 0x10DCC9: main (main.cpp:54)
+     n0: 5640716 in 2 places, all below massif's threshold (1.00%)
+   n0: 14544352 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31272116 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=65
+#-----------
+time=464388730178
+mem_heap_B=3671568844
+mem_heap_extra_B=1087908
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=470549259609
+mem_heap_B=4344316768
+mem_heap_extra_B=1116776
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=470909181593
+mem_heap_B=4357321776
+mem_heap_extra_B=1120608
+mem_stacks_B=0
+heap_tree=detailed
+n2: 4357321776 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4326047500 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2499846288 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 611265824 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 611265824 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 572250800 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 572250800 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 559215344 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 559215344 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 611265824 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 611265824 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 572250800 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 572250800 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 559215344 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 559215344 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 611265824 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 611265824 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 572250800 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 572250800 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 559215344 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 559215344 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 611265824 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 611265824 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 572250800 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 572250800 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 572250800 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 559215344 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 559215344 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 54782992 in 149 places, all below massif's threshold (1.00%)
+  n4: 1826181148 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 960033616 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 960033616 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 936952064 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 936952064 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 936952064 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 936952064 0x10DCC9: main (main.cpp:54)
+     n0: 23081552 in 2 places, all below massif's threshold (1.00%)
+   n1: 611265612 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 611265612 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 572250600 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 572250600 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 559215172 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 559215172 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 240008404 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 240008404 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 234238016 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 234238016 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 234238016 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 234238016 0x10DCC9: main (main.cpp:54)
+     n0: 5770388 in 2 places, all below massif's threshold (1.00%)
+   n0: 14873516 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31274276 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=472179124118
+mem_heap_B=3765283388
+mem_heap_extra_B=1112420
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=478525163955
+mem_heap_B=4466123568
+mem_heap_extra_B=1142984
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=478894800447
+mem_heap_B=4479128576
+mem_heap_extra_B=1146816
+mem_stacks_B=0
+heap_tree=detailed
+n2: 4479128576 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4447852140 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2551912880 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 624270832 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 624270832 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 585255808 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 585255808 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 572220352 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 572220352 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 624270832 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 624270832 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 585255808 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 585255808 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 572220352 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 572220352 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 624270832 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 624270832 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 585255808 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 585255808 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 572220352 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 572220352 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 624270832 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 624270832 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 585255808 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 585255808 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 585255808 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 572220352 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 572220352 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 54829552 in 149 places, all below massif's threshold (1.00%)
+  n4: 1895919196 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1005156720 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 1005156720 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 981556480 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 981556480 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 981556480 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 981556480 0x10DCC9: main (main.cpp:54)
+     n0: 23600240 in 2 places, all below massif's threshold (1.00%)
+   n1: 624270616 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 624270616 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 585255604 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 585255604 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 572220176 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 572220176 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 251289180 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 251289180 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 245389120 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 245389120 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 245389120 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 245389120 0x10DCC9: main (main.cpp:54)
+     n0: 5900060 in 2 places, all below massif's threshold (1.00%)
+   n0: 15202680 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31276436 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=71
+#-----------
+time=480167982518
+mem_heap_B=3859646284
+mem_heap_extra_B=1127572
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=486703771026
+mem_heap_B=4589227040
+mem_heap_extra_B=1154632
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=487083344359
+mem_heap_B=4602232048
+mem_heap_extra_B=1158464
+mem_stacks_B=0
+heap_tree=detailed
+n2: 4602232048 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4570953452 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2603979504 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 637275840 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 637275840 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 598260816 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 598260816 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 585225360 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 585225360 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 637275840 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 637275840 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 598260816 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 598260816 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 585225360 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 585225360 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 637275840 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 637275840 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 598260816 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 598260816 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 585225360 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 585225360 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 637275840 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 637275840 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 598260816 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 598260816 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 598260816 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 585225360 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 585225360 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 54876144 in 149 places, all below massif's threshold (1.00%)
+  n4: 1966953884 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1051317136 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 1051317136 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1027198208 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 1027198208 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 1027198208 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 1027198208 0x10DCC9: main (main.cpp:54)
+     n0: 24118928 in 2 places, all below massif's threshold (1.00%)
+   n1: 637275620 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 637275620 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 598260608 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 598260608 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 585225180 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 585225180 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 262829284 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 262829284 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 256799552 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 256799552 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 256799552 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 256799552 0x10DCC9: main (main.cpp:54)
+     n0: 6029732 in 2 places, all below massif's threshold (1.00%)
+   n0: 15531844 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31278596 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=74
+#-----------
+time=488359765980
+mem_heap_B=3941652460
+mem_heap_extra_B=1141804
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=495089541531
+mem_heap_B=4700622112
+mem_heap_extra_B=1172368
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=495479276016
+mem_heap_B=4713627120
+mem_heap_extra_B=1176200
+mem_stacks_B=0
+heap_tree=detailed
+n2: 4713627120 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4682346364 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2643041088 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 650280848 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 650280848 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 611265824 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 611265824 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 598230368 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 598230368 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 650280848 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 650280848 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 611265824 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 611265824 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 598230368 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 598230368 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 650280848 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 650280848 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 611265824 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 611265824 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 598230368 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 598230368 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 650280848 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 650280848 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 611265824 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 611265824 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 611265824 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 598230368 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 598230368 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 41917696 in 149 places, all below massif's threshold (1.00%)
+  n4: 2039285212 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1098514864 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 1098514864 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1073877248 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 1073877248 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 1073877248 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 1073877248 0x10DCC9: main (main.cpp:54)
+     n0: 24637616 in 2 places, all below massif's threshold (1.00%)
+   n1: 650280624 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 650280624 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 611265612 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 611265612 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 598230184 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 598230184 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 274628716 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 274628716 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 268469312 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 268469312 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 268469312 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 268469312 0x10DCC9: main (main.cpp:54)
+     n0: 6159404 in 2 places, all below massif's threshold (1.00%)
+   n0: 15861008 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31280756 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=77
+#-----------
+time=496758935984
+mem_heap_B=4037311996
+mem_heap_extra_B=1170988
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=503686936802
+mem_heap_B=4826318864
+mem_heap_extra_B=1199824
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=504087055761
+mem_heap_B=4839323872
+mem_heap_extra_B=1203656
+mem_stacks_B=0
+heap_tree=detailed
+n2: 4839323872 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4808040956 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2695107712 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 663285856 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 663285856 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 624270832 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 624270832 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 611235376 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 611235376 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 663285856 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 663285856 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 624270832 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 624270832 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 611235376 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 611235376 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 663285856 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 663285856 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 624270832 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 624270832 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 611235376 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 611235376 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 663285856 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 663285856 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 624270832 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 624270832 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 624270832 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 611235376 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 611235376 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 41964288 in 149 places, all below massif's threshold (1.00%)
+  n4: 2112913180 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1146749904 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 1146749904 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1121593600 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 1121593600 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 1121593600 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 1121593600 0x10DCC9: main (main.cpp:54)
+     n0: 25156304 in 2 places, all below massif's threshold (1.00%)
+   n1: 663285628 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 663285628 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 624270616 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 624270616 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 611235188 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 611235188 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 286687476 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 286687476 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 280398400 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 280398400 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 280398400 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 280398400 0x10DCC9: main (main.cpp:54)
+     n0: 6289076 in 2 places, all below massif's threshold (1.00%)
+   n0: 16190172 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31282916 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=80
+#-----------
+time=505369954345
+mem_heap_B=4133619820
+mem_heap_extra_B=1182700
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=512500418846
+mem_heap_B=4953312224
+mem_heap_extra_B=1216864
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=512911145602
+mem_heap_B=4966317232
+mem_heap_extra_B=1220696
+mem_stacks_B=0
+heap_tree=detailed
+n2: 4966317232 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4935032156 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2747174304 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 676290864 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 676290864 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 637275840 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 637275840 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 624240384 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 624240384 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 676290864 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 676290864 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 637275840 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 637275840 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 624240384 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 624240384 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 676290864 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 676290864 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 637275840 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 637275840 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 624240384 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 624240384 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 676290864 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 676290864 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 637275840 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 637275840 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 637275840 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 624240384 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 624240384 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 42010848 in 149 places, all below massif's threshold (1.00%)
+  n4: 2187837788 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1196022256 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 1196022256 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1170347264 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 1170347264 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 1170347264 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 1170347264 0x10DCC9: main (main.cpp:54)
+     n0: 25674992 in 2 places, all below massif's threshold (1.00%)
+   n1: 676290632 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 676290632 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 637275620 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 637275620 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 624240192 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 624240192 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 299005564 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 299005564 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 292586816 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 292586816 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 292586816 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 292586816 0x10DCC9: main (main.cpp:54)
+     n0: 6418748 in 2 places, all below massif's threshold (1.00%)
+   n0: 16519336 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31285076 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=83
+#-----------
+time=514197283640
+mem_heap_B=4230575996
+mem_heap_extra_B=1209676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=521534449772
+mem_heap_B=5081602256
+mem_heap_extra_B=1239808
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=521956007646
+mem_heap_B=5094607264
+mem_heap_extra_B=1243640
+mem_stacks_B=0
+heap_tree=detailed
+n2: 5094607264 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 5063320028 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2799240928 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 689295872 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 689295872 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 650280848 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 650280848 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 637245392 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 637245392 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 689295872 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 689295872 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 650280848 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 650280848 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 637245392 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 637245392 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 689295872 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 689295872 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 650280848 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 650280848 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 637245392 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 637245392 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 689295872 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 689295872 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 650280848 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 650280848 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 650280848 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 637245392 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 637245392 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 42057440 in 149 places, all below massif's threshold (1.00%)
+  n4: 2264059036 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1246331920 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 1246331920 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1220138240 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 1220138240 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 1220138240 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 1220138240 0x10DCC9: main (main.cpp:54)
+     n0: 26193680 in 2 places, all below massif's threshold (1.00%)
+   n1: 689295636 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 689295636 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 650280624 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 650280624 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 637245196 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 637245196 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 311582980 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 311582980 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 305034560 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 305034560 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 305034560 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 305034560 0x10DCC9: main (main.cpp:54)
+     n0: 6548420 in 2 places, all below massif's threshold (1.00%)
+   n0: 16848500 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31287236 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=86
+#-----------
+time=523245382960
+mem_heap_B=4328180460
+mem_heap_extra_B=1223116
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=530793489148
+mem_heap_B=5211188896
+mem_heap_extra_B=1252160
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=531226101463
+mem_heap_B=5224193904
+mem_heap_extra_B=1255992
+mem_stacks_B=0
+heap_tree=detailed
+n2: 5224193904 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 5192904508 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2851307520 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 702300880 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 702300880 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 663285856 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 663285856 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 650250400 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 650250400 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 702300880 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 702300880 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 663285856 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 663285856 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 650250400 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 650250400 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 702300880 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 702300880 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 663285856 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 663285856 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 650250400 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 650250400 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 702300880 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 702300880 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 663285856 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 663285856 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 663285856 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 650250400 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 650250400 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 42104000 in 149 places, all below massif's threshold (1.00%)
+  n4: 2341576924 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1297678896 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 1297678896 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1270966528 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 1270966528 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 1270966528 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 1270966528 0x10DCC9: main (main.cpp:54)
+     n0: 26712368 in 2 places, all below massif's threshold (1.00%)
+   n1: 702300640 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 702300640 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 663285628 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 663285628 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 650250200 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 650250200 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 324419724 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 324419724 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 317741632 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 317741632 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 317741632 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 317741632 0x10DCC9: main (main.cpp:54)
+     n0: 6678092 in 2 places, all below massif's threshold (1.00%)
+   n0: 17177664 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31289396 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=89
+#-----------
+time=532518727153
+mem_heap_B=4426433276
+mem_heap_extra_B=1243612
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=540282011629
+mem_heap_B=5342072208
+mem_heap_extra_B=1270400
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=540725901683
+mem_heap_B=5355077216
+mem_heap_extra_B=1274232
+mem_stacks_B=0
+heap_tree=peak
+n2: 5355077216 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 5323785660 0x5078F25: PetscMallocAlign (mal.c:52)
+  n5: 2903374144 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 715305888 0x534DF34: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3989)
+    n2: 715305888 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 676290864 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 676290864 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 663255408 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 663255408 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 715305888 0x534E052: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3992)
+    n2: 715305888 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 676290864 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 676290864 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 663255408 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 663255408 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 715305888 0x534E09C: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:3996)
+    n2: 715305888 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 676290864 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 676290864 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 663255408 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 663255408 0x10DCC9: main (main.cpp:54)
+       n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 2 places, all below massif's threshold (1.00%)
+   n1: 715305888 0x5350F15: MatMarkDiagonal_SeqAIJ (aij.c:1685)
+    n2: 715305888 0x5352486: MatAssemblyEnd_SeqAIJ (aij.c:1138)
+     n1: 676290864 0x5AA29F5: MatAssemblyEnd (matrix.c:5880)
+      n1: 676290864 0x535506A: MatAssemblyEnd_Seq_Hash (seqhashmat.h:64)
+       n2: 676290864 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+        n1: 663255408 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+         n0: 663255408 0x10DCC9: main (main.cpp:54)
+        n0: 13035456 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015024 in 1 place, below massif's threshold (1.00%)
+   n0: 42150592 in 149 places, all below massif's threshold (1.00%)
+  n4: 2420391452 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 1350063184 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 1350063184 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 1322832128 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 1322832128 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 1322832128 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 1322832128 0x10DCC9: main (main.cpp:54)
+     n0: 27231056 in 2 places, all below massif's threshold (1.00%)
+   n1: 715305644 0x534DDBE: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4015)
+    n2: 715305644 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 676290632 0x5354DC0: MatAssemblyEnd_Seq_Hash (seqhashmat.h:35)
+      n2: 676290632 0x5AA2C26: MatAssemblyEnd (matrix.c:5878)
+       n1: 663255204 0x112FBA: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:377)
+        n0: 663255204 0x10DCC9: main (main.cpp:54)
+       n0: 13035428 in 8 places, all below massif's threshold (1.00%)
+     n0: 39015012 in 2 places, all below massif's threshold (1.00%)
+   n1: 337515796 0x534DD97: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4014)
+    n2: 337515796 0x5354D36: MatSeqAIJSetPreallocation (aij.c:3953)
+     n1: 330708032 0x5361FB6: MatAXPY_SeqAIJ (aij.c:3047)
+      n1: 330708032 0x5AB0C14: MatAXPY (axpy.c:123)
+       n1: 330708032 0x113167: tise::solve_tise(int, int, std::vector<std::complex<double>, std::allocator<std::complex<double> > > const&, int, int, double, double, double, int, bool) (tise.cpp:405)
+        n0: 330708032 0x10DCC9: main (main.cpp:54)
+     n0: 6807764 in 2 places, all below massif's threshold (1.00%)
+   n0: 17506828 in 7 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 31291556 in 248 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=92
+#-----------
+time=542656786020
+mem_heap_B=4341782524
+mem_heap_extra_B=1214580
+mem_stacks_B=0
+heap_tree=empty
