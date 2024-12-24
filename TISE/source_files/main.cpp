@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 
 
     bool SAVE_BSPLINES = false;
-    bool EMBED = true;
+    bool EMBED = false;
 
 
     std::vector<std::complex<double>> knots = basis::linear_knots(n_basis, degree, rmax);

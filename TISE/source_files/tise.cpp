@@ -472,7 +472,7 @@ namespace tise
         }
 
 
-        ierr = save_matrix(H_total,"H_total.dat"); CHKERRQ(ierr);
+
 
         ierr = PetscViewerDestroy(&viewTISE); CHKERRQ(ierr);
         ierr = EPSDestroy(&eps); CHKERRQ(ierr);
@@ -481,7 +481,12 @@ namespace tise
         ierr = MatDestroy(&Inv_r); CHKERRQ(ierr);
         ierr = MatDestroy(&S); CHKERRQ(ierr);
         ierr = MatDestroy(&temp); CHKERRQ(ierr);
-        ierr = MatDestroy(&H_total); CHKERRQ(ierr);
+        if (EMBED)
+        {
+            ierr = save_matrix(H_total,"H_total.dat"); CHKERRQ(ierr);
+            ierr = MatDestroy(&H_total); CHKERRQ(ierr);
+        }
+        
 
 
         return 0;
