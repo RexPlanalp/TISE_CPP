@@ -29,7 +29,7 @@ namespace tise
     }
 
 
-    PetscErrorCode construct_kinetic_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots,double R0,double eta) 
+    PetscErrorCode construct_kinetic_matrix(Mat *A, int n_basis, int degree, const std::vector<PetscScalar>& knots,double R0,double eta) 
     {
         PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
         PetscInt p_degree = static_cast<PetscInt>(degree);
@@ -65,7 +65,7 @@ namespace tise
             for (PetscInt j = col_start; j < col_end; j++) 
             {
                 // Compute the matrix element
-                std::complex<double> matrix_element = basis::kinetic_matrix_element(
+                PetscScalar matrix_element = basis::kinetic_matrix_element(
                     static_cast<int>(i), 
                     static_cast<int>(j), 
                     degree, 
@@ -85,7 +85,7 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode construct_inv_r2_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots,double R0, double eta) 
+    PetscErrorCode construct_inv_r2_matrix(Mat *A, int n_basis, int degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
         PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
         PetscInt p_degree = static_cast<PetscInt>(degree);
@@ -121,7 +121,7 @@ namespace tise
             for (PetscInt j = col_start; j < col_end; j++) 
             {
                 // Compute the matrix element
-                std::complex<double> matrix_element = basis::inverse_r2_matrix_element(
+                PetscScalar matrix_element = basis::inverse_r2_matrix_element(
                     static_cast<int>(i), 
                     static_cast<int>(j), 
                     degree, 
@@ -141,7 +141,7 @@ namespace tise
         return 0; // Return success
     }
     
-    PetscErrorCode construct_overlap_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots,double R0, double eta) 
+    PetscErrorCode construct_overlap_matrix(Mat *A, int n_basis, int degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
         PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
         PetscInt p_degree = static_cast<PetscInt>(degree);
@@ -177,7 +177,7 @@ namespace tise
             for (PetscInt j = col_start; j < col_end; j++) 
             {
                 // Compute the matrix element
-                std::complex<double> matrix_element = basis::overlap_matrix_element(
+                PetscScalar matrix_element = basis::overlap_matrix_element(
                     static_cast<int>(i), 
                     static_cast<int>(j), 
                     degree, 
@@ -197,7 +197,7 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode construct_inv_r_matrix(Mat *A, int n_basis, int degree, const std::vector<std::complex<double>>& knots,double R0, double eta) 
+    PetscErrorCode construct_inv_r_matrix(Mat *A, int n_basis, int degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
         PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
         PetscInt p_degree = static_cast<PetscInt>(degree);
@@ -233,7 +233,7 @@ namespace tise
             for (PetscInt j = col_start; j < col_end; j++) 
             {
                 // Compute the matrix element
-                std::complex<double> matrix_element = basis::inverse_r_matrix_element(
+                PetscScalar matrix_element = basis::inverse_r_matrix_element(
                     static_cast<int>(i), 
                     static_cast<int>(j), 
                     degree, 
@@ -253,7 +253,7 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<std::complex<double>>& knots,int lmax, int nmax,double R0, double eta,double tolerance, PetscInt max_iter,bool EMBED)
+    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<PetscScalar>& knots,int lmax, int nmax,double R0, double eta,double tolerance, PetscInt max_iter,bool EMBED)
     {
         PetscErrorCode ierr;
         PetscViewer viewTISE;

@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
     bool EMBED = false;
 
 
-    std::vector<std::complex<double>> knots = basis::linear_knots(n_basis, degree, rmax);
+    std::vector<PetscScalar> knots = basis::linear_knots(n_basis, degree, rmax);
     if (SAVE_BSPLINES)
     {
         int Nx = rmax * 10;
