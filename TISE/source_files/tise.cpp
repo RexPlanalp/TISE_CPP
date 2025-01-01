@@ -13,36 +13,33 @@ namespace tise
 
     PetscErrorCode save_matrix(Mat A, const char *filename)
     {
-    PetscErrorCode ierr;
-    PetscViewer viewer;
+        PetscErrorCode ierr;
+        PetscViewer viewer;
 
-    // Open a binary viewer in write mode
-    ierr = PetscViewerBinaryOpen(PETSC_COMM_WORLD, filename, FILE_MODE_WRITE, &viewer); CHKERRQ(ierr);
+        // Open a binary viewer in write mode
+        ierr = PetscViewerBinaryOpen(PETSC_COMM_WORLD, filename, FILE_MODE_WRITE, &viewer); CHKERRQ(ierr);
 
-    // Write the matrix to the file in parallel
-    ierr = MatView(A, viewer); CHKERRQ(ierr);
+        // Write the matrix to the file in parallel
+        ierr = MatView(A, viewer); CHKERRQ(ierr);
 
-    // Clean up the viewer
-    ierr = PetscViewerDestroy(&viewer); CHKERRQ(ierr);
+        // Clean up the viewer
+        ierr = PetscViewerDestroy(&viewer); CHKERRQ(ierr);
 
-    return ierr;
+        return ierr;
     }
 
 
     PetscErrorCode construct_kinetic_matrix(Mat *A, PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots,double R0,double eta) 
     {
-        PetscInt  p_n_basis = static_cast<PetscInt >(n_basis);
-        PetscInt  p_degree = static_cast<PetscInt >(degree);
-
         PetscErrorCode ierr;
 
         // Create the matrix
         ierr = MatCreate(PETSC_COMM_WORLD, A); CHKERRQ(ierr);
-        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, p_n_basis, p_n_basis); CHKERRQ(ierr);
+        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, n_basis, n_basis); CHKERRQ(ierr);
         ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
 
         // Preallocate memory for nonzero entries
-        PetscInt  nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        PetscInt  nnz_per_row = 2 * degree + 1; // Number of nonzeros per row
         ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
 
         // Set up the matrix
@@ -53,14 +50,14 @@ namespace tise
         ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
 
         // Precompute the degree-based band width
-        PetscInt  band_width = p_degree + 1;
+        PetscInt  band_width = degree + 1;
 
         // Iterate over locally owned rows
         for (PetscInt  i = start_row; i < end_row; i++) 
         {
             // Set values only within the band for current row
             PetscInt  col_start = std::max(static_cast<PetscInt >(0), i - band_width + 1);
-            PetscInt  col_end = std::min(p_n_basis, i + band_width); // Exclusive
+            PetscInt  col_end = std::min(n_basis, i + band_width); // Exclusive
 
             for (PetscInt  j = col_start; j < col_end; j++) 
             {
@@ -87,18 +84,17 @@ namespace tise
 
     PetscErrorCode construct_inv_r2_matrix(Mat *A, PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
-        PetscInt  p_n_basis = static_cast<PetscInt >(n_basis);
-        PetscInt  p_degree = static_cast<PetscInt >(degree);
+      
 
         PetscErrorCode ierr;
 
         // Create the matrix
         ierr = MatCreate(PETSC_COMM_WORLD, A); CHKERRQ(ierr);
-        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, p_n_basis, p_n_basis); CHKERRQ(ierr);
+        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, n_basis, n_basis); CHKERRQ(ierr);
         ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
 
         // Preallocate memory for nonzero entries
-        PetscInt  nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        PetscInt  nnz_per_row = 2 * degree + 1; // Number of nonzeros per row
         ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
 
         // Set up the matrix
@@ -109,14 +105,14 @@ namespace tise
         ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
 
         // Precompute the degree-based band width
-        PetscInt  band_width = p_degree + 1;
+        PetscInt  band_width = degree + 1;
 
         // Iterate over locally owned rows
         for (PetscInt  i = start_row; i < end_row; i++) 
         {
             // Set values only within the band for current row
             PetscInt  col_start = std::max(static_cast<PetscInt >(0), i - band_width + 1);
-            PetscInt  col_end = std::min(p_n_basis, i + band_width); // Exclusive
+            PetscInt  col_end = std::min(n_basis, i + band_width); // Exclusive
 
             for (PetscInt  j = col_start; j < col_end; j++) 
             {
@@ -143,18 +139,17 @@ namespace tise
     
     PetscErrorCode construct_overlap_matrix(Mat *A, PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
-        PetscInt  p_n_basis = static_cast<PetscInt >(n_basis);
-        PetscInt  p_degree = static_cast<PetscInt >(degree);
+     
 
         PetscErrorCode ierr;
 
         // Create the matrix
         ierr = MatCreate(PETSC_COMM_WORLD, A); CHKERRQ(ierr);
-        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, p_n_basis, p_n_basis); CHKERRQ(ierr);
+        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, n_basis, n_basis); CHKERRQ(ierr);
         ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
 
         // Preallocate memory for nonzero entries
-        PetscInt  nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        PetscInt  nnz_per_row = 2 * degree + 1; // Number of nonzeros per row
         ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
 
         // Set up the matrix
@@ -165,14 +160,14 @@ namespace tise
         ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
 
         // Precompute the degree-based band width
-        PetscInt  band_width = p_degree + 1;
+        PetscInt  band_width = degree + 1;
 
         // Iterate over locally owned rows
         for (PetscInt  i = start_row; i < end_row; i++) 
         {
             // Set values only within the band for current row
             PetscInt  col_start = std::max(static_cast<PetscInt >(0), i - band_width + 1);
-            PetscInt  col_end = std::min(p_n_basis, i + band_width); // Exclusive
+            PetscInt  col_end = std::min(n_basis, i + band_width); // Exclusive
 
             for (PetscInt  j = col_start; j < col_end; j++) 
             {
@@ -199,18 +194,17 @@ namespace tise
 
     PetscErrorCode construct_inv_r_matrix(Mat *A, PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
-        PetscInt  p_n_basis = static_cast<PetscInt >(n_basis);
-        PetscInt  p_degree = static_cast<PetscInt >(degree);
+      
 
         PetscErrorCode ierr;
 
         // Create the matrix
         ierr = MatCreate(PETSC_COMM_WORLD, A); CHKERRQ(ierr);
-        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, p_n_basis, p_n_basis); CHKERRQ(ierr);
+        ierr = MatSetSizes(*A, PETSC_DECIDE, PETSC_DECIDE, n_basis, n_basis); CHKERRQ(ierr);
         ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
 
         // Preallocate memory for nonzero entries
-        PetscInt  nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        PetscInt  nnz_per_row = 2 * degree + 1; // Number of nonzeros per row
         ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
 
         // Set up the matrix
@@ -221,14 +215,14 @@ namespace tise
         ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
 
         // Precompute the degree-based band width
-        PetscInt  band_width = p_degree + 1;
+        PetscInt  band_width = degree + 1;
 
         // Iterate over locally owned rows
         for (PetscInt  i = start_row; i < end_row; i++) 
         {
             // Set values only within the band for current row
             PetscInt  col_start = std::max(static_cast<PetscInt >(0), i - band_width + 1);
-            PetscInt  col_end = std::min(p_n_basis, i + band_width); // Exclusive
+            PetscInt  col_end = std::min(n_basis, i + band_width); // Exclusive
 
             for (PetscInt  j = col_start; j < col_end; j++) 
             {
