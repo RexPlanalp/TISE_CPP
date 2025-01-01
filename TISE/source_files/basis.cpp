@@ -9,7 +9,6 @@
 #include <petscsys.h>
 
 
-
 namespace basis
 {
 
@@ -31,7 +30,7 @@ namespace basis
 	std::array<double, 7> roots_seven = {-0.94910791,-0.74153119,-0.40584515,0,0.40584515,0.74153119,0.94910791};
 	std::array<double, 7> weights_seven = { 0.12948497,0.27970539,0.38183005,0.41795918,0.38183005,0.27970539,0.12948497};
 
-	std::array<double, 8> roots_eight = { -0.96028986, -0.79666648, -0.52553241, -0.18343464, 0.18343464, 0.52553241, 0.79666648, 0.96028986};
+	std::array<double, 8> roots_eight = {-0.96028986, -0.79666648, -0.52553241, -0.18343464, 0.18343464, 0.52553241, 0.79666648, 0.96028986};
 	std::array<double, 8> weights_eight = {0.10122854, 0.22238103, 0.31370665, 0.36268378, 0.36268378, 0.31370665, 0.22238103, 0.10122854};
 
 
@@ -104,18 +103,18 @@ namespace basis
 		}
 	}
 
-	std::vector<PetscScalar> linear_knots(int n_basis, int degree, double rmax) 
+	std::vector<PetscScalar> linear_knots(PetscInt  n_basis, PetscInt  degree, double rmax) 
 	{	
-		int order = degree + 1;
+		PetscInt  order = degree + 1;
 
 
 		std::vector<PetscScalar> knots;
-		int N_knots = n_basis + order;
+		PetscInt  N_knots = n_basis + order;
 
-		int N_middle = N_knots - 2 * (order - 2);
+		PetscInt  N_middle = N_knots - 2 * (order - 2);
 		double step_size = rmax / (N_middle-1);
 		std::vector<PetscScalar> knots_middle;
-		for (int idx = 0; idx < N_middle; ++idx) 
+		for (PetscInt  idx = 0; idx < N_middle; ++idx) 
 		{
 			knots_middle.push_back(idx * step_size);
 		}
@@ -132,7 +131,7 @@ namespace basis
 		return knots;
 	}
 
-	PetscScalar B(PetscInt i, PetscInt degree,  const std::vector<PetscScalar>& knots, PetscScalar x)
+	PetscScalar B(PetscInt  i, PetscInt  degree,  const std::vector<PetscScalar>& knots, PetscScalar x)
 	{
 		if (degree == 0)
 		{
@@ -158,7 +157,7 @@ namespace basis
 		return term1+term2;
 	}
 
-	PetscScalar dB(int i, int degree, const std::vector<PetscScalar>& knots, PetscScalar x)
+	PetscScalar dB(PetscInt  i, PetscInt  degree, const std::vector<PetscScalar>& knots, PetscScalar x)
 	{
 		if (degree == 0)
 		{
@@ -184,50 +183,55 @@ namespace basis
 		return term1 + term2;
 	}
 
-	PetscScalar compute_matrix_element(int i, int j, int degree, const std::vector<PetscScalar>& knots, std::function<PetscScalar(int, int, const std::vector<PetscScalar>&, PetscScalar)> integrand, double R0, double eta) // Note eta here
+	PetscScalar compute_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots,std::function<PetscScalar(int, int, const std::vector<PetscScalar>&, PetscScalar)> integrand,double R0, double eta) 
 	{
-		
+		// Retrieve roots and weights
 		std::unordered_map<int, std::pair<std::vector<double>, std::vector<double>>>::iterator it = gauss_quadrature.find(degree);
-		std::vector<double>& roots = it->second.first;
-		std::vector<double>& weights = it->second.second;
+		const std::vector<double>& roots = it->second.first;
+		const std::vector<double>& weights = it->second.second;
 
+		// Transform knots (this is assumed not a bottleneck per your instructions)
 		std::vector<PetscScalar> knots_modified = R_k(knots, R0, eta);
 
 		PetscScalar total = 0.0;
+		PetscInt lower = std::min(i, j);
+		PetscInt upper = std::max(i, j);
 
-		int lower = std::min(i, j);
-		int upper = std::max(i, j);
+	
+		for (PetscInt k = lower; k <= upper + degree; ++k) {
+			PetscScalar a = knots[k];
+			PetscScalar b = knots[k + 1];
 
-		for (int k = lower; k <= upper + degree; ++k) {
-			PetscScalar a = knots[k];    
-			PetscScalar b = knots[k + 1]; 
+			if (a == b) continue;
 
-			if (a == b)
-				continue;
+			PetscScalar half_b_minus_a = 0.5 * (b - a);
+			PetscScalar half_b_plus_a = 0.5 * (b + a);
 
 			for (size_t r = 0; r < roots.size(); ++r) {
-				PetscScalar xi = 0.5 * (b - a) * roots[r] + 0.5 * (b + a); 
+				PetscScalar xi = half_b_minus_a * roots[r] + half_b_plus_a;
 				double weight = weights[r];
 
-				
-				PetscScalar xi_modified = R_x(xi, R0, eta);
-				PetscScalar weight_modified = R_w(xi,weight,R0,eta);
-				total += weight_modified * integrand(i, j, knots_modified, xi_modified) * (b - a) * 0.5;
+				// Inline R_x and R_w logic
+				PetscScalar xi_modified = (eta == 0 || xi.real() < R0) ? xi : R0 + (xi - R0) * std::exp(PetscScalar(0, M_PI * eta));
+				PetscScalar weight_modified = (eta == 0 || xi.real() < R0) ? weight : weight * std::exp(PetscScalar(0, M_PI * eta));
+
+				// Precompute the scaled weight and evaluate the integrand
+				PetscScalar scaled_weight = weight_modified * half_b_minus_a;
+				total += scaled_weight * integrand(i, j, knots_modified, xi_modified);
 			}
 		}
-
 
 		return total;
 	}
 
-	PetscScalar overlap_matrix_element(int i, int j, int degree, const std::vector<PetscScalar>& knots, double R0, double eta) 
+	PetscScalar overlap_matrix_element(PetscInt  i, PetscInt  j, PetscInt  degree, const std::vector<PetscScalar>& knots, double R0, double eta) 
 	{
 		return compute_matrix_element(
 			i, 
 			j, 
 			degree, 
 			knots, 
-			[degree, R0, eta](int i, int j, const std::vector<PetscScalar>& knots, PetscScalar xi)
+			[degree, R0, eta](PetscInt  i, PetscInt  j, const std::vector<PetscScalar>& knots, PetscScalar xi)
 			{
 			PetscScalar Bi = basis::B(i, degree, knots, xi); PetscScalar Bj = basis::B(j, degree, knots, xi);
 			return Bi * Bj;
@@ -237,40 +241,40 @@ namespace basis
 		);
 	}
 
-	PetscScalar kinetic_matrix_element(int i, int j, int degree, const std::vector<PetscScalar>& knots,double R0,double eta) {
+	PetscScalar kinetic_matrix_element(PetscInt  i, PetscInt  j, PetscInt  degree, const std::vector<PetscScalar>& knots,double R0,double eta) {
 		return compute_matrix_element(i, j, degree, knots, 
-			[degree](int i, int j, const std::vector<PetscScalar>& knots, PetscScalar xi) {
+			[degree](PetscInt  i, PetscInt  j, const std::vector<PetscScalar>& knots, PetscScalar xi) {
 				PetscScalar Bi = basis::dB(i, degree, knots, xi);
 				PetscScalar Bj = basis::dB(j, degree, knots, xi);
 				return 0.5 * Bi * Bj;
 			},R0,eta);
 	}
 
-	PetscScalar inverse_r2_matrix_element(int i, int j, int degree, const std::vector<PetscScalar>& knots,double R0,double eta) {
+	PetscScalar inverse_r2_matrix_element(PetscInt  i, PetscInt  j, PetscInt  degree, const std::vector<PetscScalar>& knots,double R0,double eta) {
 		return compute_matrix_element(i, j, degree, knots, 
-			[degree](int i, int j, const std::vector<PetscScalar>& knots, PetscScalar xi) {
+			[degree](PetscInt  i, PetscInt  j, const std::vector<PetscScalar>& knots, PetscScalar xi) {
 				PetscScalar Bi = basis::B(i, degree, knots, xi);
 				PetscScalar Bj = basis::B(j, degree, knots, xi);
 				return Bi * Bj / (xi * xi + 1E-25);
 			},R0,eta);
 	}
 
-	PetscScalar inverse_r_matrix_element(int i, int j, int degree, const std::vector<PetscScalar>& knots,double R0,double eta) {
+	PetscScalar inverse_r_matrix_element(PetscInt  i, PetscInt  j, PetscInt  degree, const std::vector<PetscScalar>& knots,double R0,double eta) {
 		return compute_matrix_element(i, j, degree, knots, 
-			[degree](int i, int j, const std::vector<PetscScalar>& knots, PetscScalar xi) {
+			[degree](PetscInt  i, PetscInt  j, const std::vector<PetscScalar>& knots, PetscScalar xi) {
 				PetscScalar Bi = basis::B(i, degree, knots, xi);
 				PetscScalar Bj = basis::B(j, degree, knots, xi);
 				return Bi * Bj / (xi + 1E-25);
 			},R0,eta);
 	}
 
-	int save_bsplinee_basis(int n_basis, int degree, const std::vector<PetscScalar>& knots, int Nx, double xmax,double R0,double eta)
+	PetscErrorCode save_bsplinee_basis(PetscInt  n_basis, PetscInt  degree, const std::vector<PetscScalar>& knots, PetscInt  Nx, double xmax,double R0,double eta)
 	{
 		std::vector<PetscScalar> x_vector;
 		double step_size = xmax / (Nx - 1);
 
 		// Generate x_vector
-		for (int idx = 0; idx < Nx; ++idx)
+		for (PetscInt  idx = 0; idx < Nx; ++idx)
 		{
 			x_vector.push_back(idx * step_size);
 		}
@@ -284,9 +288,9 @@ namespace basis
 		}
 
 		// Loop through each basis function
-		for (int i = 0; i < n_basis; ++i)
+		for (PetscInt  i = 0; i < n_basis; ++i)
 		{
-			for (int idx = 0; idx < Nx; ++idx)
+			for (PetscInt  idx = 0; idx < Nx; ++idx)
 			{
 
 				std::vector<PetscScalar> knots_modified = R_k(knots,R0,eta);

@@ -29,10 +29,10 @@ namespace tise
     }
 
 
-    PetscErrorCode construct_kinetic_matrix(Mat *A, int n_basis, int degree, const std::vector<PetscScalar>& knots,double R0,double eta) 
+    PetscErrorCode construct_kinetic_matrix(Mat *A, PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots,double R0,double eta) 
     {
-        PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
-        PetscInt p_degree = static_cast<PetscInt>(degree);
+        PetscInt  p_n_basis = static_cast<PetscInt >(n_basis);
+        PetscInt  p_degree = static_cast<PetscInt >(degree);
 
         PetscErrorCode ierr;
 
@@ -42,27 +42,27 @@ namespace tise
         ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
 
         // Preallocate memory for nonzero entries
-        PetscInt nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        PetscInt  nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
         ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
 
         // Set up the matrix
         ierr = MatSetUp(*A); CHKERRQ(ierr);
 
         // Get the range of rows owned by the current process
-        PetscInt start_row, end_row;
+        PetscInt  start_row, end_row;
         ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
 
         // Precompute the degree-based band width
-        PetscInt band_width = p_degree + 1;
+        PetscInt  band_width = p_degree + 1;
 
         // Iterate over locally owned rows
-        for (PetscInt i = start_row; i < end_row; i++) 
+        for (PetscInt  i = start_row; i < end_row; i++) 
         {
             // Set values only within the band for current row
-            PetscInt col_start = std::max(static_cast<PetscInt>(0), i - band_width + 1);
-            PetscInt col_end = std::min(p_n_basis, i + band_width); // Exclusive
+            PetscInt  col_start = std::max(static_cast<PetscInt >(0), i - band_width + 1);
+            PetscInt  col_end = std::min(p_n_basis, i + band_width); // Exclusive
 
-            for (PetscInt j = col_start; j < col_end; j++) 
+            for (PetscInt  j = col_start; j < col_end; j++) 
             {
                 // Compute the matrix element
                 PetscScalar matrix_element = basis::kinetic_matrix_element(
@@ -85,10 +85,10 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode construct_inv_r2_matrix(Mat *A, int n_basis, int degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
+    PetscErrorCode construct_inv_r2_matrix(Mat *A, PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
-        PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
-        PetscInt p_degree = static_cast<PetscInt>(degree);
+        PetscInt  p_n_basis = static_cast<PetscInt >(n_basis);
+        PetscInt  p_degree = static_cast<PetscInt >(degree);
 
         PetscErrorCode ierr;
 
@@ -98,27 +98,27 @@ namespace tise
         ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
 
         // Preallocate memory for nonzero entries
-        PetscInt nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        PetscInt  nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
         ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
 
         // Set up the matrix
         ierr = MatSetUp(*A); CHKERRQ(ierr);
 
         // Get the range of rows owned by the current process
-        PetscInt start_row, end_row;
+        PetscInt  start_row, end_row;
         ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
 
         // Precompute the degree-based band width
-        PetscInt band_width = p_degree + 1;
+        PetscInt  band_width = p_degree + 1;
 
         // Iterate over locally owned rows
-        for (PetscInt i = start_row; i < end_row; i++) 
+        for (PetscInt  i = start_row; i < end_row; i++) 
         {
             // Set values only within the band for current row
-            PetscInt col_start = std::max(static_cast<PetscInt>(0), i - band_width + 1);
-            PetscInt col_end = std::min(p_n_basis, i + band_width); // Exclusive
+            PetscInt  col_start = std::max(static_cast<PetscInt >(0), i - band_width + 1);
+            PetscInt  col_end = std::min(p_n_basis, i + band_width); // Exclusive
 
-            for (PetscInt j = col_start; j < col_end; j++) 
+            for (PetscInt  j = col_start; j < col_end; j++) 
             {
                 // Compute the matrix element
                 PetscScalar matrix_element = basis::inverse_r2_matrix_element(
@@ -141,10 +141,10 @@ namespace tise
         return 0; // Return success
     }
     
-    PetscErrorCode construct_overlap_matrix(Mat *A, int n_basis, int degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
+    PetscErrorCode construct_overlap_matrix(Mat *A, PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
-        PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
-        PetscInt p_degree = static_cast<PetscInt>(degree);
+        PetscInt  p_n_basis = static_cast<PetscInt >(n_basis);
+        PetscInt  p_degree = static_cast<PetscInt >(degree);
 
         PetscErrorCode ierr;
 
@@ -154,27 +154,27 @@ namespace tise
         ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
 
         // Preallocate memory for nonzero entries
-        PetscInt nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        PetscInt  nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
         ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
 
         // Set up the matrix
         ierr = MatSetUp(*A); CHKERRQ(ierr);
 
         // Get the range of rows owned by the current process
-        PetscInt start_row, end_row;
+        PetscInt  start_row, end_row;
         ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
 
         // Precompute the degree-based band width
-        PetscInt band_width = p_degree + 1;
+        PetscInt  band_width = p_degree + 1;
 
         // Iterate over locally owned rows
-        for (PetscInt i = start_row; i < end_row; i++) 
+        for (PetscInt  i = start_row; i < end_row; i++) 
         {
             // Set values only within the band for current row
-            PetscInt col_start = std::max(static_cast<PetscInt>(0), i - band_width + 1);
-            PetscInt col_end = std::min(p_n_basis, i + band_width); // Exclusive
+            PetscInt  col_start = std::max(static_cast<PetscInt >(0), i - band_width + 1);
+            PetscInt  col_end = std::min(p_n_basis, i + band_width); // Exclusive
 
-            for (PetscInt j = col_start; j < col_end; j++) 
+            for (PetscInt  j = col_start; j < col_end; j++) 
             {
                 // Compute the matrix element
                 PetscScalar matrix_element = basis::overlap_matrix_element(
@@ -197,10 +197,10 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode construct_inv_r_matrix(Mat *A, int n_basis, int degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
+    PetscErrorCode construct_inv_r_matrix(Mat *A, PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots,double R0, double eta) 
     {
-        PetscInt p_n_basis = static_cast<PetscInt>(n_basis);
-        PetscInt p_degree = static_cast<PetscInt>(degree);
+        PetscInt  p_n_basis = static_cast<PetscInt >(n_basis);
+        PetscInt  p_degree = static_cast<PetscInt >(degree);
 
         PetscErrorCode ierr;
 
@@ -210,27 +210,27 @@ namespace tise
         ierr = MatSetFromOptions(*A); CHKERRQ(ierr);
 
         // Preallocate memory for nonzero entries
-        PetscInt nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
+        PetscInt  nnz_per_row = 2 * p_degree + 1; // Number of nonzeros per row
         ierr = MatMPIAIJSetPreallocation(*A, nnz_per_row, NULL, nnz_per_row, NULL); CHKERRQ(ierr);
 
         // Set up the matrix
         ierr = MatSetUp(*A); CHKERRQ(ierr);
 
         // Get the range of rows owned by the current process
-        PetscInt start_row, end_row;
+        PetscInt  start_row, end_row;
         ierr = MatGetOwnershipRange(*A, &start_row, &end_row); CHKERRQ(ierr);
 
         // Precompute the degree-based band width
-        PetscInt band_width = p_degree + 1;
+        PetscInt  band_width = p_degree + 1;
 
         // Iterate over locally owned rows
-        for (PetscInt i = start_row; i < end_row; i++) 
+        for (PetscInt  i = start_row; i < end_row; i++) 
         {
             // Set values only within the band for current row
-            PetscInt col_start = std::max(static_cast<PetscInt>(0), i - band_width + 1);
-            PetscInt col_end = std::min(p_n_basis, i + band_width); // Exclusive
+            PetscInt  col_start = std::max(static_cast<PetscInt >(0), i - band_width + 1);
+            PetscInt  col_end = std::min(p_n_basis, i + band_width); // Exclusive
 
-            for (PetscInt j = col_start; j < col_end; j++) 
+            for (PetscInt  j = col_start; j < col_end; j++) 
             {
                 // Compute the matrix element
                 PetscScalar matrix_element = basis::inverse_r_matrix_element(
@@ -253,7 +253,7 @@ namespace tise
         return 0; // Return success
     }
 
-    PetscErrorCode solve_tise(int n_basis,int degree,const std::vector<PetscScalar>& knots,int lmax, int nmax,double R0, double eta,double tolerance, PetscInt max_iter,bool EMBED)
+    PetscErrorCode solve_tise(PetscInt n_basis,PetscInt degree,const std::vector<PetscScalar>& knots,PetscInt lmax, PetscInt nmax,double R0, double eta,double tolerance, PetscInt  max_iter)
     {
         PetscErrorCode ierr;
         PetscViewer viewTISE;
@@ -263,67 +263,12 @@ namespace tise
         Mat S;
         Mat temp;
         EPS eps;
-        PetscInt nconv;
-        Mat H_total;
-        Mat S_total;
-        Mat I;
-        Mat I_partial;
-        Mat H_partial;
+        PetscInt  nconv;
+        
 
         ierr = construct_overlap_matrix(&S, n_basis, degree, knots,R0,eta); CHKERRQ(ierr);
         
-        if (EMBED)
-        {
-            int total = 0;
-            for (int l = 0; l<=lmax; l++)
-            {
-                total += 2*l + 1;
-            }
-            int total_size = total * n_basis;
-
-            ierr = MatCreate(PETSC_COMM_WORLD, &I); CHKERRQ(ierr);
-            ierr = MatSetSizes(I,PETSC_DECIDE,PETSC_DECIDE,total,total); CHKERRQ(ierr);
-            ierr = MatSetFromOptions(I); CHKERRQ(ierr);
-            PetscInt nnz_per_row_identity = 1;
-            ierr = MatMPIAIJSetPreallocation(I,nnz_per_row_identity,NULL,nnz_per_row_identity,NULL); CHKERRQ(ierr);
-            ierr = MatSetUp(I); CHKERRQ(ierr);
-            PetscInt start_row,end_row;
-            ierr = MatGetOwnershipRange(I,&start_row,&end_row); CHKERRQ(ierr);
-
-            PetscInt nnz_per_row = 2*degree + 1;
-
-            ierr = MatCreate(PETSC_COMM_WORLD, &H_total); CHKERRQ(ierr);
-            ierr = MatSetSizes(H_total,PETSC_DECIDE,PETSC_DECIDE,total_size,total_size); CHKERRQ(ierr);
-            ierr = MatSetFromOptions(H_total); CHKERRQ(ierr);
-            ierr = MatMPIAIJSetPreallocation(H_total,nnz_per_row,NULL,nnz_per_row,NULL); CHKERRQ(ierr);
-            ierr = MatSetUp(H_total); CHKERRQ(ierr);
-            ierr = MatAssemblyBegin(H_total,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-            ierr = MatAssemblyEnd(H_total,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-
-            ierr = MatCreate(PETSC_COMM_WORLD, &S_total); CHKERRQ(ierr);
-            ierr = MatSetSizes(S_total,PETSC_DECIDE,PETSC_DECIDE,total_size,total_size); CHKERRQ(ierr);
-            ierr = MatSetFromOptions(S_total); CHKERRQ(ierr);
-            ierr = MatMPIAIJSetPreallocation(S_total,nnz_per_row,NULL,nnz_per_row,NULL); CHKERRQ(ierr);
-            ierr = MatSetUp(S_total); CHKERRQ(ierr);
-            ierr = MatAssemblyBegin(S_total,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-            ierr = MatAssemblyEnd(S_total,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-            
-           
-            for (PetscInt i = start_row; i< end_row; i++)
-            {
-                ierr = MatSetValue(I,i,i,1,INSERT_VALUES); CHKERRQ(ierr);
-            }
-           
-
-            ierr = MatAssemblyBegin(I,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-            ierr = MatAssemblyEnd(I,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-
-            ierr = MatSeqAIJKron(I,S,MAT_INITIAL_MATRIX,&S_total); CHKERRQ(ierr);
-            ierr = save_matrix(S_total,"S_total.dat"); CHKERRQ(ierr);
-
-            ierr = MatDestroy(&S_total); CHKERRQ(ierr);
-            ierr = MatDestroy(&I); CHKERRQ(ierr);
-        }
+        
         
        
 
@@ -341,73 +286,15 @@ namespace tise
         ierr = construct_inv_r2_matrix(&Inv_r2, n_basis, degree,knots,R0,eta); CHKERRQ(ierr);
         ierr = construct_inv_r_matrix(&Inv_r,n_basis,degree,knots,R0,eta); CHKERRQ(ierr);
 
-        for (int l=0; l<=lmax; ++l)
+        for (PetscInt l=0; l<=lmax; ++l)
         {
             ierr = MatDuplicate(K, MAT_COPY_VALUES, &temp); CHKERRQ(ierr);
             ierr = MatAXPY(temp, l*(l+1)*0.5,Inv_r2,SAME_NONZERO_PATTERN); CHKERRQ(ierr);
             ierr = MatAXPY(temp,-1.0,Inv_r,SAME_NONZERO_PATTERN); CHKERRQ(ierr);
 
-            if (EMBED)
-            {   
+            
 
-                
-                int total = 0;
-                for (int l = 0; l<=lmax; l++)
-                {
-                    total += 2*l + 1;
-                }
-                int total_size = total * n_basis;
-
-
-                int start = 0;
-                for (int l_temp = 0; l_temp<l; l_temp++)
-                {
-                    start += 2*l_temp + 1;
-                }
-                int end = start + 2*l+1;
-
-
-                PetscInt nnz_per_row = 2*degree +1;
-                ierr = MatCreate(PETSC_COMM_WORLD, &H_partial); CHKERRQ(ierr);
-                ierr = MatSetSizes(H_partial,PETSC_DECIDE,PETSC_DECIDE,total_size,total_size); CHKERRQ(ierr);
-                ierr = MatSetFromOptions(H_total); CHKERRQ(ierr);
-                ierr = MatMPIAIJSetPreallocation(H_partial,nnz_per_row,NULL,nnz_per_row,NULL); CHKERRQ(ierr);
-                ierr = MatSetUp(H_partial); CHKERRQ(ierr);
-                ierr = MatAssemblyBegin(H_partial,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-                ierr = MatAssemblyEnd(H_partial,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-
-                ierr = MatCreate(PETSC_COMM_WORLD, &I_partial); CHKERRQ(ierr);
-                ierr = MatSetSizes(I_partial,PETSC_DECIDE,PETSC_DECIDE,total,total); CHKERRQ(ierr);
-                ierr = MatSetFromOptions(I_partial); CHKERRQ(ierr);
-                PetscInt nnz_per_row_identity = 1;
-                ierr = MatMPIAIJSetPreallocation(I_partial,nnz_per_row_identity,NULL,nnz_per_row_identity,NULL); CHKERRQ(ierr);
-                ierr = MatSetUp(I_partial); CHKERRQ(ierr);
-                PetscInt start_row,end_row;
-                ierr = MatGetOwnershipRange(I_partial,&start_row,&end_row); CHKERRQ(ierr);
-
-                for (PetscInt i = start_row; i< end_row; i++)
-                {
-                    if ((i >= start && i < end))
-                    {
-                        ierr = MatSetValue(I_partial,i,i,1,INSERT_VALUES); CHKERRQ(ierr);
-                    }
-                    else
-                    {
-                        continue;
-                    }
-                }
-
-                ierr = MatAssemblyBegin(I_partial,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-                ierr = MatAssemblyEnd(I_partial,MAT_FINAL_ASSEMBLY); CHKERRQ(ierr);
-
-                ierr = MatSeqAIJKron(I_partial,temp,MAT_INITIAL_MATRIX,&H_partial); CHKERRQ(ierr);
-
-                ierr = MatAXPY(H_total,1.0,H_partial,DIFFERENT_NONZERO_PATTERN); CHKERRQ(ierr);
-                ierr = MatDestroy(&H_partial); CHKERRQ(ierr);
-                ierr = MatDestroy(&I_partial); CHKERRQ(ierr);
-            }
-
-            int num_of_energies = nmax - l;
+            PetscInt num_of_energies = nmax - l;
             if (num_of_energies <= 0)
             {
                 continue;
@@ -421,7 +308,7 @@ namespace tise
             PetscPrintf(PETSC_COMM_WORLD, "Eigenvalues Requested: %d, Eigenvalues Converged: %d\n", num_of_energies, nconv);
 
 
-            for (PetscInt i = 0; i < nconv; ++i)
+            for (PetscInt  i = 0; i < nconv; ++i)
             {
                 PetscScalar eigenvalue;
                 ierr = EPSGetEigenvalue(eps, i, &eigenvalue, NULL); CHKERRQ(ierr);
@@ -481,11 +368,7 @@ namespace tise
         ierr = MatDestroy(&Inv_r); CHKERRQ(ierr);
         ierr = MatDestroy(&S); CHKERRQ(ierr);
         ierr = MatDestroy(&temp); CHKERRQ(ierr);
-        if (EMBED)
-        {
-            ierr = save_matrix(H_total,"H_total.dat"); CHKERRQ(ierr);
-            ierr = MatDestroy(&H_total); CHKERRQ(ierr);
-        }
+        
         
 
 
