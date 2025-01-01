@@ -1,0 +1,1296 @@
+desc: (none)
+cmd: ./output
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=27320494
+mem_heap_B=752
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=27446414
+mem_heap_B=79172
+mem_heap_extra_B=172
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=27536701
+mem_heap_B=97952
+mem_heap_extra_B=3560
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=27674583
+mem_heap_B=124936
+mem_heap_extra_B=6392
+mem_stacks_B=0
+heap_tree=detailed
+n9: 124936 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n3: 20848 0x789734E: strdup (strdup.c:42)
+  n1: 17283 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 17283 in 74 places, all below massif's threshold (1.00%)
+  n1: 2550 0x720389F: MPIR_T_CVAR_REGISTER_impl (mpit.c:332)
+   n0: 2550 in 75 places, all below massif's threshold (1.00%)
+  n0: 1015 in 7 places, all below massif's threshold (1.00%)
+ n1: 11264 0x7203AA9: MPL_realloc (mpl_trmem.h:391)
+  n2: 11264 0x7203AA9: MPIR_T_CVAR_REGISTER_impl (mpit.c:328)
+   n1: 11264 0x714F131: MPIR_T_cvar_init (mpir_cvars.c:2806)
+    n1: 11264 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+     n1: 11264 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+      n1: 11264 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+       n1: 11264 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 11264 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 11264 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 11264 0x10E09F: main (main.cpp:577)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n0: 5440 in 21 places, all below massif's threshold (1.00%)
+ n1: 5328 0x720391E: MPL_malloc (mpl_trmem.h:373)
+  n1: 5328 0x720391E: MPIR_T_CVAR_REGISTER_impl (mpit.c:359)
+   n0: 5328 in 74 places, all below massif's threshold (1.00%)
+ n2: 4048 0x94601D6: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 3760 0x96FD588: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 3760 in 5 places, all below massif's threshold (1.00%)
+  n0: 288 in 1 place, below massif's threshold (1.00%)
+ n1: 1536 0x7201329: MPL_realloc (mpl_trmem.h:391)
+  n1: 1536 0x7201329: MPIR_T_cat_create (mpit.c:81)
+   n2: 1536 0x7202F97: MPIR_T_cat_add_desc (mpit.c:247)
+    n1: 1536 0x714B816: MPIR_T_cvar_init (mpir_cvars.c:534)
+     n1: 1536 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+      n1: 1536 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+       n1: 1536 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+        n1: 1536 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 1536 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 1536 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 1536 0x10E09F: main (main.cpp:577)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 1376 0x9460148: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n0: 1376 in 2 places, all below massif's threshold (1.00%)
+ n1: 1368 0x720146D: MPL_malloc (mpl_trmem.h:373)
+  n1: 1368 0x720146D: MPIR_T_cat_create (mpit.c:92)
+   n1: 1368 0x7202F97: MPIR_T_cat_add_desc (mpit.c:247)
+    n0: 1368 in 19 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=27771170
+mem_heap_B=138748
+mem_heap_extra_B=8276
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=27924468
+mem_heap_B=172759
+mem_heap_extra_B=10857
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=28004998
+mem_heap_B=184869
+mem_heap_extra_B=12171
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=28131941
+mem_heap_B=203117
+mem_heap_extra_B=14427
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=28282161
+mem_heap_B=246778
+mem_heap_extra_B=17326
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=28458809
+mem_heap_B=266043
+mem_heap_extra_B=20749
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=28541026
+mem_heap_B=278061
+mem_heap_extra_B=22219
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=28663264
+mem_heap_B=292704
+mem_heap_extra_B=24400
+mem_stacks_B=0
+heap_tree=detailed
+n8: 292704 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 113155 0x789734E: strdup (strdup.c:42)
+  n1: 96146 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 96146 in 438 places, all below massif's threshold (1.00%)
+  n1: 15923 0x720389F: MPIR_T_CVAR_REGISTER_impl (mpit.c:332)
+   n0: 15923 in 438 places, all below massif's threshold (1.00%)
+  n0: 1086 in 24 places, all below massif's threshold (1.00%)
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 45056 0x7203AA9: MPL_realloc (mpl_trmem.h:391)
+  n2: 45056 0x7203AA9: MPIR_T_CVAR_REGISTER_impl (mpit.c:328)
+   n1: 45056 0x71597BE: MPIR_T_cvar_init (mpir_cvars.c:9022)
+    n1: 45056 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+     n1: 45056 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+      n1: 45056 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+       n1: 45056 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 45056 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 45056 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 45056 0x10E09F: main (main.cpp:577)
+   n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n1: 31536 0x720391E: MPL_malloc (mpl_trmem.h:373)
+  n1: 31536 0x720391E: MPIR_T_CVAR_REGISTER_impl (mpit.c:359)
+   n0: 31536 in 438 places, all below massif's threshold (1.00%)
+ n0: 12317 in 43 places, all below massif's threshold (1.00%)
+ n1: 9216 0x7203D90: MPL_malloc (mpl_trmem.h:373)
+  n1: 9216 0x7203D90: MPIR_T_CVAR_REGISTER_impl (mpit.c:337)
+   n0: 9216 in 24 places, all below massif's threshold (1.00%)
+ n2: 4048 0x94601D6: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 3760 0x96FD588: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 3760 in 5 places, all below massif's threshold (1.00%)
+  n0: 288 in 1 place, below massif's threshold (1.00%)
+ n1: 3648 0x7202409: MPL_realloc (mpl_trmem.h:391)
+  n1: 3648 0x7202409: MPIR_T_cat_add_cvar (mpit.c:159)
+   n0: 3648 in 29 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=13
+#-----------
+time=28758178
+mem_heap_B=296626
+mem_heap_extra_B=25166
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=28880531
+mem_heap_B=297920
+mem_heap_extra_B=25968
+mem_stacks_B=0
+heap_tree=detailed
+n8: 297920 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 114099 0x789734E: strdup (strdup.c:42)
+  n1: 96146 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 96146 in 438 places, all below massif's threshold (1.00%)
+  n1: 15923 0x720389F: MPIR_T_CVAR_REGISTER_impl (mpit.c:332)
+   n0: 15923 in 438 places, all below massif's threshold (1.00%)
+  n0: 2030 in 26 places, all below massif's threshold (1.00%)
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 45056 0x7203AA9: MPL_realloc (mpl_trmem.h:391)
+  n2: 45056 0x7203AA9: MPIR_T_CVAR_REGISTER_impl (mpit.c:328)
+   n1: 45056 0x71597BE: MPIR_T_cvar_init (mpir_cvars.c:9022)
+    n1: 45056 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+     n1: 45056 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+      n1: 45056 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+       n1: 45056 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 45056 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 45056 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 45056 0x10E09F: main (main.cpp:577)
+   n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n1: 31536 0x720391E: MPL_malloc (mpl_trmem.h:373)
+  n1: 31536 0x720391E: MPIR_T_CVAR_REGISTER_impl (mpit.c:359)
+   n0: 31536 in 438 places, all below massif's threshold (1.00%)
+ n0: 16589 in 53 places, all below massif's threshold (1.00%)
+ n1: 9216 0x7203D90: MPL_malloc (mpl_trmem.h:373)
+  n1: 9216 0x7203D90: MPIR_T_CVAR_REGISTER_impl (mpit.c:337)
+   n0: 9216 in 24 places, all below massif's threshold (1.00%)
+ n2: 4048 0x94601D6: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 3760 0x96FD588: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 3760 in 5 places, all below massif's threshold (1.00%)
+  n0: 288 in 1 place, below massif's threshold (1.00%)
+ n1: 3648 0x7202409: MPL_realloc (mpl_trmem.h:391)
+  n1: 3648 0x7202409: MPIR_T_cat_add_cvar (mpit.c:159)
+   n0: 3648 in 29 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=15
+#-----------
+time=28954907
+mem_heap_B=298786
+mem_heap_extra_B=26478
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=29078326
+mem_heap_B=299888
+mem_heap_extra_B=27280
+mem_stacks_B=0
+heap_tree=detailed
+n8: 299888 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 115043 0x789734E: strdup (strdup.c:42)
+  n1: 96146 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 96146 in 438 places, all below massif's threshold (1.00%)
+  n1: 15923 0x720389F: MPIR_T_CVAR_REGISTER_impl (mpit.c:332)
+   n0: 15923 in 438 places, all below massif's threshold (1.00%)
+  n0: 2974 in 26 places, all below massif's threshold (1.00%)
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 45056 0x7203AA9: MPL_realloc (mpl_trmem.h:391)
+  n2: 45056 0x7203AA9: MPIR_T_CVAR_REGISTER_impl (mpit.c:328)
+   n1: 45056 0x71597BE: MPIR_T_cvar_init (mpir_cvars.c:9022)
+    n1: 45056 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+     n1: 45056 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+      n1: 45056 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+       n1: 45056 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 45056 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 45056 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 45056 0x10E09F: main (main.cpp:577)
+   n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n1: 31536 0x720391E: MPL_malloc (mpl_trmem.h:373)
+  n1: 31536 0x720391E: MPIR_T_CVAR_REGISTER_impl (mpit.c:359)
+   n0: 31536 in 438 places, all below massif's threshold (1.00%)
+ n0: 17613 in 53 places, all below massif's threshold (1.00%)
+ n1: 9216 0x7203D90: MPL_malloc (mpl_trmem.h:373)
+  n1: 9216 0x7203D90: MPIR_T_CVAR_REGISTER_impl (mpit.c:337)
+   n0: 9216 in 24 places, all below massif's threshold (1.00%)
+ n2: 4048 0x94601D6: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 3760 0x96FD588: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 3760 in 5 places, all below massif's threshold (1.00%)
+  n0: 288 in 1 place, below massif's threshold (1.00%)
+ n1: 3648 0x7202409: MPL_realloc (mpl_trmem.h:391)
+  n1: 3648 0x7202409: MPIR_T_cat_add_cvar (mpit.c:159)
+   n0: 3648 in 29 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=29267657
+mem_heap_B=302290
+mem_heap_extra_B=27870
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=29396794
+mem_heap_B=306050
+mem_heap_extra_B=28430
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=29579373
+mem_heap_B=310626
+mem_heap_extra_B=29134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=29741671
+mem_heap_B=314250
+mem_heap_extra_B=29638
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=29873842
+mem_heap_B=322894
+mem_heap_extra_B=30994
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=30003189
+mem_heap_B=359934
+mem_heap_extra_B=32106
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=30162677
+mem_heap_B=365544
+mem_heap_extra_B=35304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=30321339
+mem_heap_B=432869
+mem_heap_extra_B=40347
+mem_stacks_B=0
+heap_tree=detailed
+n12: 432869 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 117485 0x789734E: strdup (strdup.c:42)
+  n1: 96146 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 96146 in 438 places, all below massif's threshold (1.00%)
+  n1: 15923 0x720389F: MPIR_T_CVAR_REGISTER_impl (mpit.c:332)
+   n0: 15923 in 438 places, all below massif's threshold (1.00%)
+  n0: 5416 in 43 places, all below massif's threshold (1.00%)
+ n1: 81280 0x7260E2A: lh_kchar_table_new (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 81280 0x72599CE: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 81280 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 81280 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 81280 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 81280 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 81280 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 81280 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 81280 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 81280 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 81280 0x10E09F: main (main.cpp:577)
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 45056 0x7203AA9: MPL_realloc (mpl_trmem.h:391)
+  n2: 45056 0x7203AA9: MPIR_T_CVAR_REGISTER_impl (mpit.c:328)
+   n1: 45056 0x71597BE: MPIR_T_cvar_init (mpir_cvars.c:9022)
+    n1: 45056 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+     n1: 45056 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+      n1: 45056 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+       n1: 45056 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 45056 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 45056 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 45056 0x10E09F: main (main.cpp:577)
+   n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n1: 31536 0x720391E: MPL_malloc (mpl_trmem.h:373)
+  n1: 31536 0x720391E: MPIR_T_CVAR_REGISTER_impl (mpit.c:359)
+   n0: 31536 in 438 places, all below massif's threshold (1.00%)
+ n0: 31000 in 96 places, all below massif's threshold (1.00%)
+ n1: 13888 0x7215959: hwloc_alloc_setup_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n0: 13888 in 11 places, all below massif's threshold (1.00%)
+ n1: 11176 0x7259988: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 11176 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 11176 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 11176 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+     n1: 11176 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+      n1: 11176 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+       n1: 11176 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 11176 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 11176 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 11176 0x10E09F: main (main.cpp:577)
+ n1: 9216 0x7203D90: MPL_malloc (mpl_trmem.h:373)
+  n1: 9216 0x7203D90: MPIR_T_CVAR_REGISTER_impl (mpit.c:337)
+   n0: 9216 in 24 places, all below massif's threshold (1.00%)
+ n1: 7112 0x7260E0C: lh_kchar_table_new (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 7112 0x72599CE: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 7112 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 7112 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 7112 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 7112 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 7112 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 7112 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 7112 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 7112 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 7112 0x10E09F: main (main.cpp:577)
+ n1: 5824 0x722815A: hwloc_bitmap_alloc (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n0: 5824 in 19 places, all below massif's threshold (1.00%)
+ n1: 5568 0x722830A: hwloc_bitmap_dup (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n0: 5568 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=25
+#-----------
+time=30435771
+mem_heap_B=477539
+mem_heap_extra_B=43525
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=30516761
+mem_heap_B=511602
+mem_heap_extra_B=46126
+mem_stacks_B=0
+heap_tree=detailed
+n11: 511602 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 142080 0x7260E2A: lh_kchar_table_new (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 142080 0x72599CE: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 142080 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 142080 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 142080 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 142080 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 142080 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 142080 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 142080 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 142080 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 142080 0x10E09F: main (main.cpp:577)
+ n4: 120250 0x789734E: strdup (strdup.c:42)
+  n1: 96146 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 96146 in 438 places, all below massif's threshold (1.00%)
+  n1: 15923 0x720389F: MPIR_T_CVAR_REGISTER_impl (mpit.c:332)
+   n0: 15923 in 438 places, all below massif's threshold (1.00%)
+  n1: 6095 0x7259EF7: json_object_object_add (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 6095 0x725CE06: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 6095 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 6095 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 6095 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 6095 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 6095 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 6095 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 6095 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 6095 0x10E09F: main (main.cpp:577)
+  n0: 2086 in 42 places, all below massif's threshold (1.00%)
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 45056 0x7203AA9: MPL_realloc (mpl_trmem.h:391)
+  n2: 45056 0x7203AA9: MPIR_T_CVAR_REGISTER_impl (mpit.c:328)
+   n1: 45056 0x71597BE: MPIR_T_cvar_init (mpir_cvars.c:9022)
+    n1: 45056 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+     n1: 45056 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+      n1: 45056 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+       n1: 45056 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 45056 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 45056 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 45056 0x10E09F: main (main.cpp:577)
+   n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n0: 37912 in 99 places, all below massif's threshold (1.00%)
+ n1: 31536 0x720391E: MPL_malloc (mpl_trmem.h:373)
+  n1: 31536 0x720391E: MPIR_T_CVAR_REGISTER_impl (mpit.c:359)
+   n0: 31536 in 438 places, all below massif's threshold (1.00%)
+ n1: 19624 0x7259988: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 19624 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 19624 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 19624 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+     n1: 19624 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+      n1: 19624 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+       n1: 19624 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 19624 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 19624 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 19624 0x10E09F: main (main.cpp:577)
+ n1: 13888 0x7215959: hwloc_alloc_setup_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n0: 13888 in 11 places, all below massif's threshold (1.00%)
+ n1: 12488 0x7260E0C: lh_kchar_table_new (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 12488 0x72599CE: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 12488 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 12488 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 12488 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 12488 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 12488 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 12488 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 12488 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 12488 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 12488 0x10E09F: main (main.cpp:577)
+ n1: 9216 0x7203D90: MPL_malloc (mpl_trmem.h:373)
+  n1: 9216 0x7203D90: MPIR_T_CVAR_REGISTER_impl (mpit.c:337)
+   n0: 9216 in 24 places, all below massif's threshold (1.00%)
+ n1: 5824 0x722815A: hwloc_bitmap_alloc (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n0: 5824 in 19 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=27
+#-----------
+time=30628580
+mem_heap_B=555299
+mem_heap_extra_B=49133
+mem_stacks_B=0
+heap_tree=detailed
+n10: 555299 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 175360 0x7260E2A: lh_kchar_table_new (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 175360 0x72599CE: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 175360 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 175360 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 175360 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 175360 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 175360 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 175360 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 175360 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 175360 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 175360 0x10E09F: main (main.cpp:577)
+ n4: 121899 0x789734E: strdup (strdup.c:42)
+  n1: 96146 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 96146 in 438 places, all below massif's threshold (1.00%)
+  n1: 15923 0x720389F: MPIR_T_CVAR_REGISTER_impl (mpit.c:332)
+   n0: 15923 in 438 places, all below massif's threshold (1.00%)
+  n1: 7727 0x7259EF7: json_object_object_add (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 7727 0x725CE06: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 7727 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 7727 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 7727 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 7727 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 7727 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 7727 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 7727 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 7727 0x10E09F: main (main.cpp:577)
+  n0: 2103 in 42 places, all below massif's threshold (1.00%)
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n1: 45056 0x7203AA9: MPL_realloc (mpl_trmem.h:391)
+  n2: 45056 0x7203AA9: MPIR_T_CVAR_REGISTER_impl (mpit.c:328)
+   n1: 45056 0x71597BE: MPIR_T_cvar_init (mpir_cvars.c:9022)
+    n1: 45056 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+     n1: 45056 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+      n1: 45056 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+       n1: 45056 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 45056 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 45056 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 45056 0x10E09F: main (main.cpp:577)
+   n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n0: 45016 in 100 places, all below massif's threshold (1.00%)
+ n1: 31536 0x720391E: MPL_malloc (mpl_trmem.h:373)
+  n1: 31536 0x720391E: MPIR_T_CVAR_REGISTER_impl (mpit.c:359)
+   n0: 31536 in 438 places, all below massif's threshold (1.00%)
+ n1: 24200 0x7259988: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 24200 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 24200 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 24200 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+     n1: 24200 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+      n1: 24200 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+       n1: 24200 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 24200 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 24200 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 24200 0x10E09F: main (main.cpp:577)
+ n1: 15400 0x7260E0C: lh_kchar_table_new (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 15400 0x72599CE: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 15400 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 15400 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 15400 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 15400 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 15400 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 15400 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 15400 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 15400 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 15400 0x10E09F: main (main.cpp:577)
+ n1: 13888 0x7215959: hwloc_alloc_setup_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n0: 13888 in 11 places, all below massif's threshold (1.00%)
+ n1: 9216 0x7203D90: MPL_malloc (mpl_trmem.h:373)
+  n1: 9216 0x7203D90: MPIR_T_CVAR_REGISTER_impl (mpit.c:337)
+   n0: 9216 in 24 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=28
+#-----------
+time=30803444
+mem_heap_B=624451
+mem_heap_extra_B=54205
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=30967501
+mem_heap_B=682271
+mem_heap_extra_B=58329
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=31143281
+mem_heap_B=686574
+mem_heap_extra_B=60034
+mem_stacks_B=0
+heap_tree=detailed
+n10: 686574 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 273920 0x7260E2A: lh_kchar_table_new (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 273920 0x72599CE: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 273920 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 273920 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 273920 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 273920 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 273920 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 273920 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 273920 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 273920 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 273920 0x10E09F: main (main.cpp:577)
+ n4: 126697 0x789734E: strdup (strdup.c:42)
+  n1: 96146 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 96146 in 438 places, all below massif's threshold (1.00%)
+  n1: 15923 0x720389F: MPIR_T_CVAR_REGISTER_impl (mpit.c:332)
+   n0: 15923 in 438 places, all below massif's threshold (1.00%)
+  n1: 12659 0x7259EF7: json_object_object_add (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 12659 0x725CE06: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 12659 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 12659 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 12659 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 12659 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 12659 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 12659 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 12659 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 12659 0x10E09F: main (main.cpp:577)
+  n0: 1969 in 42 places, all below massif's threshold (1.00%)
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+ n0: 50757 in 103 places, all below massif's threshold (1.00%)
+ n1: 45056 0x7203AA9: MPL_realloc (mpl_trmem.h:391)
+  n2: 45056 0x7203AA9: MPIR_T_CVAR_REGISTER_impl (mpit.c:328)
+   n1: 45056 0x71597BE: MPIR_T_cvar_init (mpir_cvars.c:9022)
+    n1: 45056 0x71FFBCD: MPIR_T_cvar_env_init (mpit_initthread.c:75)
+     n1: 45056 0x71FFBCD: MPIR_T_env_init (mpit_initthread.c:96)
+      n1: 45056 0x7132A59: MPII_Init_thread (mpir_init.c:173)
+       n1: 45056 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 45056 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 45056 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 45056 0x10E09F: main (main.cpp:577)
+   n0: 0 in 5 places, all below massif's threshold (1.00%)
+ n1: 37752 0x7259988: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 37752 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 37752 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 37752 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+     n1: 37752 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+      n1: 37752 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+       n1: 37752 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+        n1: 37752 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+         n1: 37752 0x50A9249: PetscInitialize (pinit.c:1345)
+          n0: 37752 0x10E09F: main (main.cpp:577)
+ n1: 31536 0x720391E: MPL_malloc (mpl_trmem.h:373)
+  n1: 31536 0x720391E: MPIR_T_CVAR_REGISTER_impl (mpit.c:359)
+   n0: 31536 in 438 places, all below massif's threshold (1.00%)
+ n1: 24024 0x7260E0C: lh_kchar_table_new (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n1: 24024 0x72599CE: json_object_new_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+   n1: 24024 0x725E140: json_tokener_parse_ex (in /opt/petsc/lib/libmpi.so.12.4.3)
+    n1: 24024 0x725FAE4: json_tokener_parse (in /opt/petsc/lib/libmpi.so.12.4.3)
+     n1: 24024 0x70C9041: MPIR_Csel_create_from_buf (csel.c:561)
+      n1: 24024 0x70C57AB: MPII_Coll_init (coll_impl.c:182)
+       n1: 24024 0x7132AD5: MPII_Init_thread (mpir_init.c:207)
+        n1: 24024 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 24024 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 24024 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 24024 0x10E09F: main (main.cpp:577)
+ n1: 13888 0x7215959: hwloc_alloc_setup_object (in /opt/petsc/lib/libmpi.so.12.4.3)
+  n0: 13888 in 11 places, all below massif's threshold (1.00%)
+ n1: 9216 0x7203D90: MPL_malloc (mpl_trmem.h:373)
+  n1: 9216 0x7203D90: MPIR_T_CVAR_REGISTER_impl (mpit.c:337)
+   n0: 9216 in 24 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=31
+#-----------
+time=31273822
+mem_heap_B=688251
+mem_heap_extra_B=60637
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=31359558
+mem_heap_B=689511
+mem_heap_extra_B=61145
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=31527480
+mem_heap_B=692592
+mem_heap_extra_B=62432
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=31653013
+mem_heap_B=694991
+mem_heap_extra_B=63425
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=31782037
+mem_heap_B=696958
+mem_heap_extra_B=64202
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=31897769
+mem_heap_B=698478
+mem_heap_extra_B=64834
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=32063681
+mem_heap_B=701142
+mem_heap_extra_B=65850
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=32200556
+mem_heap_B=701336
+mem_heap_extra_B=65912
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=32306601
+mem_heap_B=4555577
+mem_heap_extra_B=44279
+mem_stacks_B=0
+heap_tree=detailed
+n4: 4555577 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 4194688 0x10E09F: main (main.cpp:577)
+ n0: 173105 in 127 places, all below massif's threshold (1.00%)
+ n2: 114056 0x789734E: strdup (strdup.c:42)
+  n1: 96146 0x7203903: MPIR_T_CVAR_REGISTER_impl (mpit.c:354)
+   n0: 96146 in 438 places, all below massif's threshold (1.00%)
+  n0: 17910 in 46 places, all below massif's threshold (1.00%)
+ n1: 73728 0x750338E: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.33)
+  n1: 73728 0x400571E: call_init.part.0 (dl-init.c:74)
+   n1: 73728 0x4005823: call_init (dl-init.c:120)
+    n1: 73728 0x4005823: _dl_init (dl-init.c:121)
+     n0: 73728 0x401F59F: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+#-----------
+snapshot=40
+#-----------
+time=32519504
+mem_heap_B=9527539
+mem_heap_extra_B=44437
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=32700193
+mem_heap_B=9527563
+mem_heap_extra_B=44453
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=32862983
+mem_heap_B=9887167
+mem_heap_extra_B=45065
+mem_stacks_B=0
+heap_tree=detailed
+n6: 9887167 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 4194688 0x10E09F: main (main.cpp:577)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n0: 3670016 0x10E09F: main (main.cpp:577)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n0: 1310720 0x10E09F: main (main.cpp:577)
+ n0: 310952 in 181 places, all below massif's threshold (1.00%)
+ n1: 286720 0x711D5C8: MPIR_Handle_indirect_init (mpir_handlemem.h:188)
+  n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc_unsafe (mpir_handlemem.h:316)
+   n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc.constprop.0 (mpir_handlemem.h:258)
+    n1: 286720 0x711DB21: type_struct.part.0 (type_create.c:201)
+     n1: 286720 0x711EE05: type_struct (type_create.c:192)
+      n1: 286720 0x711EE05: MPIR_Type_struct (type_create.c:243)
+       n1: 286720 0x7122954: MPIR_Type_create_struct_impl (type_create.c:905)
+        n1: 286720 0x6F34F33: internal_Type_create_struct (c_binding.c:36775)
+         n1: 286720 0x50A80EB: PetscInitialize_Common (pinit.c:972)
+          n1: 286720 0x50A92D9: PetscInitialize (pinit.c:1360)
+           n0: 286720 0x10E09F: main (main.cpp:577)
+ n1: 114071 0x789734E: strdup (strdup.c:42)
+  n0: 114071 in 48 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=43
+#-----------
+time=33030551
+mem_heap_B=9913007
+mem_heap_extra_B=45313
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=33152034
+mem_heap_B=9917695
+mem_heap_extra_B=46833
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=33323122
+mem_heap_B=9918479
+mem_heap_extra_B=47161
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=33453417
+mem_heap_B=9918975
+mem_heap_extra_B=47313
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=33635972
+mem_heap_B=9919423
+mem_heap_extra_B=47465
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=33722831
+mem_heap_B=9919599
+mem_heap_extra_B=47537
+mem_stacks_B=0
+heap_tree=detailed
+n6: 9919599 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 4194688 0x10E09F: main (main.cpp:577)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n0: 3670016 0x10E09F: main (main.cpp:577)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n0: 1310720 0x10E09F: main (main.cpp:577)
+ n0: 343384 in 189 places, all below massif's threshold (1.00%)
+ n1: 286720 0x711D5C8: MPIR_Handle_indirect_init (mpir_handlemem.h:188)
+  n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc_unsafe (mpir_handlemem.h:316)
+   n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc.constprop.0 (mpir_handlemem.h:258)
+    n1: 286720 0x711DB21: type_struct.part.0 (type_create.c:201)
+     n1: 286720 0x711EE05: type_struct (type_create.c:192)
+      n1: 286720 0x711EE05: MPIR_Type_struct (type_create.c:243)
+       n1: 286720 0x7122954: MPIR_Type_create_struct_impl (type_create.c:905)
+        n1: 286720 0x6F34F33: internal_Type_create_struct (c_binding.c:36775)
+         n1: 286720 0x50A80EB: PetscInitialize_Common (pinit.c:972)
+          n1: 286720 0x50A92D9: PetscInitialize (pinit.c:1360)
+           n0: 286720 0x10E09F: main (main.cpp:577)
+ n1: 114071 0x789734E: strdup (strdup.c:42)
+  n0: 114071 in 48 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=49
+#-----------
+time=33843898
+mem_heap_B=9929255
+mem_heap_extra_B=48473
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=33939689
+mem_heap_B=10212235
+mem_heap_extra_B=48549
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=33950094
+mem_heap_B=10214443
+mem_heap_extra_B=48709
+mem_stacks_B=0
+heap_tree=detailed
+n7: 10214443 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 4194688 0x10E09F: main (main.cpp:577)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n0: 3670016 0x10E09F: main (main.cpp:577)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n0: 1310720 0x10E09F: main (main.cpp:577)
+ n2: 322772 0x5078F25: PetscMallocAlign (mal.c:52)
+  n2: 220004 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 160000 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n1: 160000 0x5354CD8: MatCreateSeqAIJ (aij.c:3895)
+     n0: 160000 0x10E0C8: main (main.cpp:584)
+   n0: 60004 in 2 places, all below massif's threshold (1.00%)
+  n0: 102768 in 2 places, all below massif's threshold (1.00%)
+ n0: 315456 in 192 places, all below massif's threshold (1.00%)
+ n1: 286720 0x711D5C8: MPIR_Handle_indirect_init (mpir_handlemem.h:188)
+  n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc_unsafe (mpir_handlemem.h:316)
+   n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc.constprop.0 (mpir_handlemem.h:258)
+    n1: 286720 0x711DB21: type_struct.part.0 (type_create.c:201)
+     n1: 286720 0x711EE05: type_struct (type_create.c:192)
+      n1: 286720 0x711EE05: MPIR_Type_struct (type_create.c:243)
+       n1: 286720 0x7122954: MPIR_Type_create_struct_impl (type_create.c:905)
+        n1: 286720 0x6F34F33: internal_Type_create_struct (c_binding.c:36775)
+         n1: 286720 0x50A80EB: PetscInitialize_Common (pinit.c:972)
+          n1: 286720 0x50A92D9: PetscInitialize (pinit.c:1360)
+           n0: 286720 0x10E09F: main (main.cpp:577)
+ n1: 114071 0x789734E: strdup (strdup.c:42)
+  n0: 114071 in 48 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=34042149
+mem_heap_B=10336275
+mem_heap_extra_B=48933
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=34345976
+mem_heap_B=10616279
+mem_heap_extra_B=48969
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=34437625
+mem_heap_B=10636327
+mem_heap_extra_B=48985
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=34876372
+mem_heap_B=10656327
+mem_heap_extra_B=48993
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=34967332
+mem_heap_B=10676375
+mem_heap_extra_B=49009
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=35145845
+mem_heap_B=10676391
+mem_heap_extra_B=49017
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=35150119
+mem_heap_B=10676647
+mem_heap_extra_B=49145
+mem_stacks_B=0
+heap_tree=detailed
+n7: 10676647 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 4194688 0x10E09F: main (main.cpp:577)
+ n1: 3670016 0x71D8A9F: MPL_malloc (mpl_trmem.h:373)
+  n1: 3670016 0x71D8A9F: MPIDI_RMA_init (mpidi_rma.c:93)
+   n1: 3670016 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 3670016 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 3670016 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 3670016 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 3670016 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 3670016 0x50A9249: PetscInitialize (pinit.c:1345)
+         n0: 3670016 0x10E09F: main (main.cpp:577)
+ n1: 1310720 0x71D8B48: MPL_malloc (mpl_trmem.h:373)
+  n1: 1310720 0x71D8B48: MPIDI_RMA_init (mpidi_rma.c:101)
+   n1: 1310720 0x71CE2AB: init_world (mpid_init.c:184)
+    n1: 1310720 0x71CE2AB: MPID_Init (mpid_init.c:66)
+     n1: 1310720 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+      n1: 1310720 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+       n1: 1310720 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+        n1: 1310720 0x50A9249: PetscInitialize (pinit.c:1345)
+         n0: 1310720 0x10E09F: main (main.cpp:577)
+ n3: 783832 0x5078F25: PetscMallocAlign (mal.c:52)
+  n2: 540008 0x50BFC61: PetscShmgetAllocateArray (server.c:265)
+   n1: 400000 0x534DF65: MatSeqAIJSetPreallocation_SeqAIJ (aij.c:4020)
+    n2: 400000 0x5354CD8: MatCreateSeqAIJ (aij.c:3895)
+     n0: 240000 0x10E0F1: main (main.cpp:585)
+     n0: 160000 0x10E0C8: main (main.cpp:584)
+   n0: 140008 in 2 places, all below massif's threshold (1.00%)
+  n1: 223760 0x50793F1: PetscMallocA (mal.c:411)
+   n0: 223760 in 63 places, all below massif's threshold (1.00%)
+  n0: 20064 in 1 place, below massif's threshold (1.00%)
+ n0: 316600 in 192 places, all below massif's threshold (1.00%)
+ n1: 286720 0x711D5C8: MPIR_Handle_indirect_init (mpir_handlemem.h:188)
+  n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc_unsafe (mpir_handlemem.h:316)
+   n1: 286720 0x711D5C8: MPIR_Handle_obj_alloc.constprop.0 (mpir_handlemem.h:258)
+    n1: 286720 0x711DB21: type_struct.part.0 (type_create.c:201)
+     n1: 286720 0x711EE05: type_struct (type_create.c:192)
+      n1: 286720 0x711EE05: MPIR_Type_struct (type_create.c:243)
+       n1: 286720 0x7122954: MPIR_Type_create_struct_impl (type_create.c:905)
+        n1: 286720 0x6F34F33: internal_Type_create_struct (c_binding.c:36775)
+         n1: 286720 0x50A80EB: PetscInitialize_Common (pinit.c:972)
+          n1: 286720 0x50A92D9: PetscInitialize (pinit.c:1360)
+           n0: 286720 0x10E09F: main (main.cpp:577)
+ n1: 114071 0x789734E: strdup (strdup.c:42)
+  n0: 114071 in 48 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=59
+#-----------
+time=35230286
+mem_heap_B=10676771
+mem_heap_extra_B=49189
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=35304765
+mem_heap_B=10676883
+mem_heap_extra_B=49245
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=35388031
+mem_heap_B=10679187
+mem_heap_extra_B=49317
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=35462454
+mem_heap_B=10679299
+mem_heap_extra_B=49365
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=35537690
+mem_heap_B=10679395
+mem_heap_extra_B=49413
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=435580598
+mem_heap_B=410682003
+mem_heap_extra_B=52573
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=435583659
+mem_heap_B=410682019
+mem_heap_extra_B=52581
+mem_stacks_B=0
+heap_tree=detailed
+n3: 410682019 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 400788840 0x5078F25: PetscMallocAlign (mal.c:52)
+  n2: 400228768 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 400000000 0x5211C57: VecCreate_MPI_Private (pbvec.c:583)
+    n1: 400000000 0x5211F65: VecCreate_MPI (pbvec.c:645)
+     n1: 400000000 0x523C8FF: VecSetType (vecreg.c:161)
+      n1: 400000000 0x521A583: VecCreateMPI (vmpicr.c:40)
+       n0: 400000000 0x10E48C: main (main.cpp:610)
+   n0: 228768 in 70 places, all below massif's threshold (1.00%)
+  n0: 560072 in 2 places, all below massif's threshold (1.00%)
+ n0: 5698491 in 196 places, all below massif's threshold (1.00%)
+ n1: 4194688 0x71FC284: MPL_malloc (mpl_trmem.h:373)
+  n1: 4194688 0x71FC284: MPIDU_Init_shm_alloc (mpidu_init_shm_alloc.c:66)
+   n1: 4194688 0x71E84C2: MPID_nem_init (mpid_nem_init.c:253)
+    n1: 4194688 0x71DBEE6: MPIDI_CH3_Init (ch3_init.c:83)
+     n1: 4194688 0x71CE1D4: init_world (mpid_init.c:169)
+      n1: 4194688 0x71CE1D4: MPID_Init (mpid_init.c:66)
+       n1: 4194688 0x7132B40: MPII_Init_thread (mpir_init.c:241)
+        n1: 4194688 0x6FF0AB3: internal_Init_thread (c_binding.c:49242)
+         n1: 4194688 0x6FF0AB3: PMPI_Init_thread (c_binding.c:49297)
+          n1: 4194688 0x50A9249: PetscInitialize (pinit.c:1345)
+           n0: 4194688 0x10E09F: main (main.cpp:577)
+#-----------
+snapshot=66
+#-----------
+time=835590604
+mem_heap_B=810684163
+mem_heap_extra_B=55661
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=835592237
+mem_heap_B=810684179
+mem_heap_extra_B=55669
+mem_stacks_B=0
+heap_tree=peak
+n2: 810684179 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 800791000 0x5078F25: PetscMallocAlign (mal.c:52)
+  n2: 800230928 0x50793F1: PetscMallocA (mal.c:411)
+   n1: 800000000 0x5211C57: VecCreate_MPI_Private (pbvec.c:583)
+    n1: 800000000 0x5211F65: VecCreate_MPI (pbvec.c:645)
+     n1: 800000000 0x523C8FF: VecSetType (vecreg.c:161)
+      n2: 800000000 0x521A583: VecCreateMPI (vmpicr.c:40)
+       n0: 400000000 0x10E48C: main (main.cpp:610)
+       n0: 400000000 0x10E4A1: main (main.cpp:611)
+   n0: 230928 in 70 places, all below massif's threshold (1.00%)
+  n0: 560072 in 2 places, all below massif's threshold (1.00%)
+ n0: 9893179 in 197 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=68
+#-----------
+time=6710599052
+mem_heap_B=810684195
+mem_heap_extra_B=55693
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=6714322917
+mem_heap_B=810924327
+mem_heap_extra_B=55761
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=6714415383
+mem_heap_B=810524195
+mem_heap_extra_B=55669
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=6714490693
+mem_heap_B=9908667
+mem_heap_extra_B=46733
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=6714565071
+mem_heap_B=323430
+mem_heap_extra_B=31274
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=6714639504
+mem_heap_B=107348
+mem_heap_extra_B=5724
+mem_stacks_B=0
+heap_tree=empty

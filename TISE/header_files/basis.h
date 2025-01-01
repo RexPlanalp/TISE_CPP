@@ -14,10 +14,10 @@ namespace basis
 
 
 	PetscScalar compute_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots, std::function<PetscScalar(int, int, const std::vector<PetscScalar>&, PetscScalar)> integrand, double R0, double eta);
-	PetscScalar overlap_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots, double R0, double w);
-	PetscScalar kinetic_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots,double R0,double w);
-	PetscScalar inverse_r2_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots,double R0,double w);
-	PetscScalar inverse_r_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots,double R0,double w);
+	PetscScalar overlap_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots, double R0, double eta);
+	PetscScalar kinetic_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots,double R0,double eta);
+	PetscScalar inverse_r2_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots,double R0,double eta);
+	PetscScalar inverse_r_matrix_element(PetscInt i, PetscInt j, PetscInt degree, const std::vector<PetscScalar>& knots,double R0,double eta);
 
 
 	PetscErrorCode save_bsplinee_basis(PetscInt n_basis, PetscInt degree, const std::vector<PetscScalar>& knots, PetscInt Nx, double xmax,double R0,double eta);
